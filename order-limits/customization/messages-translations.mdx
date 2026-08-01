@@ -28,6 +28,21 @@ storefront — see the
 for the full list. Click the copy button next to a variable in the app to
 insert it.
 
+### Default messages
+
+Every limit starts with sensible defaults you can adapt:
+
+| Message | Default text |
+| --- | --- |
+| Minimum quantity | You must select at least `{{minimum_product_quantity}}` products |
+| Maximum quantity | You can only select a maximum of `{{maximum_product_quantity}}` products |
+| Break multiple | The quantity must be a multiple of `{{multiple}}` |
+| Minimum value | You can only purchase a minimum of `{{minimum_total_product_value}}` `{{currency}}` |
+| Maximum value | You are only allowed to purchase a maximum of `{{maximum_total_product_value}}` `{{currency}}` |
+
+Collection limits use collection-specific wording ("…products in this
+collection") and the collection variables instead.
+
 ## Translations
 
 Messages support one **default language** plus any number of additional

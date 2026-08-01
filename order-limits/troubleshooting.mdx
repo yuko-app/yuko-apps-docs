@@ -30,10 +30,15 @@ import OrderLimitsFooter from "/snippets/order-limits/footer.mdx";
     - Check **Settings → Rule settings**: if it's set to **Allows customer
       to purchase even if limits are not met**, checkout stays open by
       design. Switch to the **Blocks** option to enforce.
+    - Open the limit in the editor — if an **Enable Checkout Rule** button
+      appears at the top, the checkout validation for that limit type
+      (e.g. **Yuko Product Limit**) is missing from your store. Click it
+      to re-add the validation in **Settings → Checkout → Checkout
+      rules**. Without it, messages show but checkout isn't blocked.
     - Enable **Hide payment methods if limits are not met** for stronger
       enforcement at checkout.
-    - Enable **Hide express checkout** on the Limits page so Buy-it-now
-      buttons can't bypass cart validation.
+    - Enable **Hide express checkout if limits are not met** on the Limits
+      page so Buy-it-now buttons can't bypass cart validation.
   </Accordion>
 
   <Accordion title="A customer-tag limit isn't applying">

@@ -21,11 +21,21 @@ Pick a **condition type**:
 - **Limit by total weight in the order (Cart Weight)** — set a minimum
   and/or maximum cart weight, in **lb**, **oz**, **kg**, or **g**
 
+The minimum field is required for every condition type — set it to `1` (or
+a value that every order meets) if you only want to enforce a maximum.
+
 <Note>
   Whether "value" includes shipping and taxes is controlled by the
   **Order Value Calculation** setting — see
   [General settings](/order-limits/settings/general).
 </Note>
+
+### Multi-currency stores
+
+For **Cart Value** conditions, you can add a row per currency — each with
+its own **Currency**, minimum, and maximum. Customers are checked against
+the row matching their cart's currency, so a €45 minimum and a $50 minimum
+can coexist cleanly.
 
 ## Sell in multiples
 
@@ -37,13 +47,86 @@ multiple of a value (at least 2). Choose what the multiple applies to with
 - **Each product** — each product's quantity must be a multiple
 - **Each variant** — each variant's quantity must be a multiple
 
-## Scope and exclusions
+## Exclusions
 
-By default an order limit covers the entire cart, but you can narrow it:
+By default an order limit counts the entire cart. Enable **Exclusions** to
+leave certain items out of the count, choosing what to exclude:
 
-- **Specific product** — only count selected products toward the limit
-- **Specific collection** — only count items from selected collections
-- **Exclusions** — leave out selected products or variants from the count
+- **Specific product** — selected products or variants don't count toward
+  the limit
+- **Specific collection** — products from selected collections don't count
+
+Excluded items can still be purchased — they're simply ignored when the
+cart is checked against the rule.
+
+## Use cases & examples
+
+<AccordionGroup>
+  <Accordion title="Minimum order value of $50">
+    Condition **Cart Value** → **Minimum value in order** `50`. A helpful
+    message pattern uses the live remaining amount:
+
+    ```text
+    Add {{remaining_total_value}} {{currency}} more to reach our {{minimum_total_product_value}} {{currency}} minimum.
+    ```
+  </Accordion>
+  <Accordion title="No more than 20 items per order">
+    Condition **Cart Quantity** → **Minimum** `1`, **Maximum** `20`.
+    Useful for keeping orders within packing or fulfillment constraints.
+  </Accordion>
+  <Accordion title="Keep orders under a shipping weight cap">
+    Condition **Cart Weight** → set the maximum and pick the unit (e.g.
+    `20` **kg**). The `{{maximum_product_weight}}` and `{{weight_unit}}`
+    variables let the message show the exact cap.
+  </Accordion>
+  <Accordion title="Different minimums for USD and EUR customers">
+    Condition **Cart Value** → add one row per currency: USD min `50`, EUR
+    min `45`. Each customer is checked against their own currency's row.
+  </Accordion>
+  <Accordion title="A $100 minimum that ignores gift cards">
+    Set the Cart Value minimum, then enable **Exclusions** → **Specific
+    product** → select your gift card products so they don't count toward
+    the $100.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The value limit uses the wrong total">
+    Check **Order Value Calculation** in
+    [General settings](/order-limits/settings/general) — *Without shipping
+    & taxes* compares the subtotal, *With shipping & taxes* compares the
+    order total. If your $50 minimum seems to pass at $47 of products,
+    shipping is probably being counted.
+  </Accordion>
+  <Accordion title="Multi-currency minimum isn't applying">
+    Make sure there's a row for the customer's currency — a cart in a
+    currency with no matching row isn't checked against your value rule.
+    Each row needs its currency selected, or the form reports "Please
+    select a currency for this row".
+  </Accordion>
+  <Accordion title="Weight limits don't trigger">
+    Weight rules rely on product weights from your Shopify catalog —
+    products with no weight set contribute 0. Check the affected products'
+    shipping settings, and confirm the limit's unit matches what you had
+    in mind (200 **g** is very different from 200 **oz**).
+  </Accordion>
+  <Accordion title="Customers bypass the minimum with Buy it now">
+    Express checkout buttons skip the cart. Enable **Hide express checkout
+    if limits are not met** on the Limits page, and consider **Hide
+    payment methods if limits are not met** in
+    [General settings](/order-limits/settings/general) as checkout-level
+    backstops.
+  </Accordion>
+  <Accordion title="The message shows, but checkout isn't blocked">
+    Open the limit — if an **Enable Checkout Rule** button appears at the
+    top, the **Yuko Order Limit** checkout validation is missing. Click it
+    to add the validation in Shopify's checkout settings
+    (**Settings → Checkout**), and check that
+    [Rule settings](/order-limits/settings/general) is set to block.
+  </Accordion>
+</AccordionGroup>
 
 ## Refine the rule
 

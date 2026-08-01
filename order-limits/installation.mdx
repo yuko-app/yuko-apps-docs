@@ -72,6 +72,26 @@ each one is complete.
 | --- | --- | --- |
 | Yuko extension (app embed) | Product page, cart drawer, cart page | Enforces limits and shows messages in the cart |
 | Yuko Order Limit block | Product page | Shows the limit message on the product page |
-| Checkout validation | Checkout | Blocks checkout when limits aren't met (built in, no setup needed) |
+| Checkout validations | Checkout | Block checkout when limits aren't met — added automatically at install (see below) |
+
+## Checkout validations
+
+The app enforces limits at checkout through Shopify **checkout rules**
+(validations) — one per limit type, named **Yuko Product Limit**,
+**Yuko Collection Limit**, and **Yuko Order Limit**. These are added
+automatically when you install the app, and you can see them in your
+Shopify admin under **Settings → Checkout → Checkout rules**.
+
+If a validation is ever missing — for example, it was removed manually —
+the limit editor shows an **Enable Checkout Rule** button at the top of
+the affected limit. Click it to re-add the validation; it opens the right
+page in your Shopify checkout settings with the rule ready to activate.
+
+<Warning>
+  Without its checkout validation, a limit still shows messages on the
+  storefront but won't block checkout. If customers can complete orders
+  that break your rules, check for the **Enable Checkout Rule** button
+  first.
+</Warning>
 
 <OrderLimitsFooter />
