@@ -1,0 +1,95 @@
+---
+title: "Discounts"
+description: "Product discounts and shipping discounts on upsell offers."
+---
+
+import PostPurchaseFooter from "/snippets/post-purchase-upsells/footer.mdx";
+
+Each product in an offer carries its own discount, set in the **Offer**
+step. Discounts are applied automatically — the app maintains its own
+Shopify discount function, so there are no codes for customers to enter.
+
+## Product discount types
+
+| Type | What it does | Example |
+| --- | --- | --- |
+| No discount | Product is offered at its normal price | — |
+| Discounted in percentage | Percentage off the price | 15 → 15% off |
+| In amount | Fixed amount off the price | 5 → $5 off |
+| Specific | Sell at an exact price | 10 → costs exactly $10 |
+
+Rules to know:
+
+- Discount values must be **whole numbers** — no decimals.
+- Amount and specific-price discounts can't exceed the product's original
+  price.
+- **Use compare at price** shows the product's compare-at price as the
+  strikethrough reference instead of its regular price.
+- **Use custom discount title** sets the discount name that appears on
+  the order (useful for tidy order records and customer-facing receipts).
+
+## Shipping discounts
+
+Thank-you page and checkout offers can also discount shipping on the
+offered product:
+
+| Type | What it does |
+| --- | --- |
+| Default shipping | Normal shipping rates — no discount |
+| Free shipping | Shipping is free (100% off) |
+| Percentage discount | A percentage off shipping, e.g. 50% |
+| Amount discount | A fixed amount off shipping, e.g. $5 off |
+
+Each option supports an optional **Shipping message** shown on the offer —
+e.g. "Free Shipping!" or "50% off shipping". Leave it blank to use the
+default wording.
+
+<Note>
+  Post-purchase offers are added to the original order, so shipping
+  discounts apply to the **thank-you page and checkout** placements —
+  where a shipping cost is actually being calculated for the offer.
+</Note>
+
+## Use cases & examples
+
+<AccordionGroup>
+  <Accordion title='A clean "$10 add-on" offer'>
+    Use **Specific** pricing so the offer reads as a flat price rather
+    than a math exercise — "Add this for just $10" converts better than
+    "23% off $12.99".
+  </Accordion>
+  <Accordion title="Bigger-looking savings with compare-at price">
+    If your product has a compare-at price set in Shopify, enable **Use
+    compare at price** — the strikethrough shows the compare-at value, so
+    the displayed saving includes the existing markdown.
+  </Accordion>
+  <Accordion title="Free shipping to remove second-order friction">
+    On thank-you offers, pair a modest product discount with **Free
+    shipping** — paying shipping twice is the top reason customers
+    decline a post-order offer.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The discount isn't applied at purchase">
+    The app creates and syncs its discount function automatically when
+    it's installed and offers are saved. If a discount isn't applying,
+    re-save the upsell to trigger a re-sync, then test again. If it
+    persists, contact support — we can re-sync the discount function for
+    your store.
+  </Accordion>
+  <Accordion title="The form rejects my discount value">
+    Values must be whole numbers (no decimals), percentages must be
+    between 1 and 100, and amount/specific values can't exceed the
+    product's original price — the validation message names the limit.
+  </Accordion>
+  <Accordion title="The saving badge shows the wrong amount">
+    If **Use compare at price** is on, savings are calculated against the
+    compare-at price, not the current price. Check the product's
+    compare-at value in Shopify.
+  </Accordion>
+</AccordionGroup>
+
+<PostPurchaseFooter />

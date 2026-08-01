@@ -1,0 +1,73 @@
+---
+title: "Installation & setup"
+description: "Install Yuko Post Purchase Upsells and enable it for each offer placement."
+---
+
+import PostPurchaseFooter from "/snippets/post-purchase-upsells/footer.mdx";
+
+The app shows offers in three places, and each placement has its own
+one-time setup. The in-app **Setup Guide** on the Home page covers the
+post-purchase placement; the thank-you page and checkout placements are
+enabled in Shopify's checkout editor.
+
+<Steps>
+  <Step title="Install the app">
+    Install
+    [Yuko Post Purchase Upsells](https://apps.shopify.com/yuko-post-purchase-upsell)
+    from the Shopify App Store and approve the requested permissions.
+  </Step>
+  <Step title="Enable the post-purchase page">
+    Shopify lets exactly one app power the post-purchase page, so you need
+    to select Yuko:
+
+    1. In the app's **Setup Guide**, click **Enable** on the step
+       **Enable Yuko Post Purchase Upsell in shopify settings**. This
+       opens **Settings → Checkout → Post-purchase page** in your Shopify
+       admin.
+    2. Select **Yuko Post Purchase Upsell** as the post-purchase app and
+       save.
+    3. Back in the app, click **Refresh status** — the step is checked off
+       automatically once Shopify reports the app is selected.
+
+    <Check>
+      This is all the storefront setup needed for **post-purchase**
+      offers.
+    </Check>
+  </Step>
+  <Step title="(Optional) Add the thank-you page block">
+    To show offers on the thank-you / order status page:
+
+    1. Go to **Settings → Checkout** and click **Customize** to open the
+       checkout editor.
+    2. Switch the editor to the **Thank you** page.
+    3. Click **Add app block** and add the app's **thank-you product
+       slider** block, positioning it where you want the offer to appear.
+    4. Click **Save**.
+  </Step>
+  <Step title="(Optional, Shopify Plus) Add the checkout block">
+    Checkout page offers use a checkout UI extension, available on
+    **Shopify Plus** stores:
+
+    1. Go to **Settings → Checkout → Customize** to open the checkout
+       editor on the **Checkout** page.
+    2. Add the app's **checkout upsell** block from the app blocks list —
+       for example, below the order summary.
+    3. Click **Save**.
+  </Step>
+</Steps>
+
+## What powers each placement
+
+| Placement | Setup needed | How it charges |
+| --- | --- | --- |
+| Post-purchase page | Select the app in **Settings → Checkout → Post-purchase page** | One click — added to the original order's payment |
+| Thank-you page | Add the app block on the **Thank you** page in the checkout editor | Accepting starts a new checkout (a second order) |
+| Checkout page (Plus) | Add the app block on the **Checkout** page in the checkout editor | Adds the item to the cart being checked out |
+
+<Note>
+  Discounts are delivered by an automatic discount function the app
+  creates and keeps in sync by itself — there's nothing to enable for
+  discounts to work.
+</Note>
+
+<PostPurchaseFooter />

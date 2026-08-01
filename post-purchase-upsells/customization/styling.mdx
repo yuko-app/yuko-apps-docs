@@ -1,0 +1,80 @@
+---
+title: "Styling your offer"
+description: "The Style step: sections, layouts, color schemes, timer, and images."
+---
+
+import PostPurchaseFooter from "/snippets/post-purchase-upsells/footer.mdx";
+
+The **Style** step controls everything the customer sees, with a live
+preview on the right. Each funnel step (**Primary**, **Secondary**,
+**Downsell**) is styled independently — use the preview tabs (**Upsell**,
+**Upsell #2**, **Downsell (if declined)**) to check each one.
+
+An offer page is built from four sections:
+
+## Message
+
+The header banner of the offer.
+
+| Field | Description |
+| --- | --- |
+| Title | The headline, e.g. "Wait! Your order isn't complete…" |
+| Icon | Show or hide the icon, with a configurable **Icon color** |
+| Timer | Countdown that hides the offer when it expires — on by default at **15 minutes** |
+
+## Upsell products
+
+The product card(s) with pricing and buttons.
+
+| Field | Description |
+| --- | --- |
+| Layout | **Layout 1** or **Layout 2** — two arrangements of image, price, and buttons |
+| Color scheme | **Orange**, **Green**, **Blue**, **Grey**, **Neutral**, or **Yellow** |
+| CTA Text | The accept button — supports the `{{new_total}}` placeholder for the order total after adding the offer |
+| Decline Text | The "no thanks" link text |
+
+Product cards show the discounted price with a strikethrough original and
+a SAVE badge, plus an optional quantity selector and variant picker.
+
+## Text block
+
+A free-form **Title** + **Paragraph** with configurable color — use it for
+reassurance copy ("Ships together with your order") or terms.
+
+## Image
+
+Upload an image from your device (stored on Shopify's CDN) and set its
+**Image size (%)**.
+
+## Custom labels
+
+The **Custom labels** section overrides the standard storefront wording.
+Leave any field blank to use the default translated label for the
+customer's language:
+
+Subtotal, Shipping, Taxes, Total, Free, SAVE (use `{{value}}` for the
+discount, e.g. `SAVE {{value}}`), Loading offers, Variant picker label,
+Shipping % off label (`{{value}}% off`), and Shipping amount off label
+(`{{value}} off`).
+
+## Tips
+
+<AccordionGroup>
+  <Accordion title="Keep the timer honest">
+    The default 15-minute countdown hides the offer on expiry. Shorter
+    timers increase urgency but give slow readers less time — 10–15
+    minutes works for most stores.
+  </Accordion>
+  <Accordion title="Show the new order total in the CTA">
+    A CTA like `Pay {{new_total}} now` shows the customer their exact new
+    order total up front — it converts better than a generic "Add to
+    order" because it removes surprise.
+  </Accordion>
+  <Accordion title="Check all three preview tabs before publishing">
+    Publishing validates that required fields (message title, CTA text,
+    decline text, image) are set for every enabled funnel step — the
+    error list names the section and step to fix.
+  </Accordion>
+</AccordionGroup>
+
+<PostPurchaseFooter />

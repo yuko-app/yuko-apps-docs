@@ -1,0 +1,65 @@
+---
+title: "Checkout offers (Shopify Plus)"
+description: "In-checkout offers that add products to the order being placed."
+---
+
+import PostPurchaseFooter from "/snippets/post-purchase-upsells/footer.mdx";
+
+Checkout offers appear **inside the checkout itself** — for example, under
+the order summary — and let customers add the offered product to the order
+they're about to place. Because checkout UI extensions require checkout
+customization, this placement is available on **Shopify Plus** stores.
+
+## How it works
+
+1. During checkout, the block shows the highest-priority checkout upsell
+   whose [trigger](/post-purchase-upsells/upsells/triggers) matches the
+   cart.
+2. Accepting adds the product — with its discount — directly to the
+   current checkout's cart. No second order, no extra payment step.
+
+## Setup
+
+1. In the checkout editor (**Settings → Checkout → Customize**), add the
+   app's **checkout upsell** block to the checkout page and save — see
+   [Installation & setup](/post-purchase-upsells/installation).
+2. Create an upsell with the **Checkout Upsell** trigger (marked with a
+   **Shopify Plus** badge in the wizard).
+
+## Shipping discounts
+
+Checkout offers support
+[shipping discounts](/post-purchase-upsells/upsells/discounts#shipping-discounts)
+on the offered product, applied by the app's automatic discount function.
+
+## Use cases & examples
+
+<AccordionGroup>
+  <Accordion title="Last-chance add-on under the order summary">
+    Offer a small, universally useful product (gift wrap, a sample set) to
+    every checkout with a modest discount — classic impulse placement.
+  </Accordion>
+  <Accordion title="Free-shipping threshold nudge">
+    Combine a trigger condition **Order subtotal → Lesser than → 50** with
+    an attractively priced add-on to help customers reach your
+    free-shipping threshold before they place the order.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The block isn't available or doesn't render">
+    - Checkout UI blocks require **Shopify Plus**. On other plans the
+      block can't be placed in the checkout editor.
+    - The block must be manually added in the checkout editor — verify
+      it's placed on the **Checkout** page and saved.
+  </Accordion>
+  <Accordion title="The offer doesn't show during checkout">
+    Confirm the upsell's trigger is **Checkout Upsell**, its status is
+    **Active**, and its conditions match the cart you're testing with.
+    Only the highest-priority matching checkout upsell is shown.
+  </Accordion>
+</AccordionGroup>
+
+<PostPurchaseFooter />

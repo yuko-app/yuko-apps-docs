@@ -1,0 +1,44 @@
+---
+title: "Analytics"
+description: "Revenue by placement on the dashboard, and the upsell events log."
+---
+
+import PostPurchaseFooter from "/snippets/post-purchase-upsells/footer.mdx";
+
+## Dashboard revenue
+
+The **Home** page shows revenue attributed to your upsells, split by
+placement:
+
+- **Post Purchase Revenue**
+- **Thank You Revenue**
+- **Checkout Revenue**
+
+plus counts of accepted upsells and upsells created, and a **Recent
+Upsells** table. Revenue is attributed server-side from Shopify's order
+webhooks when an upsell purchase is completed, so figures reflect actual
+paid orders (recorded in both your shop currency and the customer's
+presentment currency).
+
+## Upsell Events
+
+The **Analytics** page is a full interaction log. Every row is one event:
+
+| Column | Meaning |
+| --- | --- |
+| Upsell Name | Which upsell the event belongs to |
+| Type | Post Purchase / Thank You / Checkout |
+| Step | Upsell #1 / Upsell #2 / Downsell |
+| Event Type | **Shown** / **Accepted** / **Declined** |
+| Date | When it happened |
+
+Use it to answer questions like "how often is my downsell shown, and does
+anyone accept it?" — compare Shown vs Accepted counts per step to find
+weak points in your funnel.
+
+<Note>
+  Events appear once customers start interacting with your upsells — a
+  freshly published upsell shows an empty log until its first impression.
+</Note>
+
+<PostPurchaseFooter />

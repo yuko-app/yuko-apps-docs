@@ -1,0 +1,89 @@
+---
+title: "Triggers & targeting"
+description: "Control exactly which orders see an upsell with product scopes and conditions."
+---
+
+import PostPurchaseFooter from "/snippets/post-purchase-upsells/footer.mdx";
+
+The **Trigger** step decides when an upsell is shown. It has two layers:
+a product scope ("Customer orders") and optional fine-grained conditions
+combined with AND/OR logic.
+
+## Customer orders (product scope)
+
+Under **Show Upsell offer when → Customer orders**, choose:
+
+- **Any products** — the offer can show for every order
+- **Specific products** — only when the order contains at least one of the
+  selected products
+- **Specific collections** — only when the order contains a product from
+  the selected collections
+- **Excluded products** — only when the order contains *none* of the
+  selected products
+
+## Conditions
+
+Click **Add condition** to add additional requirements. Conditions are
+grouped into Products, Orders, and Shipping:
+
+| Condition | Checks | Operators |
+| --- | --- | --- |
+| Order has product of… | Order contains certain products | In / Not in |
+| Order has product variant of… | Order contains certain variants | In / Not in |
+| Order has product in collection of… | Order contains products from collections | In / Not in |
+| Line item title is… | A line item's title | Contains / Does not contain |
+| Line item price is… | A line item's price | Greater than / Lesser than / Is equal to… |
+| Order subtotal | Subtotal (excludes tax and shipping) | Greater than / Lesser than / Is equal to… |
+| Order total | Total (includes tax and shipping) | Greater than / Lesser than / Is equal to… |
+| Order quantity | Total quantity across all line items | Greater than / Lesser than / Is equal to… |
+| Number of line items | Count of line items in the order | Greater than / Lesser than / Is equal to… |
+| Restrict by country | The order's destination country | Is / Is not |
+
+Conditions combine with **AND** / **OR** — switch the connector between
+rows to require all conditions or any of them.
+
+## Use cases & examples
+
+<AccordionGroup>
+  <Accordion title="Offer only on first-class orders: subtotal over $100">
+    Scope **Any products** + condition **Order subtotal → Greater than →
+    100**. Big spenders see the premium add-on; small orders don't.
+  </Accordion>
+  <Accordion title="Companion product for a specific machine">
+    Scope **Specific products** → select the espresso machine. Optionally
+    add **Order has product in collection of… → Not in → Accessories** so
+    people who already bought accessories aren't targeted.
+  </Accordion>
+  <Accordion title="Country-specific offer">
+    Add **Restrict by country → Is → United States** to keep an offer
+    (e.g. one with domestic-only shipping) from showing to international
+    customers.
+  </Accordion>
+  <Accordion title="Skip subscription orders">
+    If your subscription products share a naming convention, use
+    **Line item title is… → Does not contain → Subscription**.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The offer never triggers">
+    - Walk through each condition against a real test order — with the
+      **AND** connector every condition must pass; one wrong operator
+      (e.g. *Is equal to* instead of *Greater than*) blocks everything.
+    - **Order subtotal excludes tax and shipping; Order total includes
+      them.** A `Total > 100` condition can pass while `Subtotal > 100`
+      fails on the same order.
+    - Make sure the upsell is **Active** and the right trigger placement
+      is selected for where you're looking.
+  </Accordion>
+  <Accordion title="The offer triggers for orders it shouldn't">
+    Check the connector — with **OR**, any single matching condition
+    shows the offer. Also remember **Excluded products** scope means
+    "show unless these products are present", not "hide these products
+    from the offer".
+  </Accordion>
+</AccordionGroup>
+
+<PostPurchaseFooter />

@@ -1,0 +1,86 @@
+---
+title: "Funnels: Upsell #2 & downsells"
+description: "Chain a second offer after acceptance, or recover declines with a downsell."
+---
+
+import PostPurchaseFooter from "/snippets/post-purchase-upsells/footer.mdx";
+
+Every upsell can grow into a small funnel in the **Offer** step. Beyond the
+primary offer ("Upsell 1"), you can add:
+
+- **Upsell offer #2** — shown *if the customer accepts* the first offer
+- **Downsell offer** — shown *if the customer declines* the first offer
+
+```text
+        Offer shown
+        /          \
+   accepted      declined
+      |               |
+  Upsell #2       Downsell
+```
+
+Each step has its own products, its own discounts, and its own styling —
+the Style step shows **Primary**, **Secondary**, and **Downsell** sections
+with preview tabs for **Upsell**, **Upsell #2**, and **Downsell (if
+declined)**.
+
+## Setting up a funnel
+
+<Steps>
+  <Step title="Configure Upsell 1">
+    Select products and discounts for the primary offer as usual.
+  </Step>
+  <Step title="Enable Upsell offer #2 (optional)">
+    Toggle on **Upsell offer #2** ("Create the offer you will be showing
+    after customer accepts first upsell") and select its products and
+    discounts.
+  </Step>
+  <Step title="Enable Downsell offer (optional)">
+    Toggle on **Downsell offer** ("Create the offer you will be showing
+    after customer declines first upsell") and configure it.
+  </Step>
+  <Step title="Style each step">
+    In the Style step, customize each section and check all three preview
+    tabs before **Save and publish**.
+  </Step>
+</Steps>
+
+## Use cases & examples
+
+<AccordionGroup>
+  <Accordion title="Classic ladder: accessory → refill pack">
+    Upsell 1 offers an accessory at 15% off. If accepted, Upsell #2
+    offers a refill bundle — the customer has proven they're in a buying
+    mood.
+  </Accordion>
+  <Accordion title="Downsell to a cheaper alternative">
+    If the $49 add-on is declined, the downsell offers a $19 version or a
+    deeper discount on the same product. A decline becomes a second
+    chance instead of a dead end.
+  </Accordion>
+  <Accordion title="Downsell with a stronger discount">
+    Offer the same product in the downsell but move from 10% to 25% off —
+    a classic recovery pattern. Keep the stronger discount exclusive to
+    the downsell so it retains its urgency.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Upsell #2 or the downsell never appears">
+    - Both are **off by default** — check their toggles in the Offer
+      step, and that each enabled step has at least one product selected
+      (the wizard validates this on save).
+    - The downsell only shows after an explicit **decline** of the first
+      offer. If the timer expires or the customer navigates away, the
+      funnel ends without a downsell.
+  </Accordion>
+  <Accordion title="Styling looks right for Upsell 1 but wrong for the others">
+    Each funnel step is styled independently in the Style step — select
+    the **Secondary** or **Downsell** section and check its own preview
+    tab.
+  </Accordion>
+</AccordionGroup>
+
+<PostPurchaseFooter />

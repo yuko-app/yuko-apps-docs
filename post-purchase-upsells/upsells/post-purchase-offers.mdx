@@ -1,0 +1,76 @@
+---
+title: "Post-purchase offers"
+description: "One-click offers shown after payment, before the thank-you page."
+---
+
+import PostPurchaseFooter from "/snippets/post-purchase-upsells/footer.mdx";
+
+Post-purchase offers appear **after the customer pays but before the
+thank-you page**. This is the highest-converting placement: the customer
+has already committed, and accepting the offer takes **one click** — the
+add-on is charged to the payment method they just used, with no re-entry
+of payment details.
+
+## How it works
+
+1. The customer completes checkout and pays.
+2. Yuko checks your active post-purchase upsells, picks the
+   highest-priority one whose [trigger](/post-purchase-upsells/upsells/triggers)
+   matches the order, and shows it.
+3. Accepting adds the product (with its discount) to the original order.
+   Declining continues to the thank-you page — or shows your
+   [downsell](/post-purchase-upsells/upsells/funnels) if you've configured
+   one.
+4. A countdown timer (15 minutes by default) creates urgency; when it
+   expires the offer hides itself.
+
+## Setup
+
+Select **Yuko Post Purchase Upsell** in
+**Settings → Checkout → Post-purchase page** — see
+[Installation & setup](/post-purchase-upsells/installation). Then choose
+**Post Purchase Upsell** as the trigger when creating the upsell.
+
+## Use cases & examples
+
+<AccordionGroup>
+  <Accordion title="Accessory add-on after every order">
+    Trigger on **Any products**, offer a low-priced accessory (batteries,
+    filters, a care kit) at 10–20% off. Low risk, applies to your whole
+    catalog.
+  </Accordion>
+  <Accordion title="Product-specific companion offer">
+    Trigger on **Specific products** — the coffee machine — and offer the
+    matching beans or descaler. Enable **Exclude products already in
+    customer's order** so nobody is offered what they just bought.
+  </Accordion>
+  <Accordion title="Threshold-based premium offer">
+    Add a condition **Order total → Greater than → 100** so a premium
+    add-on is only offered on high-value orders.
+  </Accordion>
+</AccordionGroup>
+
+## Good to know
+
+<AccordionGroup>
+  <Accordion title="Payment method limitations">
+    Shopify only shows post-purchase pages for supported payment flows —
+    orders paid via some wallets and third-party gateways skip the
+    post-purchase page entirely. If conversion seems low, remember a
+    portion of orders never see the offer; this is a platform behavior,
+    not a configuration issue.
+  </Accordion>
+  <Accordion title="One post-purchase app at a time">
+    Shopify allows only one app on the post-purchase page. If another
+    upsell app is selected in **Settings → Checkout → Post-purchase
+    page**, Yuko's offers can't appear until you switch.
+  </Accordion>
+  <Accordion title="Only the top matching upsell is shown">
+    If several post-purchase upsells are active, the customer sees the
+    highest-priority one that matches their order — not all of them. Use
+    **Manage priority** on the Upsells page to control the order. See
+    [Managing upsells & priority](/post-purchase-upsells/upsells/priority).
+  </Accordion>
+</AccordionGroup>
+
+<PostPurchaseFooter />

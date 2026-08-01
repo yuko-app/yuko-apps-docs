@@ -67,7 +67,37 @@
         "groups": [
           {
             "group": "Get started",
-            "pages": ["post-purchase-upsells/overview"]
+            "pages": [
+              "post-purchase-upsells/overview",
+              "post-purchase-upsells/installation",
+              "post-purchase-upsells/quickstart"
+            ]
+          },
+          {
+            "group": "Upsells",
+            "pages": [
+              "post-purchase-upsells/upsells/post-purchase-offers",
+              "post-purchase-upsells/upsells/thank-you-offers",
+              "post-purchase-upsells/upsells/checkout-offers",
+              "post-purchase-upsells/upsells/triggers",
+              "post-purchase-upsells/upsells/discounts",
+              "post-purchase-upsells/upsells/funnels",
+              "post-purchase-upsells/upsells/priority"
+            ]
+          },
+          {
+            "group": "Customization",
+            "pages": [
+              "post-purchase-upsells/customization/styling",
+              "post-purchase-upsells/customization/translations"
+            ]
+          },
+          {
+            "group": "Analytics & help",
+            "pages": [
+              "post-purchase-upsells/analytics",
+              "post-purchase-upsells/troubleshooting"
+            ]
           }
         ]
       },
