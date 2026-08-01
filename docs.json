@@ -162,12 +162,34 @@
             "group": "Cart editor",
             "pages": [
               "cart-drawer/cart/cart-editor",
-              "cart-drawer/cart/rewards-bar",
-              "cart-drawer/cart/product-upsells",
-              "cart-drawer/cart/body-sections",
-              "cart-drawer/cart/footer-addons",
-              "cart-drawer/cart/footer-checkout",
               "cart-drawer/cart/general-settings"
+            ]
+          },
+          {
+            "group": "Header & body",
+            "pages": [
+              "cart-drawer/cart/top-bar",
+              "cart-drawer/cart/announcement-bar",
+              "cart-drawer/cart/savings-banner",
+              "cart-drawer/cart/rewards-bar",
+              "cart-drawer/cart/products-in-cart",
+              "cart-drawer/cart/product-upsells",
+              "cart-drawer/cart/timer",
+              "cart-drawer/cart/trust-badges"
+            ]
+          },
+          {
+            "group": "Footer",
+            "pages": [
+              "cart-drawer/cart/shipping-protection",
+              "cart-drawer/cart/gift-wrap",
+              "cart-drawer/cart/order-notes",
+              "cart-drawer/cart/discount-codes",
+              "cart-drawer/cart/checkout-button",
+              "cart-drawer/cart/accelerated-checkout",
+              "cart-drawer/cart/payment-methods",
+              "cart-drawer/cart/footer-strip",
+              "cart-drawer/cart/secondary-button"
             ]
           },
           {
@@ -204,6 +226,18 @@
     ]
   },
   "redirects": [
+    {
+      "source": "/cart-drawer/cart/body-sections",
+      "destination": "/cart-drawer/cart/top-bar"
+    },
+    {
+      "source": "/cart-drawer/cart/footer-addons",
+      "destination": "/cart-drawer/cart/shipping-protection"
+    },
+    {
+      "source": "/cart-drawer/cart/footer-checkout",
+      "destination": "/cart-drawer/cart/checkout-button"
+    },
     {
       "source": "/post-purchase-upsells/upsells/triggers",
       "destination": "/post-purchase-upsells/upsells/post-purchase-offers"

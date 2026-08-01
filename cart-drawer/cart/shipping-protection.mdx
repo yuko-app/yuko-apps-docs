@@ -1,0 +1,51 @@
+---
+title: "Shipping protection"
+description: "A paid protection add-on shoppers can toggle on — extra revenue on autopilot."
+---
+
+import CartDrawerFooter from "/snippets/cart-drawer/footer.mdx";
+
+**Shipping protection** adds a small paid toggle to the cart — "Protect
+my order — $1.95". Shoppers who enable it pay the fee with their order.
+Find it under **Footer → Shipping protection**.
+
+## How the charge works
+
+The app creates a hidden Shopify product for the fee and **keeps its
+price in sync with your settings** automatically. The panel confirms
+with "Auto-managed dummy product (created)" after you enable the section
+and click **Save**.
+
+<Warning>
+  Don't edit or delete that hidden product in Shopify — the app manages
+  it. Deleting it breaks the add-on until the next save recreates it.
+</Warning>
+
+## Settings
+
+| Setting | What it does |
+| --- | --- |
+| Image, Title, Description | What shoppers see next to the toggle |
+| Price / Compare at price | What it costs — the compare-at shows its value |
+| Display mode | **Standard** (a row in the footer) or **In checkout button** (built into the button area) |
+| Text when it is not in the cart / when it is in the cart | The toggle's two labels |
+| Toggle on by default | Protection starts enabled; shoppers can switch it off |
+| Automatically remove when the cart is empty | Cleans it up when everything else is removed |
+
+<Tip>
+  Price it around 2–3% of your average order value and enable **Toggle
+  on by default**. Opt-out keeps it fair — and most shoppers keep it.
+</Tip>
+
+<Note>
+  Shipping protection is a support-unlocked section. If you see a
+  padlock, click **Request feature** and we'll enable it for your store.
+</Note>
+
+## Tracking revenue
+
+Protection revenue and units sold have their own tiles on the
+[Analytics](/cart-drawer/analytics) page, so you can see exactly what
+this module earns.
+
+<CartDrawerFooter />

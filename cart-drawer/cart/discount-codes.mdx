@@ -1,0 +1,48 @@
+---
+title: "Discount codes"
+description: "Let shoppers apply codes in the cart — and showcase selected coupons."
+---
+
+import CartDrawerFooter from "/snippets/cart-drawer/footer.mdx";
+
+The **Discount codes** section lets shoppers apply codes without leaving
+the cart — and can showcase selected codes so they don't need to
+remember them. Find it under **Footer → Discount codes**.
+
+## Settings
+
+| Setting | What it does |
+| --- | --- |
+| Discount title | Shown beside applied discount tags in the cart |
+| Button label | The apply button's text |
+| Error message | Shown when a code fails validation (expired, minimum not met) |
+| Show remove control on discount tag | A compact ✕ on the applied code chip |
+
+## Available coupons
+
+The standout feature: search your store's Shopify discount codes and
+pick which to **show** in the cart. Shoppers see the selected codes with
+their conditions ("Min. order $30" / "No minimum") and apply them with
+one tap.
+
+<Tip>
+  Showing "WELCOME10 — no minimum" converts far better than hoping
+  shoppers remember a code from an email. One visible welcome code is
+  the highest-impact setting in this section.
+</Tip>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="A code won't apply">
+    Your configured error message appears when Shopify rejects the code
+    — usually expired, usage-limited, or an unmet minimum. Check the
+    code's rules under **Discounts** in your Shopify admin.
+  </Accordion>
+  <Accordion title="A coupon disappeared from the list">
+    The Available coupons list only shows active discounts — codes that
+    expire or get deleted in Shopify drop out automatically.
+  </Accordion>
+</AccordionGroup>
+
+<CartDrawerFooter />
