@@ -1,0 +1,158 @@
+---
+title: "Quantity Breaks & Free Gifts"
+description: "Buy More, Save More tier tables with optional free gifts per tier."
+---
+
+import BundlesFooter from "/snippets/bundles-discounts/footer.mdx";
+import WhenToDisplay from "/snippets/bundles-discounts/when-to-display.mdx";
+import Combinations from "/snippets/bundles-discounts/combinations.mdx";
+import Schedule from "/snippets/bundles-discounts/schedule.mdx";
+import Eligibility from "/snippets/bundles-discounts/eligibility.mdx";
+import DesignCallout from "/snippets/bundles-discounts/design-callout.mdx";
+
+The classic **Buy More, Save More** offer: a tier table on the product
+page where the price updates automatically as customers pick a quantity —
+optionally attaching **free gifts** to any tier. This is the only offer
+type that starts from the **Select template** gallery, so you begin with a
+designed look and customize from there.
+
+**Create it:** **Create Offer → Quantity Breaks & Free Gifts → pick a
+template → configure**. The editor has three tabs: **Offers block**,
+**Design**, and **Settings & Schedule**.
+
+## Offers block tab
+
+### When to display
+
+<WhenToDisplay />
+
+### Offer title
+
+The block heading shown above the tiers, with an eye toggle to hide it and
+a checkbox **Add horizontal line on both sides of offer title** for the
+strikethrough style.
+
+### Tiers
+
+Tiers appear as tabs (**Tier 1**, **Tier 2**, …) with **Add another tier**
+and a per-tier trash button. Each tier has:
+
+| Field | What it does |
+| --- | --- |
+| Title | Shown on the product page, in the cart, and at checkout |
+| Quantity | The exact quantity this tier represents — must be unique across tiers |
+| Discount type | **Percentage**, **Fixed amount**, or **Final tier price** |
+| Discount value | The `%` or currency value (percentage capped at 100) |
+| Subtitle | Secondary line under the title |
+| Selected by default | Pre-selects this tier on the storefront (exactly one tier holds it) |
+| Label type | Attention label style: **Flat**, **Star**, **Oval**, **Top**, or **Rectangle** |
+| Label / Badge | Label and badge text, each with an eye toggle to show/hide |
+| Add image / Edit image | Per-tier image: **None**, **Show variant image**, or **Upload custom image**, with **Size** (20–100px) and **Corner radius** (0–50px) sliders |
+
+<Warning>
+  With **Final tier price**, make sure the amount doesn't exceed the
+  product price × quantity — otherwise the customer won't be eligible for
+  a discount.
+</Warning>
+
+### Free gifts
+
+Tick **Add gifts with tier** on any tier and select gift products. Each
+gift row has a quantity (default 1) and a gift label (default
+`+ Free gift`). Gifts are added automatically when the customer buys that
+tier's quantity.
+
+## Design tab
+
+Pick a **Color theme** — **Default**, **Red**, **Orange**, **Lime**,
+**Green**, **Blue**, **Purple**, **Magenta**, or **Custom** — then
+fine-tune layout (Vertical/Horizontal), radio visibility, sliders,
+paired color pickers for every element (including gift text/background),
+and typography.
+
+<DesignCallout />
+
+## Settings & Schedule tab
+
+**Pricing** — **Show total price** or **Show price per item**.
+
+**Additional settings**
+
+- **Let customers choose different variants for each item**
+- **Show quantity selector** with a **Quantity selector label** (default
+  `Select Quantity`)
+- **Apply discount if customer selected quantity exceeds tier quantity**
+  — quantities between tiers get the nearest lower tier's discount
+- **Preview out of stock message** and the **Out of stock message** text
+  (default `SOLD OUT`)
+- **Hide currency**
+
+**Combinations**
+
+<Combinations />
+
+**Customer eligibility rules**
+
+<Eligibility />
+
+**Schedule**
+
+<Schedule />
+
+## Use cases & examples
+
+<AccordionGroup>
+  <Accordion title="Tiered savings on a single product" icon="stairs" description="Buy 1 at full price, 2 at 10% off, 3 at 15% off.">
+    Target **Specific selected products**, add three tiers with
+    quantities 1 / 2 / 3 and **Percentage** discounts 0 / 10 / 15. Mark
+    the middle tier **Selected by default** to anchor the choice.
+  </Accordion>
+  <Accordion title="Free gift at the top tier" icon="gift" description="Buy 3, get a travel-size freebie added automatically.">
+    On the Tier 3 card, tick **Add gifts with tier** and pick the gift.
+    The default `+ Free gift` label shows next to it on the storefront —
+    and it's added to the cart automatically.
+  </Accordion>
+  <Accordion title="Rounded bundle pricing" icon="tag" description="2 for exactly $50 with Final tier price.">
+    Use **Final tier price** with value `50` on the quantity-2 tier for a
+    clean "2 for $50" — check the price × quantity warning before saving.
+  </Accordion>
+  <Accordion title="Wholesale-only tier table" icon="warehouse" description="Show the offer only to logged-in, tagged customers.">
+    In **Customer eligibility rules**, choose **Specific customer
+    segment** and add a **Customer's tags** rule for `wholesale` — guests
+    and untagged customers see the normal product page.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The tier table doesn't appear on the product page">
+    - Check the **Yuko Extension** app embed is enabled — a red **Not
+      Visible** badge in the Offers list means it isn't.
+    - Confirm the product matches the **When to display...** rule, the
+      offer status is **Active**, and no schedule keeps it inactive.
+    - If another active offer covers the same products, the overlap
+      banner ("Oops! Yuko identified issue...") tells you which offers
+      conflict — deactivate one.
+  </Accordion>
+  <Accordion title="The discount doesn't apply in cart or checkout">
+    - Check **Combinations** — if the customer has another discount of a
+      class this deal doesn't combine with, one of them won't apply.
+    - For **Fixed amount**: an amount larger than the product price
+      prevents adding to cart.
+    - Check **Customer eligibility rules** — tag/spend/order rules only
+      match logged-in customers.
+  </Accordion>
+  <Accordion title="Quantities between tiers get no discount">
+    Enable **Apply discount if customer selected quantity exceeds tier
+    quantity** — quantity 4 then earns the tier-3 discount instead of
+    none.
+  </Accordion>
+  <Accordion title="Free gift isn't added">
+    Confirm the gift is configured on the tier the customer actually
+    selected, and the gift product is in stock and published to the
+    Online Store channel.
+  </Accordion>
+</AccordionGroup>
+
+<BundlesFooter />

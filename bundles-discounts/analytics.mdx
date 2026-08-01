@@ -1,0 +1,28 @@
+---
+title: "Analytics"
+description: "How impressions, conversions, and revenue are counted."
+---
+
+import BundlesFooter from "/snippets/bundles-discounts/footer.mdx";
+
+Analytics appear in two places: summary tiles and per-offer columns on
+the **Offers** page (scoped by its date-range filter), and offer counts
+on the dashboard.
+
+| Metric | How it's counted |
+| --- | --- |
+| Impressions | Once per offer per page view, when the widget actually renders on the storefront |
+| Conversions | Recorded when a paid order is attributed to the offer (from Shopify's order webhooks) |
+| Conversion rate | Conversions ÷ impressions, per offer |
+| Revenue | The attributed order value from paid orders, recorded in the order currency and your store currency |
+
+Notes for interpreting the numbers:
+
+- Impressions require the widget to render — if the **Yuko Extension**
+  embed is off, you get zero impressions, not zero interest.
+- Conversions and revenue come from **paid** orders only; abandoned
+  checkouts never count.
+- The summary tiles include offers you've since deleted; the per-offer
+  table shows live offers.
+
+<BundlesFooter />

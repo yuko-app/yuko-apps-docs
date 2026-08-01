@@ -1,0 +1,102 @@
+---
+title: "Related Products"
+description: "A discounted cross-sell block — AI-recommended or hand-picked products with an add-to-cart button."
+---
+
+import BundlesFooter from "/snippets/bundles-discounts/footer.mdx";
+import WhenToDisplay from "/snippets/bundles-discounts/when-to-display.mdx";
+import Combinations from "/snippets/bundles-discounts/combinations.mdx";
+import Schedule from "/snippets/bundles-discounts/schedule.mdx";
+import DesignCallout from "/snippets/bundles-discounts/design-callout.mdx";
+
+Related Products renders a **"You may also like" block** on product pages
+— each suggested product with its own add-to-cart button and an optional
+discount. Suggestions can come from Shopify's recommendations (no
+maintenance) or from products/collections you pick.
+
+**Create it:** **Create Offer → Bundle → Related Products**. Tabs:
+**Offers block**, **Design**, and **Settings** (this type has no
+Deal-settings card — just combinations and schedule).
+
+## Offers block tab
+
+### When to display
+
+Which product pages show the block (the tags option is available here):
+
+<WhenToDisplay />
+
+### What to display
+
+Where the suggestions come from:
+
+- **AI Recommendition (Recommended)** — Shopify's Product
+  Recommendations API picks related products live; nothing to maintain
+- **All products except selected**
+- **All products except selected collections**
+- **Products in selected collections**
+- **Specific selected products**
+
+Switching the source clears the previous selection.
+
+### Discount
+
+**None**, **Percentage discount**, or **Fixed amount for each product**,
+with the **Value** field.
+
+## Design tab
+
+This type's widget text lives on the Design tab: **Block title** (default
+`You may also like`) and **CTA button text** (default `Add`). Then:
+**Themes** carousel, **Borders** (block / product image / CTA border
+sizes and radii), **Spacing** (inside/outside top and bottom, 0–60),
+**Colors** (including **Next product button** for the carousel arrow),
+and **Typography**.
+
+<DesignCallout />
+
+## Settings tab
+
+<Combinations />
+
+<Schedule />
+
+## Use cases & examples
+
+<AccordionGroup>
+  <Accordion title="Zero-maintenance cross-sell" icon="wand-magic-sparkles" description="AI recommendations storewide with 5% off to nudge the click.">
+    **Applies to: All products** + **AI Recommendition** + **Percentage
+    discount** `5`. One offer, every page, always relevant.
+  </Accordion>
+  <Accordion title="Curated accessories under gear pages" icon="screwdriver-wrench" description="Show the Accessories collection on your equipment pages.">
+    Target the equipment collection in **When to display...**, source
+    **Products in selected collections** → Accessories.
+  </Accordion>
+  <Accordion title="Tag-driven placement" icon="tags" description="Show the block only on products tagged “clearance”.">
+    Use **Products with specific tags** with the `clearance` tag —
+    placement follows your tagging workflow automatically.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The block doesn't appear">
+    Check the **Yuko Extension** embed (red **Not Visible** badge =
+    disabled), the **When to display...** rule, and offer status. For
+    manual placement, the theme editor block is **Yuko Related
+    Products** on product templates.
+  </Accordion>
+  <Accordion title="AI mode shows nothing on some pages">
+    Shopify needs recommendation data for the viewed product — young
+    stores or new products may not have it yet. Switch the source to a
+    curated mode for those cases.
+  </Accordion>
+  <Accordion title="The discount doesn't apply to added items">
+    Check **Combinations** against the rest of the cart, and remember
+    **None** is a valid source setting — the block can run without any
+    discount.
+  </Accordion>
+</AccordionGroup>
+
+<BundlesFooter />

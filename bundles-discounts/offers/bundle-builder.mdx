@@ -1,0 +1,170 @@
+---
+title: "Build Your Own Box (Bundle Builder)"
+description: "A dedicated bundle-building page where shoppers fill a box from curated product groups."
+---
+
+import BundlesFooter from "/snippets/bundles-discounts/footer.mdx";
+import Combinations from "/snippets/bundles-discounts/combinations.mdx";
+import Schedule from "/snippets/bundles-discounts/schedule.mdx";
+
+Build Your Own Box gives shoppers a **dedicated page** where they fill a
+box of a fixed size ("Pack of 3 / 5 / 7") from curated product groups,
+watch a progress bar as they go, and check out the finished bundle at a
+discount. The app **creates and maintains an Online Store page
+automatically** for each Bundle Builder offer.
+
+**Create it:** **Create Offer → Bundle → Build Your Own Box**. This type
+has four tabs: **Offers block**, **Design**, **Settings**, and
+**Widget**.
+
+## Offers block tab
+
+### Bundle Title
+
+The page heading (default `Build Your Own Bundle`), with an eye toggle to
+hide it on the storefront.
+
+### Boxes
+
+Each **box** is one pack size + discount tier, shown as pills the shopper
+picks between. Boxes appear as tabs (**Box 1**, **Box 2**, …) with **Add
+another box**. Per box:
+
+| Field | What it does |
+| --- | --- |
+| Title | The pill label shoppers see — defaults `Pack of 3` / `Pack of 5` / `Pack of 7` |
+| Quantity | The exact pack size — shoppers must fill exactly this many slots |
+| Discount Type | **Percentage**, **Fixed Amount**, or **Fixed Bundle Price** |
+| Percentage Off / Fixed Amount Off / Fixed Bundle Price | The discount value field, named after the chosen type |
+
+### Product groups
+
+Each box has its own **Product groups** — the categories shoppers pick
+from (e.g. "Plants", "Pots"). Groups are drag-to-reorder, with **Add
+product group**. Per group:
+
+- **Name** — the tab label shoppers see (placeholder *"Group name (e.g.
+  Plants)"*)
+- **Products** and **Collections** tabs with **Add products** / **Add
+  collections** pickers — collections expand to their products live on
+  the storefront
+
+Every group needs at least one product or collection. With two or more
+named groups, the storefront shows category tabs; with one, shoppers see
+a single product grid.
+
+## Design tab
+
+- **Choose a template** — **Standard Design**, **Classic Design**, or
+  **Compact Design**
+- **Brand colors** — **Primary** and **Secondary**
+- **Customize** sliders — box / slot / product image / call-to-action
+  border radii
+- **Advanced Colors** — 14 pickers covering block, boxes (normal and
+  selected), slots, product cards, and CTA
+- **Typography** — bundle title, box title, product title, product
+  price, CTA
+- **Bundle Banner** — optional desktop (1900×230) and mobile (1100×500)
+  banner images shown at the top of the bundle page
+
+## Settings tab
+
+### Your Bundle Link
+
+The auto-created page's URL, with **Copy link** and **Edit link** (the
+**Link ending** after `/pages/` — lowercased, special characters become
+hyphens). The link field reads *"Available after you save this offer"*
+until the first save.
+
+<Note>
+  The page is created on first save, its title and published state stay
+  in sync with the offer (deactivating unpublishes it), and it's deleted
+  with the offer. If you delete the page manually in Shopify, the app
+  recreates it on the next save.
+</Note>
+
+### Combinations
+
+<Combinations />
+
+### Additional settings
+
+- **Let customers choose different variants for each item** — shows a
+  variant dropdown on multi-variant products
+- **Preview out of stock message** + **Out of stock message** (default
+  `SOLD OUT`) — overlaid on sold-out products
+- **Action** — what happens after the shopper adds the bundle:
+  **Skip cart directly to checkout** (default) or **Redirect to cart**
+
+### Schedule
+
+<Schedule />
+
+## Widget tab — the product page upsell
+
+The **Product Page Bundle Upsell Widgets** toggle (off by default) puts
+an entry point to your bundle page on product pages:
+
+- Type: **Offer Upsell Block** (image + title + description + button) or
+  **Offer Upsell Button** (button only)
+- **Widget Settings** — **Update Image**, **Widget Title** (default
+  `Bundle & Save`), **Widget Description** (default `Buy this product
+  with bundle and save 10%`), **Widget Button Text** (default
+  `Buy with Bundle`)
+- **Display Widget on** — **All products in bundle** (every product used
+  inside the boxes), **Specific products**, or **Specific collections**
+- To place it at a custom location, add the **Yuko Upsell** app block to
+  your product template — the **Add to theme** button deep-links there
+
+## What shoppers see
+
+On the bundle page: the box pills with savings badges ("Save 10%"), the
+category tabs, a product grid with +/− steppers, a slot row filling up,
+a progress bar ("Buy 2 more and save 10%" → "You unlocked save 10%"),
+and a **Checkout** button that activates only when every slot is filled.
+The discount is applied automatically by the app's Shopify Function.
+
+## Use cases & examples
+
+<AccordionGroup>
+  <Accordion title="Build-your-own snack box" icon="box-open" description="Pack of 6 or 12 from Sweet and Savory groups.">
+    Two boxes (quantities 6 and 12, bigger discount on 12), two product
+    groups fed by collections. Shoppers switch pack size with the pills.
+  </Accordion>
+  <Accordion title="Plant starter kit" icon="seedling" description="Groups for Plants, Pots, and Soil — one pick each guided by slots.">
+    A 3-quantity box with three curated groups walks shoppers through
+    assembling a complete kit.
+  </Accordion>
+  <Accordion title="Drive traffic from product pages" icon="signs-post" description="The upsell widget sends shoppers to the bundle page.">
+    Enable the **Widget** tab's upsell block on **All products in
+    bundle** so every participating product page advertises the bundle.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The bundle page is blank or shows 'no matching offer'">
+    The offer must be **Active** and saved — activation publishes the
+    page, deactivating unpublishes it. In the theme editor a diagnostic
+    message explains this state; live shoppers just see nothing.
+  </Accordion>
+  <Accordion title="The product-page upsell doesn't show">
+    The Widget toggle is **off by default**. Check it's enabled, the
+    viewed product matches **Display Widget on**, and the offer has a
+    published page. In theme-editor preview, the block prints the exact
+    reason (turned off, no active offer, or product not targeted).
+  </Accordion>
+  <Accordion title="Shoppers can't press Checkout">
+    By design — the button stays inactive until **every slot is
+    filled**. The box quantity is exact, not a minimum or maximum.
+  </Accordion>
+  <Accordion title="Editing the link fails">
+    The link ending must survive normalization (lowercase letters,
+    numbers, hyphens). *"Save the offer before editing its link"* means
+    the page doesn't exist yet — save first. Shopify may adjust the
+    final handle if it's already taken.
+  </Accordion>
+</AccordionGroup>
+
+<BundlesFooter />

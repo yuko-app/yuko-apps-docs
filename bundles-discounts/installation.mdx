@@ -1,0 +1,76 @@
+---
+title: "Installation & theme setup"
+description: "Install Yuko Bundle Builder & Discounts and enable the Yuko Extension in your theme."
+---
+
+import BundlesFooter from "/snippets/bundles-discounts/footer.mdx";
+
+Setup is deliberately light: install the app, enable one app embed, and
+create an offer. Offer widgets render automatically on your product pages
+— you only add individual blocks if you want to control their exact
+placement.
+
+<Steps>
+  <Step title="Install the app">
+    Install
+    [Yuko Bundle Builder & Discounts](https://apps.shopify.com/yuko-bundles-quantity-discount)
+    from the Shopify App Store and approve the requested permissions.
+  </Step>
+  <Step title="Enable the Yuko Extension (app embed)">
+    The **Yuko Extension** app embed powers all offer rendering on your
+    storefront.
+
+    1. In the dashboard's **Setup guide**, click **Enable extension** on
+       the step **Enable Yuko Extension** — it opens your theme editor
+       with the embed ready to activate.
+    2. Save in the theme editor, return to the app, and click
+       **Refresh**.
+
+    <Note>
+      Manually: **Online Store → Themes → Customize → App embeds** →
+      toggle on **Yuko Extension**. Its settings include a **Mount
+      selector** (default `form[action*="/cart/add"]`) controlling where
+      widgets attach on the product page, and a **Custom JavaScript**
+      field — leave both at their defaults unless support advises
+      otherwise.
+    </Note>
+  </Step>
+  <Step title="Create your first offer">
+    Click **Create offer** in the Setup guide (or **Create Offer** in the
+    header) — the [quick start](/bundles-discounts/quickstart) walks
+    through it.
+
+    <Check>
+      Once the embed is Active and an offer is saved, the widget appears
+      on the targeted product pages automatically.
+    </Check>
+  </Step>
+</Steps>
+
+## Optional: placing blocks manually
+
+Widgets mount automatically near the add-to-cart form. To control the
+exact position, add the matching app block to your **product template** in
+the theme editor:
+
+| Theme editor block | Renders |
+| --- | --- |
+| Yuko Discount | Quantity breaks / quantity discounts / volume discounts |
+| Yuko Bundle | Fixed Bundle, Mix & Match, AI Bundle |
+| Yuko Related Products | Related Products offers |
+| Yuko Upsell | The Bundle Builder product-page upsell widget |
+
+See [Storefront blocks reference](/bundles-discounts/storefront-blocks)
+for the full details.
+
+<Warning>
+  If the Yuko Extension embed is disabled, offers show a red
+  **Not Visible** badge in the Offers list and nothing renders on the
+  storefront — this is the single most common setup issue.
+</Warning>
+
+Discounts themselves are applied by Shopify Functions installed with the
+app (automatic discounts and cart transforms) — no discount codes, and no
+extra setup.
+
+<BundlesFooter />

@@ -1,0 +1,100 @@
+---
+title: "Quantity Discounts"
+description: "Per-product quantity tiers — buy 3 of Product A, get 10%; buy 6, get 20%."
+---
+
+import BundlesFooter from "/snippets/bundles-discounts/footer.mdx";
+import WhenToDisplay from "/snippets/bundles-discounts/when-to-display.mdx";
+import TierRangeConfig from "/snippets/bundles-discounts/tier-range-config.mdx";
+import Combinations from "/snippets/bundles-discounts/combinations.mdx";
+import Schedule from "/snippets/bundles-discounts/schedule.mdx";
+import Eligibility from "/snippets/bundles-discounts/eligibility.mdx";
+import DesignCallout from "/snippets/bundles-discounts/design-callout.mdx";
+
+Quantity Discounts apply tiered discounts **per product**: "Buy 3
+quantities of Product A, get 10%. Buy 6, get 20%." Each product's own
+quantity is what counts — customers can't combine different products to
+reach a tier (for that, use
+[Volume discount bundles](/bundles-discounts/offers/volume-discount-bundles)).
+
+**Create it:** **Create Offer → Volume Discounts → Quantity discounts**.
+The editor has three tabs: **Offers block**, **Design**, and
+**Settings & Schedule**.
+
+## Offers block tab
+
+### When to display
+
+<WhenToDisplay />
+
+### Offer title
+
+The block heading, with an eye toggle to hide it and the
+**Add horizontal line on both sides of offer title** checkbox.
+
+<TierRangeConfig />
+
+## Design tab
+
+A **Themes** carousel with 21 ready-made looks (Default, Green Lilly,
+Soft Blue, Art Deco Elegance, Corporate Blue, Simple, Orange Sale,
+Elegant Vertical, Standard Mono, Blissful Serenity, Black & White, Dark
+Elegance, Summer, Forest Haven, Joyful Harvest, Matte Neutral Calm,
+Midnight Blue, Midnight Luxe, Modern Contrast, Modern Monochrome,
+Nature's Touch), plus sliders, colors, and typography.
+
+<DesignCallout />
+
+## Settings & Schedule tab
+
+Identical to the quantity breaks settings: **Pricing** (total vs per
+item), **Additional settings** (variants per item, quantity selector,
+nearest-lower-tier discount, out-of-stock message, hide currency), then:
+
+<Combinations />
+
+<Eligibility />
+
+<Schedule />
+
+## Use cases & examples
+
+<AccordionGroup>
+  <Accordion title="Case pricing for B2B" icon="boxes-stacked" description="1–5 at list price, 6–11 at 10%, 12+ at 20%.">
+    Three tiers with ranges 1–5, 6–11, and 12–no max. Use **Percentage**
+    discounts, and leave the last tier's maximum blank for "and above".
+  </Accordion>
+  <Accordion title="Per-unit price drops" icon="arrow-trend-down" description="$8 each up to 5 units, $6.50 each from 6 up.">
+    Use **Price per quantity** — each range sets the unit price
+    customers pay, shown under the *Price per item* heading.
+  </Accordion>
+  <Accordion title="Storewide 3-for-10% rule" icon="store" description="Every product gets the same per-product tier table.">
+    Set **Applies to: All products** — each product page shows the tiers,
+    counting only that product's quantity.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Customers mixing products don't get the discount">
+    That's by design — Quantity Discounts count each product separately.
+    If "any 3 items from the collection" is the goal, use
+    [Volume discount bundles](/bundles-discounts/offers/volume-discount-bundles)
+    instead.
+  </Accordion>
+  <Accordion title="The widget doesn't render">
+    Check the **Yuko Extension** embed (red **Not Visible** badge in the
+    Offers list = disabled), the **When to display...** targeting, offer
+    status, and the overlap banner for conflicts with other active
+    offers.
+  </Accordion>
+  <Accordion title="A tier never seems to apply">
+    Tier ranges must not overlap and must be unique — the form flags
+    "Quantity ranges must not overlap." Check for a gap between ranges
+    too: with tiers 1–3 and 6–10, quantities 4–5 get no tier (or the
+    nearest lower tier's discount if that setting is on).
+  </Accordion>
+</AccordionGroup>
+
+<BundlesFooter />

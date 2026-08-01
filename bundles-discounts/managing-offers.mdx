@@ -1,0 +1,55 @@
+---
+title: "Managing offers"
+description: "The Offers list, statuses, duplication, overlap warnings, and per-offer analytics."
+---
+
+import BundlesFooter from "/snippets/bundles-discounts/footer.mdx";
+
+## The Offers page
+
+The **Offers** page lists every offer with status tabs (**All / Active /
+Inactive**), a **Search offers** field, and a date-range filter (**All
+time / Today / Last 7 days / Last 30 days / Last 90 days**) that scopes
+the analytics columns.
+
+Summary tiles at the top show **Impressions**, **Conversions**, and
+**Revenue** for the selected range; the table adds per-offer columns —
+Title, Type, Impressions, Conversions, Conversion rate, Offer revenue,
+Status, Actions (Edit / Delete).
+
+## Status
+
+The status pill toggles each offer between **Active** and **Inactive**
+directly from the list. On the offer page, **Duplicate**, **Deactivate**,
+and **Delete** live under the secondary actions — duplication is only
+available there, not in the list.
+
+<Warning>
+  A red **Not Visible** badge next to the status means the offer can't
+  render: the **Yuko Extension** app embed (or the offer's theme block)
+  is disabled in your theme. Fix it via
+  [Installation & theme setup](/bundles-discounts/installation).
+</Warning>
+
+Deleting shows a confirmation (*"Are you sure you want to delete this
+offer? This action cannot be undone."*) — for Bundle Builder offers this
+also deletes the auto-created page.
+
+## Offer overlap
+
+Two active offers covering the same products conflict. The editor shows a
+critical banner — **"Oops! Yuko identified issue..."** — naming the
+conflict (e.g. *"You already have active deal covering all products"*).
+Resolve it by narrowing one offer's **When to display...** rule or
+deactivating one of the offers; the overlapping offer won't behave
+predictably until you do.
+
+## Editing
+
+The offer name is edited inline on the offer page (pencil icon next to
+the title — the badge beside it shows the offer type). Validation errors
+list in a banner (*"There are N errors with this offer"*), switch you to
+the tab that needs attention, and tag tier-scoped problems with the tier
+number.
+
+<BundlesFooter />

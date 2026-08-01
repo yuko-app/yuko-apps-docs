@@ -1,0 +1,122 @@
+---
+title: "Fixed Bundle"
+description: "Bundle specific products together at a discount — shown on the product pages you choose."
+---
+
+import BundlesFooter from "/snippets/bundles-discounts/footer.mdx";
+import WhenToDisplay from "/snippets/bundles-discounts/when-to-display.mdx";
+import Combinations from "/snippets/bundles-discounts/combinations.mdx";
+import Schedule from "/snippets/bundles-discounts/schedule.mdx";
+import DesignCallout from "/snippets/bundles-discounts/design-callout.mdx";
+
+A Fixed Bundle offers a **set list of products, bought together for a
+discount** — "camera + bag + SD card, 10% off". The bundle widget renders
+on the product pages you target, showing the included products joined by
+"+" separators with a total price and CTA.
+
+**Create it:** **Create Offer → Bundle → Fixed Bundle**. The editor has
+three tabs: **Offers block**, **Design**, and **Settings & Schedule**.
+
+## Offers block tab
+
+### When to display
+
+Which product pages *show* the bundle widget (this is separate from which
+products are *in* the bundle):
+
+<WhenToDisplay />
+
+### Offer title
+
+The widget heading — default `Bundle & Get 10% OFF!` — with an eye toggle
+and the **Add horizontal line on both sides of offer title** checkbox.
+
+### Included products
+
+The actual bundle contents. Search or **Browse** to add products; each row
+has a **quantity** field (minimum 1) and a remove button. At least one
+product is required.
+
+### Discount
+
+**Discount type:**
+
+- **None**
+- **Percentage discount**
+- **Fixed amount for each product**
+- **Set fixed price for bundle** — the whole bundle sells at one price
+
+plus the **Value** field (currency prefix or `%` suffix; percentage must
+be between 0 and 100).
+
+## Design tab
+
+The 21-theme **Themes** carousel, **Layout** (Vertical / Horizontal),
+sliders (block padding, block/product/image/CTA border radii, title
+strikethrough thickness), 19 color pickers covering every element —
+including the "+" separator, footer prices, and CTA — and full
+typography controls.
+
+<DesignCallout />
+
+## Settings & Schedule tab
+
+**Combinations**
+
+<Combinations />
+
+**Deal settings**
+
+| Setting | What it does |
+| --- | --- |
+| Pricing | **Show total price**, **Show price per item**, or **Show both per item and total price** (reveals a **Price per unit text** field, default `each`) |
+| Let customers choose different variants for each item | Shows a variant selector per bundle item on the storefront |
+| Add main item to the cart together with the bundle | Includes the product page's own product alongside the bundle |
+| Action | **Behave same as the theme's add to cart button**, **Redirect to cart**, or **Skip cart directly to checkout** |
+| Preview out of stock message / Out of stock message | Sold-out display text (default `SOLD OUT`) |
+| Footer text | The total row label (default `Total:`) |
+| Call to action text | The button label (default `Get this bundle`) |
+
+**Schedule**
+
+<Schedule />
+
+## Use cases & examples
+
+<AccordionGroup>
+  <Accordion title="Starter kit on the hero product's page" icon="box-open" description="Camera page shows camera + bag + SD card at 10% off.">
+    Target **Specific selected products** (the camera), include all three
+    products, use **Percentage discount** `10`. Enable variant choice if
+    the bag comes in colors.
+  </Accordion>
+  <Accordion title="Flat-price gift set" icon="gift" description="Three products for exactly $49 with a fixed bundle price.">
+    Use **Set fixed price for bundle** with `49` — the widget shows one
+    clean price regardless of the items' individual prices.
+  </Accordion>
+  <Accordion title="Frequently-bought-together add-on" icon="cart-plus" description="Keep the main product and add the bundle on top.">
+    Enable **Add main item to the cart together with the bundle** so the
+    product being viewed joins the bundle in one click.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The bundle doesn't show on the expected page">
+    **When to display...** controls *where* the widget appears — it's
+    easy to configure the bundle contents but leave targeting on a
+    different set of products. Also check the **Yuko Extension** embed
+    (red **Not Visible** badge = disabled) and the offer's status.
+  </Accordion>
+  <Accordion title="The discount doesn't apply">
+    Check **Combinations** against other discounts in the cart, and for
+    **Fixed amount for each product** make sure the amount doesn't exceed
+    any included product's price.
+  </Accordion>
+  <Accordion title="A bundle item is sold out">
+    Enable **Preview out of stock message** to control what customers see
+    — otherwise unavailable variants simply can't be added.
+  </Accordion>
+</AccordionGroup>
+
+<BundlesFooter />

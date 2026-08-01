@@ -1,0 +1,84 @@
+---
+title: "Design & themes"
+description: "Themes, color pickers, layout, and typography across all offer widgets."
+---
+
+import BundlesFooter from "/snippets/bundles-discounts/footer.mdx";
+
+Every offer has a **Design** tab with a live **Product page preview**.
+The controls vary by offer family — this page maps what's available
+where.
+
+## Themes & color presets
+
+- **Quantity Breaks & Free Gifts** uses a **Color theme** swatch row:
+  **Default**, **Red**, **Orange**, **Lime**, **Green**, **Blue**,
+  **Purple**, **Magenta**, plus **Custom** (opens a color picker). The
+  same selector appears in the template gallery, so your choice carries
+  into the form.
+- **Quantity Discounts, Volume Discounts, Fixed Bundle, Mix & Match, AI
+  Bundle, and Related Products** use a **Themes** carousel with 21
+  presets: Default, Green Lilly, Soft Blue, Art Deco Elegance, Corporate
+  Blue, Simple, Orange Sale, Elegant Vertical, Standard Mono, Blissful
+  Serenity, Black & White, Dark Elegance, Summer, Forest Haven, Joyful
+  Harvest, Matte Neutral Calm, Midnight Blue, Midnight Luxe, Modern
+  Contrast, Modern Monochrome, Nature's Touch.
+- **Bundle Builder** instead picks between three page templates —
+  Standard, Classic, Compact — with Primary/Secondary brand colors.
+
+<Warning>
+  Applying a theme replaces your color customizations — the app confirms
+  first: *"Unsaved customization will be lost. Do you still want to apply
+  this theme?"*
+</Warning>
+
+## Colors
+
+Every color is adjustable with a picker (hex field + alpha `%`). What you
+can color depends on the widget:
+
+- **Quantity breaks** — paired base/selected pickers for background,
+  title, subtitle, price, regular price, radio, border, label, badge,
+  and gift text/background, plus block-level border/background/title and
+  quantity-selector colors.
+- **Quantity/Volume discounts** — a reduced set: background, title,
+  subtitle, block border/background, offer title (+ strikethrough), and
+  quantity-selector colors; per-tier **Badge background/text** live on
+  each tier card.
+- **Fixed Bundle / Mix & Match / AI Bundle** — 19 pickers including the
+  "+" separator, footer prices, product image border, and CTA.
+- **Related Products** — block, product, price, CTA, and the **Next
+  product button** carousel arrow.
+
+## Layout & sliders
+
+- **Layout**: Vertical / Horizontal (quantity breaks and bundles).
+- Border-radius and padding sliders per widget (block, product, image,
+  CTA), plus **Offer title strikethrough thickness** when the
+  horizontal-line title style is on, and **Quantity button border
+  radius** when the quantity selector is enabled.
+- **Related Products** adds border *sizes* and inside/outside spacing
+  sliders; **Bundle Builder** has box/slot/image/CTA radii.
+
+## Typography
+
+Each text element takes a pixel size and a weight — **Light (300)** to
+**Extra bold (800)**. The element list follows the widget (offer title,
+tier title/subtitle, prices, labels, badges, gift text, CTA, and so on),
+behind a **Show more** toggle.
+
+## Where widget text lives
+
+Most widgets put customer-facing text in the **Offers block** tab (offer
+title, tier titles, badges). Two exceptions:
+
+- **Related Products** — **Block title** and **CTA button text** are on
+  the **Design** tab.
+- **Bundle Builder** — page banner images are on the **Design** tab;
+  widget texts are on the **Widget** tab.
+
+Standard storefront strings (Add to Cart, Out of stock, "Only X left!",
+"Save X%", "Total:", quantity controls) come from the extension's locale
+and follow your theme's language.
+
+<BundlesFooter />

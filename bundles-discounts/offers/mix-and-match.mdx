@@ -1,0 +1,119 @@
+---
+title: "Mix & Match"
+description: "Let customers build their own bundle by picking products from a pool you define."
+---
+
+import BundlesFooter from "/snippets/bundles-discounts/footer.mdx";
+import WhenToDisplay from "/snippets/bundles-discounts/when-to-display.mdx";
+import Combinations from "/snippets/bundles-discounts/combinations.mdx";
+import Schedule from "/snippets/bundles-discounts/schedule.mdx";
+import DesignCallout from "/snippets/bundles-discounts/design-callout.mdx";
+
+Mix & Match shows a bundle widget with **empty slots the customer fills
+themselves** from a product pool you define — "pick any 3, get 10% off".
+
+**Create it:** **Create Offer → Bundle → Mix & Match Bundle**. The editor
+has three tabs: **Offers block**, **Design**, and **Settings & Schedule**.
+
+## Offers block tab
+
+### When to display
+
+Which product pages show the widget:
+
+<WhenToDisplay />
+
+### Offer title
+
+Default `Mix & Match with 10% discount`, with the eye toggle and
+horizontal-line checkbox.
+
+### Number of products
+
+How many products the customer picks to complete the bundle — the
+**Slots** field allows **1–4** (default 3).
+
+### Products Eligible for bundling
+
+The pool customers pick from:
+
+- **All products**
+- **Specific products**
+- **All products except specific products**
+- **Specific collections**
+- **All products except specific collections**
+
+Non-"All" modes reveal the search + **Browse** picker. Include and
+exclude selections are kept separately, so switching modes doesn't lose
+either list.
+
+### Discount
+
+**None**, **Percentage discount**, or **Fixed amount for each product**
+(no bundle-wide fixed price for Mix & Match), plus the **Value** field.
+
+## Design tab
+
+Same design system as Fixed Bundle: 21 themes, Vertical/Horizontal
+layout, sliders, full color pickers, and typography. Clicking a slot in
+the **Product page preview** opens the **Select a product** dialog so you
+can preview with real products.
+
+<DesignCallout />
+
+## Settings & Schedule tab
+
+**Combinations**
+
+<Combinations />
+
+**Deal settings** — Pricing radios (total / per item / both, with
+**Price per unit text**), **Add main item to the cart together with the
+bundle**, **Action** (theme button / cart / checkout), **Footer text**,
+and **Call to action text**. Variant-per-item choice and the out-of-stock
+pair don't apply here — customers pick from the live pool.
+
+**Schedule**
+
+<Schedule />
+
+## Use cases & examples
+
+<AccordionGroup>
+  <Accordion title="Pick any 3 flavors" icon="ice-cream" description="A 3-slot bundle over the Flavors collection at 10% off.">
+    **Slots** `3`, pool **Specific collections** → Flavors, **Percentage
+    discount** `10`. Customers assemble their own trio.
+  </Accordion>
+  <Accordion title="Build-a-routine skincare set" icon="spa" description="Cleanser + serum + moisturizer, customer's choice of each.">
+    Pool the routine collections and set 3 slots — pair it with targeting
+    on the routine's hero products so the widget appears where the
+    journey starts.
+  </Accordion>
+  <Accordion title="Sample-any-4 discovery set" icon="flask" description="Four slots over your samples, fixed amount off each.">
+    **Slots** `4` with **Fixed amount for each product** — each pick gets
+    the same amount off, keeping margins predictable.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The widget shows but the pool is empty">
+    The preview dialog says it directly: *"No eligible products to show.
+    Check your 'Products Eligible for bundling' rule."* Make sure the
+    pool mode has products/collections selected and those products are
+    published and in stock.
+  </Accordion>
+  <Accordion title="It doesn't render on the page I expect">
+    **When to display...** (where the widget shows) is independent of
+    the eligibility pool (what's inside it). Check both — plus the
+    **Yuko Extension** embed and offer status.
+  </Accordion>
+  <Accordion title="Discount doesn't apply to the assembled bundle">
+    The discount fires when the customer completes the configured slot
+    count. Check **Combinations** and that all picked items came from
+    the eligible pool.
+  </Accordion>
+</AccordionGroup>
+
+<BundlesFooter />

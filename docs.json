@@ -104,7 +104,45 @@
         "groups": [
           {
             "group": "Get started",
-            "pages": ["bundles-discounts/overview"]
+            "pages": [
+              "bundles-discounts/overview",
+              "bundles-discounts/installation",
+              "bundles-discounts/quickstart"
+            ]
+          },
+          {
+            "group": "Offer types",
+            "pages": [
+              "bundles-discounts/offers/quantity-breaks-gifts",
+              "bundles-discounts/offers/quantity-discounts",
+              "bundles-discounts/offers/volume-discount-bundles",
+              "bundles-discounts/offers/fixed-bundle",
+              "bundles-discounts/offers/mix-and-match",
+              "bundles-discounts/offers/ai-bundle",
+              "bundles-discounts/offers/related-products",
+              "bundles-discounts/offers/bundle-builder"
+            ]
+          },
+          {
+            "group": "Customization",
+            "pages": [
+              "bundles-discounts/customization/design-themes"
+            ]
+          },
+          {
+            "group": "Management & settings",
+            "pages": [
+              "bundles-discounts/managing-offers",
+              "bundles-discounts/storefront-blocks",
+              "bundles-discounts/settings"
+            ]
+          },
+          {
+            "group": "Analytics & help",
+            "pages": [
+              "bundles-discounts/analytics",
+              "bundles-discounts/troubleshooting"
+            ]
           }
         ]
       },

@@ -1,0 +1,52 @@
+---
+title: "Storefront blocks reference"
+description: "Every theme editor piece the app ships, what it renders, and its settings."
+---
+
+import BundlesFooter from "/snippets/bundles-discounts/footer.mdx";
+
+All storefront rendering is powered by one required **app embed** plus
+optional **app blocks** for manual placement.
+
+## Yuko Extension (app embed) — required
+
+Enabled under **Theme editor → App embeds**. Without it, nothing renders
+and offers show the **Not Visible** badge in the Offers list.
+
+| Setting | Purpose |
+| --- | --- |
+| Mount selector | CSS selector where widgets auto-mount on product pages — default `form[action*="/cart/add"]` (the add-to-cart form). Change only if your theme uses non-standard markup. |
+| Custom JavaScript | Advanced hook for store-specific tweaks — leave empty unless support advises otherwise. |
+
+## App blocks (optional, product templates)
+
+Add these in the theme editor when you want to position a widget
+manually instead of relying on auto-mount:
+
+| Block | Renders | Settings |
+| --- | --- | --- |
+| **Yuko Discount** | Quantity breaks, quantity discounts, volume discounts | none |
+| **Yuko Bundle** | Fixed Bundle, Mix & Match, AI Bundle | none |
+| **Yuko Related Products** | Related Products offers | none |
+| **Yuko Upsell** | The Bundle Builder product-page upsell widget | none |
+
+In theme-editor preview, blocks print diagnostic messages when they have
+nothing to show (offer inactive, widget disabled, product not targeted) —
+live shoppers never see these.
+
+## The Bundle Builder page
+
+Build Your Own Box doesn't use a product-page block for its main
+experience — the app auto-creates an **Online Store page** per offer and
+renders the builder there. See
+[Build Your Own Box](/bundles-discounts/offers/bundle-builder).
+
+## Behind the scenes (no setup needed)
+
+Discounts and bundle pricing are applied by Shopify Functions installed
+with the app — an automatic discount function ("Yuko Discounts") plus
+bundle/cart-transform functions that merge bundle items in the cart.
+There are no discount codes, and merchants never configure these
+directly.
+
+<BundlesFooter />

@@ -1,0 +1,96 @@
+---
+title: "Volume discount bundles"
+description: "Cart-wide tiers across products — buy any 3 items from a collection, get a discount."
+---
+
+import BundlesFooter from "/snippets/bundles-discounts/footer.mdx";
+import WhenToDisplay from "/snippets/bundles-discounts/when-to-display.mdx";
+import TierRangeConfig from "/snippets/bundles-discounts/tier-range-config.mdx";
+import Combinations from "/snippets/bundles-discounts/combinations.mdx";
+import Schedule from "/snippets/bundles-discounts/schedule.mdx";
+import Eligibility from "/snippets/bundles-discounts/eligibility.mdx";
+import DesignCallout from "/snippets/bundles-discounts/design-callout.mdx";
+
+Volume discount bundles apply tiers **across products**: "buy any 3 items
+(from a collection or selected products) and get a discount." Customers
+can mix and match different products — the combined quantity is what
+unlocks the tier. For per-product counting, use
+[Quantity Discounts](/bundles-discounts/offers/quantity-discounts).
+
+**Create it:** **Create Offer → Volume Discounts → Volume discount
+bundles**. The editor has three tabs: **Offers block**, **Design**, and
+**Settings & Schedule** — the form is identical to Quantity Discounts;
+the difference is how quantities are counted at checkout.
+
+## Offers block tab
+
+### When to display
+
+<WhenToDisplay />
+
+The products this rule matches are also the products whose quantities
+count toward the tiers.
+
+### Offer title
+
+The block heading, with an eye toggle and the horizontal-line checkbox.
+
+<TierRangeConfig />
+
+## Design tab
+
+The same 21-theme **Themes** carousel, sliders, colors, and typography as
+Quantity Discounts.
+
+<DesignCallout />
+
+## Settings & Schedule tab
+
+**Pricing**, **Additional settings** (variants per item, quantity
+selector, nearest-lower-tier discount, out-of-stock message, hide
+currency), then:
+
+<Combinations />
+
+<Eligibility />
+
+<Schedule />
+
+## Use cases & examples
+
+<AccordionGroup>
+  <Accordion title="Any 3 from the collection, 15% off" icon="layer-group" description="Customers mix and match toward one shared tier.">
+    **Applies to: Products in selected collections** → tier range 3–no
+    max at 15%. Two t-shirts and a hoodie together unlock the tier.
+  </Accordion>
+  <Accordion title="Sitewide volume ladder" icon="chart-line" description="3+ items 10%, 6+ items 20% — across the whole store.">
+    **Applies to: All products** with two tiers (3–5, 6–no max). Great
+    for AOV pushes during sales periods.
+  </Accordion>
+  <Accordion title="Mix-any-flavors pricing" icon="mug-hot" description="Price per quantity across all flavors of a product line.">
+    Target the flavor collection and use **Price per quantity** so any
+    mix of flavors earns the same per-unit pricing.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The tier doesn't unlock even though the cart qualifies">
+    Confirm every item the customer added actually matches the **When to
+    display...** rule — items outside the target don't count toward the
+    combined quantity. Then check eligibility rules and combinations.
+  </Accordion>
+  <Accordion title="The widget doesn't render">
+    Check the **Yuko Extension** embed (red **Not Visible** badge =
+    disabled), the targeting rule, offer status, and the overlap banner
+    for conflicts.
+  </Accordion>
+  <Accordion title="Should I use this or Quantity Discounts?">
+    Combined counting across products → Volume discount bundles.
+    Per-product counting → Quantity Discounts. The forms look the same;
+    the checkout math differs.
+  </Accordion>
+</AccordionGroup>
+
+<BundlesFooter />
