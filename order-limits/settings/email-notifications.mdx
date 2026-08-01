@@ -1,0 +1,37 @@
+---
+title: "Customer email notifications"
+description: "Send automatic emails to customers who hit a limit, with a customizable template."
+---
+
+import OrderLimitsFooter from "/snippets/order-limits/footer.mdx";
+
+The **Customers Email** tab (in **Settings**) lets you send an automatic
+email to customers whose order attempt exceeded a limit — for example, to
+start a conversation about bulk pricing when someone tries to order above
+your maximum.
+
+## Enable and edit the email
+
+Toggle the notification on, then customize the template:
+
+| Field | Default |
+| --- | --- |
+| Subject | Thanks for reaching out {{store_name}} |
+| Title | Hi {{customer_name}}, |
+| Body | Your recent order attempt exceeded the maximum quantity allowed for this product. If you're interested in purchasing in bulk or need a custom quote, please reply to this email and we'll take care of the rest. |
+| Footer | If you have any questions, feel free to reply anytime. |
+
+## Merge tags
+
+Use these tags anywhere in the template — they're replaced per email:
+
+- `{{store_name}}` — your store's name
+- `{{customer_name}}` — the customer's name
+
+<Note>
+  Emails require the customer to be identifiable (logged in or having
+  entered their email), so guests who never share an email address can't be
+  notified this way.
+</Note>
+
+<OrderLimitsFooter />

@@ -1,0 +1,66 @@
+---
+title: "FAQ & troubleshooting"
+description: "Fixes for the most common issues with limits, messages, and theme integration."
+---
+
+import OrderLimitsFooter from "/snippets/order-limits/footer.mdx";
+
+<AccordionGroup>
+  <Accordion title="Limit messages aren't showing on my product page">
+    1. Check the dashboard's **Active App Block(s)** card — both the
+       **Yuko Order Limit extension** (app embed) and the **Yuko Limits
+       banner for product pages** (product block) must show **Enabled**.
+       See [Installation & theme setup](/order-limits/installation).
+    2. Make sure the limit itself is **Active** in the Limits list, and
+       that its notification setting isn't
+       **Do not show any notification**.
+    3. If you recently switched themes, re-enable the app embed and re-add
+       the block — theme extensions are per-theme.
+  </Accordion>
+
+  <Accordion title="Messages aren't showing in the cart drawer or cart page">
+    The app auto-detects message placement for standard themes. On
+    customized themes, enable **Use advanced selectors** in
+    **Settings → Cart Message Placement** and point the app at your
+    theme's cart container and item rows. See
+    [Theme compatibility & selectors](/order-limits/settings/theme-compatibility).
+  </Accordion>
+
+  <Accordion title="Customers can still check out even though limits aren't met">
+    - Check **Settings → Rule settings**: if it's set to **Allows customer
+      to purchase even if limits are not met**, checkout stays open by
+      design. Switch to the **Blocks** option to enforce.
+    - Enable **Hide payment methods if limits are not met** for stronger
+      enforcement at checkout.
+    - Enable **Hide express checkout** on the Limits page so Buy-it-now
+      buttons can't bypass cart validation.
+  </Accordion>
+
+  <Accordion title="A customer-tag limit isn't applying">
+    Tag-based rules only work for **logged-in customers** — Shopify can't
+    resolve tags for guests. Ask the customer to sign in, or use an
+    untargeted limit as the baseline.
+  </Accordion>
+
+  <Accordion title="My scheduled limit started at the wrong time">
+    Start and end dates use **GMT +0:00**, not your store's timezone.
+    Offset your schedule accordingly.
+  </Accordion>
+
+  <Accordion title="Two limits seem to conflict">
+    All active limits are enforced together — the cart must satisfy every
+    one. If a product is covered by overlapping rules (e.g. a product limit
+    and a collection limit), the strictest combination wins. Review the
+    Limits list and deactivate rules you don't need.
+  </Accordion>
+
+  <Accordion title="Does the app work with my theme?">
+    The app works with all standard Shopify themes out of the box (Dawn,
+    Debut, Brooklyn, and most paid themes). Heavily customized themes may
+    need selector configuration — see
+    [Theme compatibility & selectors](/order-limits/settings/theme-compatibility),
+    or contact support and we'll set it up for you.
+  </Accordion>
+</AccordionGroup>
+
+<OrderLimitsFooter />

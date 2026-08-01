@@ -1,0 +1,58 @@
+---
+title: "Order limits"
+description: "Set cart-wide limits on total quantity, order value, or order weight."
+---
+
+import OrderLimitsFooter from "/snippets/order-limits/footer.mdx";
+
+Order limits apply to the cart as a whole, regardless of which products are
+in it — total item count, total value, or total weight. Use them for rules
+like "minimum order value $50", "no more than 20 items per order", or
+weight-based shipping constraints.
+
+## Limit conditions
+
+Pick a **condition type**:
+
+- **Limit by total items in the order (Cart Quantity)** — set a minimum
+  and/or maximum item count for the whole cart
+- **Limit by total value of the order (Cart Value)** — set a minimum and/or
+  maximum cart value
+- **Limit by total weight in the order (Cart Weight)** — set a minimum
+  and/or maximum cart weight, in **lb**, **oz**, **kg**, or **g**
+
+<Note>
+  Whether "value" includes shipping and taxes is controlled by the
+  **Order Value Calculation** setting — see
+  [General settings](/order-limits/settings/general).
+</Note>
+
+## Sell in multiples
+
+Enable **Sell products in multiples** to require the quantity to be a
+multiple of a value (at least 2). Choose what the multiple applies to with
+**Apply multiple to**:
+
+- **Order** — the total cart quantity must be a multiple
+- **Each product** — each product's quantity must be a multiple
+- **Each variant** — each variant's quantity must be a multiple
+
+## Scope and exclusions
+
+By default an order limit covers the entire cart, but you can narrow it:
+
+- **Specific product** — only count selected products toward the limit
+- **Specific collection** — only count items from selected collections
+- **Exclusions** — leave out selected products or variants from the count
+
+## Refine the rule
+
+Order limits support
+[customer tag and country targeting](/order-limits/limits/targeting),
+[scheduling](/order-limits/limits/scheduling), and
+[custom messages](/order-limits/customization/messages-translations).
+Useful message variables include `{{remaining_total_value}}` (how much more
+the customer needs to add to reach the minimum) and `{{weight_unit}}` — see
+the [message variables reference](/order-limits/customization/message-variables).
+
+<OrderLimitsFooter />

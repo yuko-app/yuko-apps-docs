@@ -1,0 +1,69 @@
+---
+title: "Collection limits"
+description: "Set quantity or value limits across one or more collections, with flexible calculation methods."
+---
+
+import OrderLimitsFooter from "/snippets/order-limits/footer.mdx";
+
+Collection limits apply rules across all products in one or more Shopify
+collections — for example, "at least 3 items from the Sale collection" or
+"no more than $500 of items from Pre-orders".
+
+## Choose collections
+
+Under **Choose collections to limit**, browse and select one or more
+collections. You can also exclude specific collections from the rule.
+
+## Limit conditions
+
+Pick a **condition type**:
+
+- **Based on the product quantity from selected collection(s)** — set a
+  minimum and/or maximum quantity from the collection
+- **Based on the total value of items from selected collection(s)** — set a
+  minimum and/or maximum total value from the collection
+
+| Setting | What it does |
+| --- | --- |
+| Minimum / maximum quantity from collection | Bounds on how many items from the collection can be purchased |
+| Minimum / maximum total value from collection | Bounds on the total price of items from the collection |
+| Sell products in multiples | Items from the collection must be bought in multiples of the value you set |
+
+## Calculation methods
+
+Two settings control *how* quantities are counted — this is what makes
+collection limits flexible:
+
+**Quantity calculation method**
+
+- **Apply to each product individually** — every product from the
+  collection must meet the min/max on its own
+- **Apply to total quantity across all products** — the combined quantity
+  from all products in the collection must meet the min/max
+
+**Multiple collection calculation method** (when you select more than one
+collection)
+
+- **Apply to each collection individually** — each collection must meet the
+  min/max separately
+- **Apply to total quantity across all collections** — the combined total
+  across all selected collections must meet the min/max
+
+<Tip>
+  Example: with a minimum of 3 and **total across all products**, a customer
+  can mix any 3 items from the collection. With **each product
+  individually**, they'd need 3 units of every product they add from that
+  collection.
+</Tip>
+
+## Refine the rule
+
+Collection limits support the same extras as all limit types:
+[customer tag and country targeting](/order-limits/limits/targeting),
+[scheduling](/order-limits/limits/scheduling), and
+[custom messages](/order-limits/customization/messages-translations) with
+variables like `{{minimum_collection_quantity}}` and
+`{{maximum_total_product_value}}` — see the full
+[message variables reference](/order-limits/customization/message-variables).
+
+<OrderLimitsFooter />

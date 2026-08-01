@@ -20,7 +20,44 @@
         "groups": [
           {
             "group": "Get started",
-            "pages": ["order-limits/overview"]
+            "pages": [
+              "order-limits/overview",
+              "order-limits/installation",
+              "order-limits/quickstart"
+            ]
+          },
+          {
+            "group": "Limits",
+            "pages": [
+              "order-limits/limits/product-limits",
+              "order-limits/limits/collection-limits",
+              "order-limits/limits/order-limits",
+              "order-limits/limits/targeting",
+              "order-limits/limits/scheduling"
+            ]
+          },
+          {
+            "group": "Customization",
+            "pages": [
+              "order-limits/customization/branding",
+              "order-limits/customization/messages-translations",
+              "order-limits/customization/message-variables"
+            ]
+          },
+          {
+            "group": "Settings",
+            "pages": [
+              "order-limits/settings/general",
+              "order-limits/settings/theme-compatibility",
+              "order-limits/settings/email-notifications"
+            ]
+          },
+          {
+            "group": "Analytics & help",
+            "pages": [
+              "order-limits/analytics",
+              "order-limits/troubleshooting"
+            ]
           }
         ]
       },

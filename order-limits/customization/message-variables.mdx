@@ -1,0 +1,70 @@
+---
+title: "Message variables reference"
+description: "All variables you can use in limit messages, and what they output."
+---
+
+import OrderLimitsFooter from "/snippets/order-limits/footer.mdx";
+
+Variables are placeholders you insert into
+[limit messages](/order-limits/customization/messages-translations). On the
+storefront they're replaced with live values from the rule and the
+customer's cart. Wrap variable names in double curly braces, exactly as
+shown.
+
+## Product limits
+
+| Variable | Output |
+| --- | --- |
+| `{{minimum_product_quantity}}` | Minimum number of products allowed |
+| `{{maximum_product_quantity}}` | Maximum number of products allowed |
+| `{{multiple}}` | The "sell in multiples" value |
+| `{{product_title}}` | The product's name (cart drawer, cart, and checkout only) |
+| `{{quantity_needed}}` | How many more units the customer needs to add to meet the minimum |
+| `{{button_text}}` | Inserts the Contact us button into the message |
+
+## Collection limits
+
+| Variable | Output |
+| --- | --- |
+| `{{minimum_collection_quantity}}` | Minimum quantity from the collection |
+| `{{maximum_collection_quantity}}` | Maximum quantity from the collection |
+| `{{minimum_total_product_value}}` | Minimum total value from the collection |
+| `{{maximum_total_product_value}}` | Maximum total value from the collection |
+| `{{multiple}}` | The "sell in multiples" value |
+| `{{currency}}` | The cart's currency |
+| `{{button_text}}` | Inserts the Contact us button into the message |
+
+## Order limits
+
+| Variable | Output |
+| --- | --- |
+| `{{minimum_product_quantity}}` | Minimum total items in the order |
+| `{{maximum_product_quantity}}` | Maximum total items in the order |
+| `{{minimum_total_product_value}}` | Minimum order value |
+| `{{maximum_total_product_value}}` | Maximum order value |
+| `{{remaining_total_value}}` | Amount left until the cart reaches the minimum value |
+| `{{minimum_product_weight}}` | Minimum order weight |
+| `{{maximum_product_weight}}` | Maximum order weight |
+| `{{weight_unit}}` | The weight unit used in the limit (lb, oz, kg, g) |
+| `{{multiple}}` | The "sell in multiples" value |
+| `{{currency}}` | The cart's currency |
+| `{{button_text}}` | Inserts the Contact us button into the message |
+
+## Example
+
+```text
+Add {{quantity_needed}} more to meet the minimum of {{minimum_product_quantity}}.
+```
+
+renders on the storefront as:
+
+```text
+Add 2 more to meet the minimum of 5.
+```
+
+<Tip>
+  In the app, each variable has a copy button in the limit editor's
+  **Message** tab, so you don't need to type them by hand.
+</Tip>
+
+<OrderLimitsFooter />
