@@ -1,35 +1,63 @@
 ---
 title: "Post-purchase offers"
-description: "One-click offers shown after payment, before the thank-you page."
+description: "Configure one-click offers shown after payment — triggers, products, discounts, funnels, and styling."
 ---
 
 import PostPurchaseFooter from "/snippets/post-purchase-upsells/footer.mdx";
+import TriggerConfig from "/snippets/post-purchase-upsells/trigger-config.mdx";
+import OfferConfig from "/snippets/post-purchase-upsells/offer-config.mdx";
+import FunnelConfig from "/snippets/post-purchase-upsells/funnel-config.mdx";
+import StyleCallout from "/snippets/post-purchase-upsells/style-callout.mdx";
 
 Post-purchase offers appear **after the customer pays but before the
 thank-you page**. This is the highest-converting placement: the customer
-has already committed, and accepting the offer takes **one click** — the
-add-on is charged to the payment method they just used, with no re-entry
-of payment details.
-
-## How it works
-
-1. The customer completes checkout and pays.
-2. Yuko checks your active post-purchase upsells, picks the
-   highest-priority one whose [trigger](/post-purchase-upsells/upsells/triggers)
-   matches the order, and shows it.
-3. Accepting adds the product (with its discount) to the original order.
-   Declining continues to the thank-you page — or shows your
-   [downsell](/post-purchase-upsells/upsells/funnels) if you've configured
-   one.
-4. A countdown timer (15 minutes by default) creates urgency; when it
-   expires the offer hides itself.
+has already committed, and accepting takes **one click** — the add-on is
+charged to the payment method they just used, with no re-entry of payment
+details. Declining (or letting the countdown expire) simply continues to
+the thank-you page.
 
 ## Setup
 
-Select **Yuko Post Purchase Upsell** in
-**Settings → Checkout → Post-purchase page** — see
-[Installation & setup](/post-purchase-upsells/installation). Then choose
-**Post Purchase Upsell** as the trigger when creating the upsell.
+<Steps>
+  <Step title="Enable the post-purchase page">
+    Shopify allows exactly one app on the post-purchase page. Select
+    **Yuko Post Purchase Upsell** in
+    **Settings → Checkout → Post-purchase page** — the dashboard Setup
+    Guide's **Enable** button takes you there, and **Refresh status**
+    confirms it. See [Installation & setup](/post-purchase-upsells/installation).
+  </Step>
+  <Step title="Create the upsell">
+    Go to **Upsells → Create upsell** and configure the three wizard
+    steps below.
+  </Step>
+</Steps>
+
+## Step 1 — Trigger
+
+Under **Select Upsell Trigger**, choose **Post Purchase Upsell**, then
+define when the offer shows:
+
+<TriggerConfig />
+
+## Step 2 — Offer
+
+<OfferConfig />
+
+<Note>
+  Post-purchase offers are added to the **original order**, so shipping
+  discounts don't apply here — they're available on the
+  [thank-you page](/post-purchase-upsells/upsells/thank-you-offers#step-2--offer)
+  and [checkout](/post-purchase-upsells/upsells/checkout-offers#step-2--offer)
+  placements, where a new shipping cost is being calculated.
+</Note>
+
+### Funnel: Upsell #2 & downsell
+
+<FunnelConfig />
+
+## Step 3 — Style
+
+<StyleCallout />
 
 ## Use cases & examples
 
@@ -48,28 +76,48 @@ Select **Yuko Post Purchase Upsell** in
     Add a condition **Order total → Greater than → 100** so a premium
     add-on is only offered on high-value orders.
   </Accordion>
+  <Accordion title="Downsell to a cheaper alternative">
+    If the $49 add-on is declined, the downsell offers a $19 version — or
+    the same product at 25% off instead of 10%.
+  </Accordion>
 </AccordionGroup>
 
-## Good to know
+## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="Payment method limitations">
-    Shopify only shows post-purchase pages for supported payment flows —
-    orders paid via some wallets and third-party gateways skip the
-    post-purchase page entirely. If conversion seems low, remember a
-    portion of orders never see the offer; this is a platform behavior,
-    not a configuration issue.
+  <Accordion title="The offer doesn't appear after payment">
+    Work through these in order:
+
+    1. **Is the app selected as the post-purchase app?** Check
+       **Settings → Checkout → Post-purchase page** — only one app can be
+       selected there.
+    2. **Is the upsell published and Active?** Drafts and paused upsells
+       never show.
+    3. **Do the trigger conditions match your test order?** With the
+       **AND** connector, every condition must pass — and remember
+       subtotal excludes tax/shipping while total includes them.
+    4. **Payment method** — Shopify skips the post-purchase page for some
+       payment flows (certain wallets and third-party gateways). Test
+       with a standard card payment; this is platform behavior, not a
+       configuration issue.
+    5. **Priority** — only the highest-priority matching upsell shows.
+       See [Managing upsells & priority](/post-purchase-upsells/upsells/priority).
   </Accordion>
-  <Accordion title="One post-purchase app at a time">
-    Shopify allows only one app on the post-purchase page. If another
-    upsell app is selected in **Settings → Checkout → Post-purchase
-    page**, Yuko's offers can't appear until you switch.
+  <Accordion title="The discount didn't apply">
+    The app maintains its discount function automatically. Re-save the
+    upsell to force a re-sync and test again; if it persists, contact
+    support. Also check the value rules — whole numbers only, percentage
+    1–100, amounts not exceeding the product price.
   </Accordion>
-  <Accordion title="Only the top matching upsell is shown">
-    If several post-purchase upsells are active, the customer sees the
-    highest-priority one that matches their order — not all of them. Use
-    **Manage priority** on the Upsells page to control the order. See
-    [Managing upsells & priority](/post-purchase-upsells/upsells/priority).
+  <Accordion title="Upsell #2 or the downsell never appears">
+    Check their toggles in the Offer step and that each enabled step has
+    products selected. The downsell needs an explicit decline — an
+    expired timer ends the funnel silently.
+  </Accordion>
+  <Accordion title="The offer disappeared while the customer was reading it">
+    The countdown **Timer** hides the offer when it expires (default 15
+    minutes). Adjust it in the Style step's Message section — see
+    [Styling your offer](/post-purchase-upsells/customization/styling).
   </Accordion>
 </AccordionGroup>
 

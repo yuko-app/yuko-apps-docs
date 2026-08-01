@@ -1,43 +1,69 @@
 ---
 title: "Thank-you page offers"
-description: "Product offers on the order confirmation page, shown as a product slider."
+description: "Configure offers on the order confirmation page — triggers, products, discounts, shipping discounts, funnels, and styling."
 ---
 
 import PostPurchaseFooter from "/snippets/post-purchase-upsells/footer.mdx";
+import TriggerConfig from "/snippets/post-purchase-upsells/trigger-config.mdx";
+import OfferConfig from "/snippets/post-purchase-upsells/offer-config.mdx";
+import FunnelConfig from "/snippets/post-purchase-upsells/funnel-config.mdx";
+import ShippingDiscounts from "/snippets/post-purchase-upsells/shipping-discounts.mdx";
+import StyleCallout from "/snippets/post-purchase-upsells/style-callout.mdx";
 
 Thank-you page offers appear on the **order status / thank-you page** after
 checkout completes, as a product slider block. Unlike post-purchase offers,
 they work for **every order** regardless of payment method — the trade-off
 is that accepting starts a fresh checkout instead of charging one-click.
 
-## How it works
-
-1. The customer lands on the thank-you page after completing their order.
-2. The app block shows the highest-priority thank-you upsell whose
-   [trigger](/post-purchase-upsells/upsells/triggers) matches the order.
-3. When the customer accepts, the app builds a new checkout with the
-   offered product and its discount already applied — the purchase
-   completes as a **separate, second order**.
-
 <Note>
-  Because acceptance creates a new order, thank-you offers appear in your
-  admin as their own orders — they don't modify the original one. Keep
+  When a customer accepts, the app builds a new checkout with the product
+  and discount already applied — the purchase completes as a **separate,
+  second order** in your admin. It doesn't modify the original order; keep
   this in mind when reconciling revenue.
 </Note>
 
 ## Setup
 
-1. Add the app's **thank-you product slider** block to the **Thank you**
-   page in the checkout editor — see
-   [Installation & setup](/post-purchase-upsells/installation).
-2. Create an upsell with the **Thank You Page Upsell** trigger.
+<Steps>
+  <Step title="Add the thank-you page block">
+    In the checkout editor (**Settings → Checkout → Customize**), switch
+    to the **Thank you** page, click **Add app block**, add the app's
+    **thank-you product slider** block, and save. See
+    [Installation & setup](/post-purchase-upsells/installation).
 
-## Shipping discounts
+    <Warning>
+      The block never appears automatically — publishing an upsell is not
+      enough. This step is the #1 reason thank-you offers "don't show".
+    </Warning>
+  </Step>
+  <Step title="Create the upsell">
+    Go to **Upsells → Create upsell** and configure the three wizard
+    steps below.
+  </Step>
+</Steps>
 
-Thank-you offers support
-[shipping discounts](/post-purchase-upsells/upsells/discounts#shipping-discounts) —
-free shipping, a percentage off, or an amount off — with an optional custom
-shipping message shown on the offer.
+## Step 1 — Trigger
+
+Under **Select Upsell Trigger**, choose **Thank You Page Upsell**, then
+define when the offer shows:
+
+<TriggerConfig />
+
+## Step 2 — Offer
+
+<OfferConfig />
+
+### Shipping discounts
+
+<ShippingDiscounts />
+
+### Funnel: Upsell #2 & downsell
+
+<FunnelConfig />
+
+## Step 3 — Style
+
+<StyleCallout />
 
 ## Use cases & examples
 
@@ -48,14 +74,14 @@ shipping message shown on the offer.
     post-purchase page but still see the thank-you slider.
   </Accordion>
   <Accordion title="Free-shipping incentive on the second order">
-    A common objection to buying again is paying shipping twice. Configure
-    the offer with **Free shipping** and a message like "Free Shipping!"
-    so the second order feels like an extension of the first.
+    A common objection to buying again is paying shipping twice.
+    Configure **Free shipping** with a message like "Free Shipping!" so
+    the second order feels like an extension of the first.
   </Accordion>
   <Accordion title="Replenishment reminder for consumables">
     Trigger on **Specific collections** (e.g. Supplements) and offer the
-    same collection at a small discount — catching customers at their most
-    engaged moment.
+    same collection at a small discount — catching customers at their
+    most engaged moment.
   </Accordion>
 </AccordionGroup>
 
@@ -63,16 +89,23 @@ shipping message shown on the offer.
 
 <AccordionGroup>
   <Accordion title="The slider doesn't appear on the thank-you page">
-    The block must be manually placed in the checkout editor — it does
-    not appear automatically when you publish an upsell. Go to
+    The block must be manually placed in the checkout editor — go to
     **Settings → Checkout → Customize**, switch to the **Thank you**
     page, and confirm the app block is added and saved.
   </Accordion>
   <Accordion title="The offer shows for the wrong orders (or none)">
-    Check the upsell's trigger conditions and its status (must be
-    **Active**, not Paused). If multiple thank-you upsells are active,
-    only the highest-priority match is shown — check
-    [Manage priority](/post-purchase-upsells/upsells/priority).
+    Check the trigger conditions against a real test order — with the
+    **AND** connector every condition must pass, and subtotal excludes
+    tax/shipping while total includes them. The upsell must be **Active**
+    (not Draft or Paused), and if multiple thank-you upsells are active,
+    only the highest-priority match is shown — see
+    [Managing upsells & priority](/post-purchase-upsells/upsells/priority).
+  </Accordion>
+  <Accordion title="The discount or shipping discount didn't apply">
+    The app maintains its discount function automatically — re-save the
+    upsell to force a re-sync. Remember discount values are whole numbers
+    only, and the shipping discount type must be set per product in the
+    Offer step.
   </Accordion>
 </AccordionGroup>
 

@@ -1,0 +1,29 @@
+Still in the Offer step, you can chain the primary offer into a small
+funnel:
+
+- **Upsell offer #2** — shown *if the customer accepts* the first offer
+- **Downsell offer** — shown *if the customer declines* the first offer
+
+```text
+        Offer shown
+        /          \
+   accepted      declined
+      |               |
+  Upsell #2       Downsell
+```
+
+Toggle each one on and configure its own products and discounts. Both are
+off by default, and every enabled step needs at least one product selected
+before the wizard lets you save.
+
+<Tip>
+  A proven downsell pattern: offer the *same* product with a deeper
+  discount (say 10% → 25%), or a cheaper alternative. A decline becomes a
+  second chance instead of a dead end.
+</Tip>
+
+<Note>
+  The downsell only shows after an explicit **decline** of the first
+  offer — if the countdown timer expires or the customer navigates away,
+  the funnel ends without a downsell.
+</Note>

@@ -74,14 +74,11 @@
             ]
           },
           {
-            "group": "Upsells",
+            "group": "Upsell offers",
             "pages": [
               "post-purchase-upsells/upsells/post-purchase-offers",
               "post-purchase-upsells/upsells/thank-you-offers",
               "post-purchase-upsells/upsells/checkout-offers",
-              "post-purchase-upsells/upsells/triggers",
-              "post-purchase-upsells/upsells/discounts",
-              "post-purchase-upsells/upsells/funnels",
               "post-purchase-upsells/upsells/priority"
             ]
           },
@@ -133,6 +130,20 @@
       }
     ]
   },
+  "redirects": [
+    {
+      "source": "/post-purchase-upsells/upsells/triggers",
+      "destination": "/post-purchase-upsells/upsells/post-purchase-offers"
+    },
+    {
+      "source": "/post-purchase-upsells/upsells/discounts",
+      "destination": "/post-purchase-upsells/upsells/post-purchase-offers"
+    },
+    {
+      "source": "/post-purchase-upsells/upsells/funnels",
+      "destination": "/post-purchase-upsells/upsells/post-purchase-offers"
+    }
+  ],
   "footer": {
     "socials": {
       "website": "https://apps.shopify.com/partners/checkoutful"
