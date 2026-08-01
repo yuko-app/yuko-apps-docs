@@ -1,0 +1,30 @@
+---
+title: "Savings banner"
+description: "Show shoppers how much they're saving, calculated from compare-at prices."
+---
+
+import CartDrawerFooter from "/snippets/cart-drawer/footer.mdx";
+
+The **Savings banner** shows shoppers the total they're saving — "You're
+saving $14!". Find it under **Body → Savings banner**.
+
+## Settings
+
+- **Text** — the message. Use the `{{savings}}` shortcode to insert the
+  amount, calculated as compare-at price minus current price across the
+  cart.
+- **Styles** — background and text colors.
+
+<Warning>
+  The banner needs **compare-at prices** on your products to have
+  anything to show. If your products don't use compare-at prices, leave
+  this section off.
+</Warning>
+
+<Tip>
+  Pair it with **Use product compare-at price** in
+  [General settings](/cart-drawer/cart/general-settings) so cart rows
+  show the strikethrough prices that explain the number.
+</Tip>
+
+<CartDrawerFooter />

@@ -1,0 +1,54 @@
+---
+title: "Translations & languages"
+description: "Translate offer text for shoppers, and switch the admin's own language."
+---
+
+import PostPurchaseFooter from "/snippets/post-purchase-upsells/footer.mdx";
+
+There are two separate language systems — one for what **shoppers** see on
+your offers, and one for the **admin dashboard** you work in.
+
+## Storefront translations (what shoppers see)
+
+In the **Style** step, the translations bar lets you maintain the offer's
+text in multiple languages. Shoppers see the language matching their
+storefront locale; everyone else gets the default.
+
+Supported shopper languages: English, French, Spanish, German, Italian,
+Portuguese, Russian, Hungarian, Chinese, Japanese, and Korean.
+
+- **Add language** — adds a language tab to the editor
+- **Make default** — switches which language is the fallback
+- **Enable/disable** — temporarily turn a language off without deleting
+  its content
+- **Remove** — delete a language and its content
+
+<Note>
+  Standard labels (Subtotal, Total, Free, and so on) are translated
+  automatically for all supported languages. Your custom copy — titles,
+  paragraphs, CTA text — starts blank in a newly added language until you
+  fill it in; there's no machine translation.
+</Note>
+
+## Admin language (what you see)
+
+The dashboard itself has a separate language switcher on the **Home**
+page. It changes the app's admin interface language only — it has no
+effect on what shoppers see. The choice is saved per store.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Shoppers see English even though I added their language">
+    Check the language is **enabled** (not just added), and that the
+    specific fields are filled in for that language — empty fields fall
+    back to the default language's text.
+  </Accordion>
+  <Accordion title="I changed the admin language but my offer didn't change">
+    That's expected — the admin switcher only affects the dashboard.
+    Offer text is managed per-language in the Style step's translations
+    bar.
+  </Accordion>
+</AccordionGroup>
+
+<PostPurchaseFooter />

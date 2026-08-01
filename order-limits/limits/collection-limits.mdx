@@ -1,0 +1,127 @@
+---
+title: "Collection limits"
+description: "Set quantity or value limits across one or more collections, with flexible calculation methods."
+---
+
+import OrderLimitsFooter from "/snippets/order-limits/footer.mdx";
+
+Collection limits apply rules across all products in one or more Shopify
+collections — for example, "at least 3 items from the Sale collection" or
+"no more than $500 of items from Pre-orders".
+
+## Choose collections
+
+Under **Choose collections to limit**, browse and select one or more
+collections. You can also exclude specific collections from the rule.
+
+## Limit conditions
+
+Pick a **condition type**:
+
+- **Based on the product quantity from selected collection(s)** — set a
+  minimum and/or maximum quantity from the collection
+- **Based on the total value of items from selected collection(s)** — set a
+  minimum and/or maximum total value from the collection
+
+| Setting | What it does |
+| --- | --- |
+| Minimum / maximum quantity from collection | Bounds on how many items from the collection can be purchased. The minimum is required — use `1` if you only need a maximum. |
+| Minimum / maximum total value from collection | Bounds on the total price of items from the collection |
+| Sell products in multiples | Items from the collection must be bought in multiples of the value you set |
+
+## Calculation methods
+
+Two settings control *how* quantities are counted — this is what makes
+collection limits flexible, and misreading them is the most common
+configuration mistake:
+
+**Quantity calculation method**
+
+- **Apply to each product individually** — every product from the
+  collection must meet the min/max on its own
+- **Apply to total quantity across all products** — the combined quantity
+  from all products in the collection must meet the min/max
+
+**Multiple collection calculation method** (when you select more than one
+collection)
+
+- **Apply to each collection individually** — each collection must meet the
+  min/max separately
+- **Apply to total quantity across all collections** — the combined total
+  across all selected collections must meet the min/max
+
+<Tip>
+  Example: with a minimum of 3 and **total across all products**, a customer
+  can mix any 3 items from the collection. With **each product
+  individually**, they'd need 3 units of every product they add from that
+  collection.
+</Tip>
+
+## Use cases & examples
+
+<AccordionGroup>
+  <Accordion title="Minimum 3 items from the Sample Packs collection" icon="flask" description="Let customers mix and match any 3 samples toward one total.">
+    Select the collection → condition **product quantity** → **Minimum**
+    `3` → calculation method **total across all products**. Customers can
+    mix and match any 3 samples.
+  </Accordion>
+  <Accordion title="Cap Sale items at 5 per order" icon="tag" description="No more than 5 discounted items per order, in any combination.">
+    Select your Sale collection → **Minimum** `1`, **Maximum** `5` →
+    **total across all products**. No more than 5 discounted items per
+    order, in any combination.
+  </Accordion>
+  <Accordion title="Pre-orders limited to $500 per order" icon="clock" description="A value ceiling on the Pre-order collection.">
+    Select the Pre-order collection → condition **total value** →
+    **Maximum** `500`. The message can show the live remaining allowance
+    with the `{{maximum_total_product_value}}` and `{{currency}}`
+    [variables](/order-limits/customization/message-variables).
+  </Accordion>
+  <Accordion title="Every product from the Bulk collection in packs of 12" icon="boxes-stacked" description="Each bulk product must be bought in multiples of 12.">
+    Select the collection → enable **Sell products in multiples** →
+    **Multiple** `12` → calculation method **each product individually**,
+    so each bulk product must independently be a multiple of 12.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The limit triggers too early (or not when expected)">
+    Nine times out of ten this is the **calculation method**. "Each product
+    individually" makes every single product meet the min/max on its own —
+    if you wanted customers to mix items toward one shared total, switch to
+    **total across all products**. With multiple collections selected,
+    check the multiple-collection method the same way.
+  </Accordion>
+  <Accordion title="A product is counted that shouldn't be (or vice versa)">
+    Collection membership comes live from Shopify. Check whether the
+    product actually belongs to the selected collection — automated
+    (smart) collections in particular can include products you didn't
+    expect. Also check the limit's collection **exclusions**.
+  </Accordion>
+  <Accordion title="Value limits use the wrong amount">
+    Whether shipping and taxes count toward value limits is controlled by
+    **Order Value Calculation** in
+    [General settings](/order-limits/settings/general). Also note value
+    comparisons use the cart's currency — the message variable
+    `{{currency}}` shows which one applies.
+  </Accordion>
+  <Accordion title="The message shows, but checkout isn't blocked">
+    Open the limit — if an **Enable Checkout Rule** button appears at the
+    top, the **Yuko Collection Limit** checkout validation is missing from
+    your store. Click it to add the validation in Shopify's checkout
+    settings, then verify **Settings → Rule settings** is set to block.
+  </Accordion>
+</AccordionGroup>
+
+## Refine the rule
+
+Collection limits support the same extras as all limit types:
+[customer tag and country targeting](/order-limits/limits/targeting),
+[scheduling](/order-limits/limits/scheduling), and
+[custom messages](/order-limits/customization/messages-translations) with
+variables like `{{minimum_collection_quantity}}` and
+`{{maximum_total_product_value}}` — see the full
+[message variables reference](/order-limits/customization/message-variables).
+
+<OrderLimitsFooter />

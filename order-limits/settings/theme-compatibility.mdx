@@ -1,0 +1,70 @@
+---
+title: "Theme compatibility & selectors"
+description: "Fix limit messages that don't appear correctly in customized themes using CSS selectors."
+---
+
+import OrderLimitsFooter from "/snippets/order-limits/footer.mdx";
+
+Out of the box, the app detects where to show limit messages in standard
+Shopify themes — Dawn, Debut, Brooklyn, and most others. If your store uses
+a heavily customized or custom-built theme and messages aren't appearing in
+the cart, you can tell the app exactly where to place them using CSS
+selectors.
+
+<Info>
+  Only reach for these settings if messages aren't displaying correctly.
+  For standard themes, leave everything at its defaults.
+</Info>
+
+## Enable advanced selectors
+
+In **Settings → Cart Message Placement**, turn on **Use advanced selectors
+(for complex / custom themes)**. Two groups of fields appear — one for the
+cart drawer, one for the cart page:
+
+| Field | What to enter |
+| --- | --- |
+| Cart drawer container | The outer element wrapping the cart drawer |
+| Cart item row (drawer) | The message appears below the last row matching this selector inside the drawer |
+| Cart page container | The outer element wrapping the cart page items |
+| Cart item row (page) | The message appears directly below the last matching row inside the container |
+| Quantity input selector (optional) | Only needed if your theme uses a non-standard quantity input |
+
+## How to find your selectors
+
+1. Open your storefront and go to the cart page (or open the cart drawer).
+2. Right-click a product row and choose **Inspect**.
+3. In the browser's developer tools, copy the class name of the cart
+   wrapper (container) and of a product row (item row).
+4. Paste them into the matching fields, prefixed with `.` for classes or
+   `#` for IDs.
+
+<Tip>
+  Multiple selectors can be comma-separated, e.g. `.cart-drawer,
+  #CartDrawer` — useful when your theme renders different markup on
+  different pages.
+</Tip>
+
+## Theme Integration Selectors
+
+For even finer control, the **Theme Integration Selectors** section (under
+**Show Advanced Selectors**) exposes the full selector set for both the
+cart drawer and the cart page:
+
+- **Container Selector** — the cart's wrapper element
+- **Line Item Selector** — individual cart items
+- **Quantity Input Selector** — quantity input fields
+- **Error Container Selector** — where error messages render
+- **Checkout Button Selector** — the checkout button
+
+The defaults work with most Shopify themes; only modify them if messages
+aren't displaying correctly.
+
+## Still not working?
+
+If you've tried the selectors and messages still don't show, contact
+support via the chat below — theme integration issues are our most common
+support topic and we can usually configure the right selectors for your
+theme quickly.
+
+<OrderLimitsFooter />

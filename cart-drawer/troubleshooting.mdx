@@ -1,0 +1,71 @@
+---
+title: "FAQ & troubleshooting"
+description: "Quick fixes for the most common cart drawer questions."
+---
+
+import CartDrawerFooter from "/snippets/cart-drawer/footer.mdx";
+
+<AccordionGroup>
+  <Accordion title="The drawer doesn't open — I still see my theme's cart">
+    Three things must all be true:
+
+    1. The **Yuko Cart Drawer** app embed is enabled in the theme
+       you're viewing (theme editor → App embeds). The dashboard's
+       extension card shows **Active** when it is.
+    2. The cart's **Status** toggle in the app is **Active**.
+    3. Both were **saved** — the theme editor and the cart editor each
+       have their own Save button.
+
+    If you recently switched or published a new theme, re-enable the
+    embed there — app embeds are per-theme.
+  </Accordion>
+
+  <Accordion title="A section is missing from my drawer">
+    Check its toggle in the cart editor — every section has one. If the
+    section shows a padlock (**Timer**, **Announcement bar**,
+    **Shipping protection**), click **Request feature** and we'll
+    unlock it for your store.
+  </Accordion>
+
+  <Accordion title="The rewards bar shows the wrong threshold">
+    You probably have a per-market override (or are missing one). Check
+    the market overrides in the Promotions progress bar panel, and use
+    the preview's **Previewing market** selector to see each market's
+    version.
+  </Accordion>
+
+  <Accordion title="Upsells aren't showing">
+    In AI mode, new stores may not have recommendation data yet —
+    switch to manual products or configure complementary products in
+    Shopify's Search & Discovery app. Also check **Hide if product is
+    already in cart** and the section toggle.
+  </Accordion>
+
+  <Accordion title="I see a strange hidden product in my Shopify admin">
+    That's the auto-managed product behind Shipping protection or Gift
+    wrap — the app creates it to charge the fee and keeps its price in
+    sync. Don't edit or delete it.
+  </Accordion>
+
+  <Accordion title="Changes I made aren't on my store">
+    The live preview updates instantly, but your store only changes
+    after **Save**. Check for the save bar at the top of the editor —
+    unsaved changes stay in the editor until you save or discard them.
+  </Accordion>
+
+  <Accordion title="The drawer looks off in my theme (spacing, fonts, overlap)">
+    Start with **General → Roundness** and the color theme. If
+    something genuinely renders wrong in your specific theme, contact
+    support via the chat — theme-specific tweaks are our daily bread,
+    and we'll adjust it for you.
+  </Accordion>
+
+  <Accordion title="Does the drawer work with my subscription app?">
+    The drawer supports Shopify subscriptions natively — plan names,
+    prices, and frequencies show on cart rows, and shoppers can switch
+    plans if you allow it. If your subscription app writes
+    non-standard line properties, ping support and we'll check it.
+  </Accordion>
+</AccordionGroup>
+
+<CartDrawerFooter />

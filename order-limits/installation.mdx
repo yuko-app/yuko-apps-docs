@@ -1,0 +1,97 @@
+---
+title: "Installation & theme setup"
+description: "Install Yuko Order Limits and activate the theme extension and product page block on your store."
+---
+
+import OrderLimitsFooter from "/snippets/order-limits/footer.mdx";
+
+Getting the app running takes three steps: install it from the Shopify App
+Store, activate the **Yuko extension** (app embed) in your theme, and add the
+**Yuko Order Limit** block to your product template. The app's dashboard
+tracks all three steps in the **Setup Guide** and detects automatically when
+each one is complete.
+
+<Steps>
+  <Step title="Install the app">
+    Install [Yuko Order Limits](https://apps.shopify.com/yuko-order-limits)
+    from the Shopify App Store and approve the requested permissions. After
+    installation, the app opens inside your Shopify admin.
+  </Step>
+  <Step title="Activate the Yuko extension (app embed)">
+    The app embed powers limit enforcement on your product pages, cart
+    drawer, and cart page.
+
+    1. In the app's dashboard, find the **Activate Yuko extension** step in
+       the Setup Guide and click **Enable**. This opens your theme editor
+       with the embed ready to activate.
+    2. In the theme editor, click **Save**.
+    3. Back in the app, click **Refresh Status** — the step shows
+       **Enabled** once it's active.
+
+    <Note>
+      You can also do this manually: in your Shopify admin, go to
+      **Online Store → Themes → Customize**, open **App embeds** (puzzle
+      icon in the left sidebar), and toggle on **Yuko Extension**.
+    </Note>
+  </Step>
+  <Step title="Activate the Yuko block on your product template">
+    The app block displays limit messages directly on your product pages.
+
+    1. In the Setup Guide, find **Activate Yuko block** and click
+       **Activate**. This opens the theme editor on your product template
+       with the block ready to add.
+    2. Position the block where you want the limit message to appear —
+       typically near the add-to-cart button — and click **Save**.
+    3. Back in the app, click **Refresh Status**.
+
+    <Tip>
+      To add it manually: open the theme editor, switch to a **Product**
+      template, click **Add block** in the desired section, and choose
+      **Yuko Order Limit** from the Apps section.
+    </Tip>
+  </Step>
+  <Step title="Verify everything is active">
+    On the dashboard, the **Active App Block(s)** card shows the live status
+    of both pieces:
+
+    - **Yuko Order Limit extension** — the app embed
+    - **Yuko Limits banner for product pages** — the product page block
+
+    Both should show **Enabled**. Use **Refresh** to re-check at any time.
+
+    <Check>
+      When both show Enabled, you're ready to
+      [create your first limit](/order-limits/quickstart).
+    </Check>
+  </Step>
+</Steps>
+
+## Which piece does what?
+
+| Piece | Where it works | What it does |
+| --- | --- | --- |
+| Yuko extension (app embed) | Product page, cart drawer, cart page | Enforces limits and shows messages in the cart |
+| Yuko Order Limit block | Product page | Shows the limit message on the product page |
+| Checkout validations | Checkout | Block checkout when limits aren't met — added automatically at install (see below) |
+
+## Checkout validations
+
+The app enforces limits at checkout through Shopify **checkout rules**
+(validations) — one per limit type, named **Yuko Product Limit**,
+**Yuko Collection Limit**, and **Yuko Order Limit**. These are added
+automatically when you install the app, and you can see them in your
+Shopify admin under **Settings → Checkout → Checkout rules**.
+
+If a validation is ever missing — for example, it was removed manually —
+the limit editor shows an **Enable Checkout Rule** button at the top of
+the affected limit. Click it to re-add the validation; it opens the right
+page in your Shopify checkout settings with the rule ready to activate.
+
+<Warning>
+  Without its checkout validation, a limit still shows messages on the
+  storefront but won't block checkout. If customers can complete orders
+  that break your rules, check for the **Enable Checkout Rule** button
+  first.
+</Warning>
+
+<OrderLimitsFooter />

@@ -1,0 +1,82 @@
+---
+title: "Installation & theme setup"
+description: "Install Yuko Cart and turn on the cart drawer in your theme — no coding needed."
+---
+
+import CartDrawerFooter from "/snippets/cart-drawer/footer.mdx";
+
+Yuko Cart replaces your theme's cart with a customizable slide-out cart
+drawer. Getting it live takes four steps. The app's dashboard shows the
+same four steps as a **Setup Guide** and checks most of them off for you
+automatically.
+
+<Steps>
+  <Step title="Install the app">
+    Install
+    [Yuko Cart Drawer & Upsells](https://apps.shopify.com/yuko-cart-drawer-upsell)
+    from the Shopify App Store. Approve the permissions when asked. The
+    app opens inside your Shopify admin.
+  </Step>
+  <Step title="Enable the cart drawer theme extension">
+    The drawer is delivered by an "app embed" in your theme. It's off
+    until you switch it on.
+
+    1. On the dashboard, find the step **Enable the cart drawer theme
+       extension** and click **Activate extension**. Your theme editor
+       opens with the embed ready.
+    2. Click **Save** in the theme editor.
+    3. Back in the app, click **Refresh status**. The **Cart drawer theme
+       extension** card should now say **Active**.
+
+    <Tip>
+      Can't find it later? In your Shopify admin, go to **Online Store →
+      Themes → Customize**, click the puzzle-piece icon (**App embeds**),
+      and switch on **Yuko Cart Drawer**.
+    </Tip>
+  </Step>
+  <Step title="Customize and activate the cart">
+    Click **Open cart settings**. This opens the cart editor. Turn the
+    **Status** toggle to **Active**, make any changes you like, and click
+    **Save**.
+
+    <Warning>
+      The drawer only replaces your theme's cart while the status is
+      **Active**. If the status is Inactive, shoppers keep seeing your
+      theme's original cart — even with the extension enabled.
+    </Warning>
+  </Step>
+  <Step title="(Optional) Add the progress bar to your product page">
+    The **Yuko Progress Bar** block shows your rewards progress (like
+    "spend $10 more for free shipping") on product pages too.
+
+    1. Click **Add to product page** in the Setup Guide. The theme
+       editor opens on a product template.
+    2. The block is added for you — drag it where you want it and click
+       **Save**.
+
+    The block has three simple settings: **Alignment**, **Max width
+    (px)**, and top/bottom spacing.
+  </Step>
+</Steps>
+
+## Check your work
+
+Visit your storefront and add any product to the cart.
+
+<Check>
+  The Yuko cart drawer should slide open (if you kept **Open cart drawer
+  on add to cart** enabled). If you see your theme's old cart instead,
+  one of the steps above isn't finished — see the checklist below.
+</Check>
+
+<AccordionGroup>
+  <Accordion title="Still seeing the old cart? Check these three things">
+    1. The **Yuko Cart Drawer** app embed is on, in the theme you're
+       actually viewing (check the theme editor's App embeds panel).
+    2. The cart's **Status** toggle in the app is **Active**.
+    3. You saved both — the theme editor and the cart editor each have
+       their own Save button.
+  </Accordion>
+</AccordionGroup>
+
+<CartDrawerFooter />

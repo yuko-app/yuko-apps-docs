@@ -1,0 +1,64 @@
+---
+title: "Managing upsells & priority"
+description: "Statuses, the upsells list, and choosing which upsell wins when several match."
+---
+
+import PostPurchaseFooter from "/snippets/post-purchase-upsells/footer.mdx";
+
+## The Upsells page
+
+The **Upsells** page lists every upsell with its type (Post Purchase /
+Thank You / Checkout), creation date, and status. From here you can create,
+edit, delete, and toggle upsells between **Active** and **Paused**.
+
+- **Draft** — created but not yet published (finish the wizard with
+  **Save and publish**); never shown
+- **Active** — eligible to be shown on its placement
+- **Paused** — kept with all its configuration, but never shown
+
+## Priority: which upsell is shown?
+
+For each placement, customers see **one** upsell per visit: the
+highest-priority active upsell whose
+[trigger conditions](/post-purchase-upsells/upsells/post-purchase-offers#step-1--trigger) match the
+order. Lower-priority upsells act as fallbacks — they're only considered
+when higher ones don't match.
+
+To control the order:
+
+<Steps>
+  <Step title="Open the priority manager">
+    On the Upsells page, click **Manage priority**.
+  </Step>
+  <Step title="Drag and drop">
+    Reorder the upsells per type. The #1 upsell is the one shown to
+    customers when its conditions match — only one upsell per type can be
+    the priority.
+  </Step>
+  <Step title="Save">
+    Click **Save priority**.
+  </Step>
+</Steps>
+
+<Tip>
+  A good pattern: put narrowly-targeted upsells (specific products, high
+  order values) *above* broad catch-all upsells. The specific offer wins
+  when it applies, and the generic one covers everything else.
+</Tip>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The wrong upsell is showing">
+    Check **Manage priority** — the top matching upsell wins. If a broad
+    "Any products" upsell sits at #1, targeted upsells below it will
+    never appear for orders both match.
+  </Accordion>
+  <Accordion title="My new upsell doesn't show at all">
+    New upsells must be **published** (finish the Style step with Save
+    and publish) and **Active**. Then check whether a higher-priority
+    upsell is matching the same orders first.
+  </Accordion>
+</AccordionGroup>
+
+<PostPurchaseFooter />

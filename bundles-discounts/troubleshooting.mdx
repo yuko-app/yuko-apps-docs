@@ -1,0 +1,85 @@
+---
+title: "FAQ & troubleshooting"
+description: "Fixes for offers not showing, discounts not applying, and common configuration mistakes."
+---
+
+import BundlesFooter from "/snippets/bundles-discounts/footer.mdx";
+
+<AccordionGroup>
+  <Accordion title="My offer doesn't show on the storefront">
+    Work through these in order:
+
+    1. **Yuko Extension enabled?** A red **Not Visible** badge in the
+       Offers list means the app embed (or required block) is off in
+       your theme — the app also warns after creating an offer: *"To
+       ensure the offers are displayed properly on product page,
+       activate Yuko Extension in your theme settings."*
+    2. **Offer Active?** Check the status pill; scheduled campaigns are
+       inactive outside their dates.
+    3. **Targeting** — does the product actually match the **When to
+       display...** rule? Smart collections can surprise you.
+    4. **Overlap** — if another active offer covers the same products,
+       the editor's "Oops! Yuko identified issue..." banner names the
+       conflict.
+    5. **Eligibility rules** — tag/spend/order-count rules only match
+       logged-in customers; a logged-out visitor may be excluded by
+       design.
+  </Accordion>
+
+  <Accordion title="The discount doesn't apply at checkout">
+    - **Combinations**: if the customer's cart carries another discount
+      of a class your deal doesn't combine with, one of the two won't
+      apply.
+    - **Fixed amounts** larger than the product price block the add to
+      cart entirely.
+    - For tiered offers, confirm the cart actually satisfies a tier
+      range — and watch for gaps between ranges.
+  </Accordion>
+
+  <Accordion title="Offer shows on the wrong products">
+    Check the **Applies to:** mode carefully — the two "except" modes
+    (products / collections) invert the selection, and tag mode matches
+    any listed tag. For bundles, remember **When to display...** (where
+    the widget shows) is independent of the bundle contents or the
+    eligible pool.
+  </Accordion>
+
+  <Accordion title="The widget position looks wrong in my theme">
+    Widgets auto-mount at the add-to-cart form (the embed's **Mount
+    selector**, default `form[action*="/cart/add"]`). For exact control,
+    add the matching app block (Yuko Discount / Yuko Bundle / Yuko
+    Related Products / Yuko Upsell) to your product template — see the
+    [storefront blocks reference](/bundles-discounts/storefront-blocks).
+    If your theme's form doesn't match the default selector, contact
+    support before editing it.
+  </Accordion>
+
+  <Accordion title="The Bundle Builder page is empty or missing">
+    The page is created on first save and published only while the offer
+    is **Active**. If you deleted the page in Shopify, re-save the offer
+    — the app recreates it. See
+    [Build Your Own Box](/bundles-discounts/offers/bundle-builder).
+  </Accordion>
+
+  <Accordion title="What's the 'Test Offer' in my Offers list?">
+    A draft AI Bundle seeded at install so you can explore the offer
+    editor. It's inactive by default — activate it, repurpose it, or
+    delete it freely.
+  </Accordion>
+
+  <Accordion title="Analytics show zero impressions">
+    Impressions count only when the widget renders — the usual cause is
+    the Yuko Extension embed being disabled or the offer not matching
+    any visited product page. See
+    [Analytics](/bundles-discounts/analytics).
+  </Accordion>
+
+  <Accordion title="Can offers show only for certain customers?">
+    Yes — quantity breaks, quantity discounts, and volume discounts have
+    **Customer eligibility rules** (status, tags, country, amount spent,
+    orders completed). Tag/spend/order rules require the customer to be
+    logged in.
+  </Accordion>
+</AccordionGroup>
+
+<BundlesFooter />

@@ -1,0 +1,121 @@
+---
+title: "Product upsells"
+description: "Recommend extra products inside the cart — AI-picked or hand-picked, with optional discounts."
+---
+
+import CartDrawerFooter from "/snippets/cart-drawer/footer.mdx";
+
+The **Product upsell** section shows a small product carousel inside the
+drawer — "you might also like" — so shoppers can add one more item
+without leaving the cart. Find it under **Body → Product upsell**.
+
+## Choose where products come from
+
+Under **Products**, pick one of two sources:
+
+### Smart AI Recommendations
+
+Shopify picks the products automatically, based on what's in the cart.
+You choose:
+
+- **Recommendation type** — **Related products** (similar to items in
+  the cart) or **Complementary products** (pair well together,
+  "often bought together")
+- **Number of products** — how many to show (Shopify caps this at 10)
+
+<Tip>
+  Complementary recommendations can be curated in Shopify's free
+  **Search & Discovery** app — the panel links straight to it. If you
+  set up complementary products there, your upsells get noticeably
+  smarter.
+</Tip>
+
+### Choose Upsell Products Manually
+
+You pick each product (and variant) yourself — **Add product** shows how
+many slots you've used. Each product can carry its own discount:
+
+- **No discount**
+- **Discounted %** (e.g. 10% off)
+- **Discounted amount** (e.g. $10 off)
+
+The discount is applied automatically when the shopper adds the product
+from the drawer.
+
+## Behavior options
+
+| Option | What it does |
+| --- | --- |
+| Show 'Saved %' badge | Shows the percent saved when the product has a compare-at price |
+| Hide if product is already in cart | Doesn't recommend something the shopper already added |
+| Automatically remove upsells from the cart when the cart is empty | If the shopper empties their cart, discounted upsell items are removed too |
+| Allow changing subscription | Lets shoppers switch between one-time and subscription options on upsell products |
+
+## Product-specific upsells
+
+**Product-specific upsells** shows *different* upsells depending on
+what's in the cart. Click **Add mapping**, choose a trigger product, and
+choose which products to recommend when it's in the cart. Mappings
+override the general source while their trigger product is present.
+
+<Tip>
+  Map your bestsellers first. "Camera in cart → show memory card and
+  case" beats generic recommendations, and you only need mappings for
+  your top few products.
+</Tip>
+
+## Styling
+
+The **Header** controls the section's title, alignment, color, and font
+size. **Styles** covers the carousel — background, text, arrows, button
+and badge colors — plus the **Add button text** and a choice of
+**Layouts**.
+
+## Yuko Bundles as a source
+
+If you also use **Yuko Bundle Builder & Discounts**, the drawer can
+surface your bundles as upsells — look for the Yuko Bundles source
+option in the panel.
+
+## Use cases & examples
+
+<AccordionGroup>
+  <Accordion title="Hands-off cross-sell" icon="wand-magic-sparkles" description="Complementary AI recommendations, 4 products, no upkeep.">
+    Source **Smart AI Recommendations**, type **Complementary
+    products**, count `4`. Enable **Hide if product is already in
+    cart** and you're done — it improves as your sales data grows.
+  </Accordion>
+  <Accordion title="Discounted add-on push" icon="tag" description="Hand-picked accessories at 10% off, only in the cart.">
+    Source **Manually**, pick 3–4 low-priced accessories, give each
+    **Discounted %** `10`. The Saved badge makes the deal visible.
+  </Accordion>
+  <Accordion title="Bestseller pairings" icon="link" description="Each hero product recommends its perfect companions.">
+    Use **Product-specific upsells**: map each bestseller to its
+    companions (coffee machine → beans + descaler). Everything else
+    falls back to AI recommendations.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="No upsells are showing">
+    - AI mode needs recommendation data — brand-new stores may see
+      nothing at first. Switch to manual products, or set up
+      complementary products in Search & Discovery.
+    - **Hide if product is already in cart** can empty the list when
+      the shopper has already added everything you recommend.
+    - Check the section's toggle is on, and the cart is saved.
+  </Accordion>
+  <Accordion title="The upsell discount didn't apply">
+    Discounts apply when the product is added **from the drawer's
+    upsell**, not when added from elsewhere in the store. Also check
+    the discount value is set on the right product in the panel.
+  </Accordion>
+  <Accordion title="A discounted upsell stayed in the cart after everything else was removed">
+    Turn on **Automatically remove upsells from the cart when the cart
+    is empty** — that's exactly what it's for.
+  </Accordion>
+</AccordionGroup>
+
+<CartDrawerFooter />

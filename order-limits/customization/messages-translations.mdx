@@ -1,0 +1,75 @@
+---
+title: "Messages & translations"
+description: "Edit the customer-facing limit messages and translate them into 13 languages."
+---
+
+import OrderLimitsFooter from "/snippets/order-limits/footer.mdx";
+
+Every limit has a **Message** tab where you edit the exact text customers
+see when a rule isn't met — per message type, per language.
+
+## Message fields
+
+Depending on the limit's conditions, you'll see fields such as:
+
+| Field | Shown when |
+| --- | --- |
+| Minimum Quantity Limit Message | The cart is below the minimum quantity |
+| Maximum Quantity Limit Message | The cart exceeds the maximum quantity |
+| Minimum / Maximum Value Limit Message | The cart is outside the value bounds |
+| Minimum / Maximum Weight Limit Message | The cart is outside the weight bounds |
+| Break multiple limit message | The quantity isn't a valid multiple |
+| Button Text / Contact Us Text | The contact option is included in the message |
+
+Each field supports **variables** like `{{minimum_product_quantity}}` and
+`{{quantity_needed}}` that are replaced with live values on the
+storefront — see the
+[message variables reference](/order-limits/customization/message-variables)
+for the full list. Click the copy button next to a variable in the app to
+insert it.
+
+### Default messages
+
+Every limit starts with sensible defaults you can adapt:
+
+| Message | Default text |
+| --- | --- |
+| Minimum quantity | You must select at least `{{minimum_product_quantity}}` products |
+| Maximum quantity | You can only select a maximum of `{{maximum_product_quantity}}` products |
+| Break multiple | The quantity must be a multiple of `{{multiple}}` |
+| Minimum value | You can only purchase a minimum of `{{minimum_total_product_value}}` `{{currency}}` |
+| Maximum value | You are only allowed to purchase a maximum of `{{maximum_total_product_value}}` `{{currency}}` |
+
+Collection limits use collection-specific wording ("…products in this
+collection") and the collection variables instead.
+
+## Translations
+
+Messages support one **default language** plus any number of additional
+languages. Customers browsing your store in a supported language see that
+language's messages; everyone else sees the default.
+
+Available languages: English, French, German, Dutch, Italian, Spanish,
+Russian, Hungarian, Hebrew, Slovenian, Japanese, Polish, and Chinese.
+
+<Steps>
+  <Step title="Add a language">
+    In the limit's **Message** tab, click **Add language** and select from
+    the list.
+  </Step>
+  <Step title="Translate each field">
+    Expand the language section and fill in the translated text for each
+    message field. Variables work the same in every language.
+  </Step>
+  <Step title="Manage languages">
+    Use **Change default language** to switch which language is the
+    fallback, or **Reset content** to restore a field's default text.
+  </Step>
+</Steps>
+
+<Note>
+  Translations are per-limit, so different limits can have entirely
+  different messaging.
+</Note>
+
+<OrderLimitsFooter />

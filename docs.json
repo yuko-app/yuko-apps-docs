@@ -12,7 +12,9 @@
       {
         "tab": "Home",
         "icon": "house",
-        "pages": ["index"]
+        "pages": [
+          "index"
+        ]
       },
       {
         "tab": "Order Limits",
@@ -20,7 +22,44 @@
         "groups": [
           {
             "group": "Get started",
-            "pages": ["order-limits/overview"]
+            "pages": [
+              "order-limits/overview",
+              "order-limits/installation",
+              "order-limits/quickstart"
+            ]
+          },
+          {
+            "group": "Limits",
+            "pages": [
+              "order-limits/limits/product-limits",
+              "order-limits/limits/collection-limits",
+              "order-limits/limits/order-limits",
+              "order-limits/limits/targeting",
+              "order-limits/limits/scheduling"
+            ]
+          },
+          {
+            "group": "Customization",
+            "pages": [
+              "order-limits/customization/branding",
+              "order-limits/customization/messages-translations",
+              "order-limits/customization/message-variables"
+            ]
+          },
+          {
+            "group": "Settings",
+            "pages": [
+              "order-limits/settings/general",
+              "order-limits/settings/theme-compatibility",
+              "order-limits/settings/email-notifications"
+            ]
+          },
+          {
+            "group": "Analytics & help",
+            "pages": [
+              "order-limits/analytics",
+              "order-limits/troubleshooting"
+            ]
           }
         ]
       },
@@ -30,7 +69,34 @@
         "groups": [
           {
             "group": "Get started",
-            "pages": ["post-purchase-upsells/overview"]
+            "pages": [
+              "post-purchase-upsells/overview",
+              "post-purchase-upsells/installation",
+              "post-purchase-upsells/quickstart"
+            ]
+          },
+          {
+            "group": "Upsell offers",
+            "pages": [
+              "post-purchase-upsells/upsells/post-purchase-offers",
+              "post-purchase-upsells/upsells/thank-you-offers",
+              "post-purchase-upsells/upsells/checkout-offers",
+              "post-purchase-upsells/upsells/priority"
+            ]
+          },
+          {
+            "group": "Customization",
+            "pages": [
+              "post-purchase-upsells/customization/styling",
+              "post-purchase-upsells/customization/translations"
+            ]
+          },
+          {
+            "group": "Analytics & help",
+            "pages": [
+              "post-purchase-upsells/analytics",
+              "post-purchase-upsells/troubleshooting"
+            ]
           }
         ]
       },
@@ -40,7 +106,45 @@
         "groups": [
           {
             "group": "Get started",
-            "pages": ["bundles-discounts/overview"]
+            "pages": [
+              "bundles-discounts/overview",
+              "bundles-discounts/installation",
+              "bundles-discounts/quickstart"
+            ]
+          },
+          {
+            "group": "Offer types",
+            "pages": [
+              "bundles-discounts/offers/quantity-breaks-gifts",
+              "bundles-discounts/offers/quantity-discounts",
+              "bundles-discounts/offers/volume-discount-bundles",
+              "bundles-discounts/offers/fixed-bundle",
+              "bundles-discounts/offers/mix-and-match",
+              "bundles-discounts/offers/ai-bundle",
+              "bundles-discounts/offers/related-products",
+              "bundles-discounts/offers/bundle-builder"
+            ]
+          },
+          {
+            "group": "Customization",
+            "pages": [
+              "bundles-discounts/customization/design-themes"
+            ]
+          },
+          {
+            "group": "Management & settings",
+            "pages": [
+              "bundles-discounts/managing-offers",
+              "bundles-discounts/storefront-blocks",
+              "bundles-discounts/settings"
+            ]
+          },
+          {
+            "group": "Analytics & help",
+            "pages": [
+              "bundles-discounts/analytics",
+              "bundles-discounts/troubleshooting"
+            ]
           }
         ]
       },
@@ -50,25 +154,114 @@
         "groups": [
           {
             "group": "Get started",
-            "pages": ["cart-drawer/overview"]
-          }
-        ]
-      },
-      {
-        "tab": "Shopjar",
-        "icon": "handshake",
-        "groups": [
+            "pages": [
+              "cart-drawer/overview",
+              "cart-drawer/installation",
+              "cart-drawer/quickstart"
+            ]
+          },
           {
-            "group": "Get started",
-            "pages": ["shopjar/overview"]
+            "group": "Cart editor",
+            "pages": [
+              "cart-drawer/cart/cart-editor",
+              "cart-drawer/cart/general-settings"
+            ]
+          },
+          {
+            "group": "Header & body",
+            "pages": [
+              "cart-drawer/cart/top-bar",
+              "cart-drawer/cart/announcement-bar",
+              "cart-drawer/cart/savings-banner",
+              "cart-drawer/cart/rewards-bar",
+              "cart-drawer/cart/products-in-cart",
+              "cart-drawer/cart/product-upsells",
+              "cart-drawer/cart/timer",
+              "cart-drawer/cart/trust-badges"
+            ]
+          },
+          {
+            "group": "Footer",
+            "pages": [
+              "cart-drawer/cart/shipping-protection",
+              "cart-drawer/cart/gift-wrap",
+              "cart-drawer/cart/order-notes",
+              "cart-drawer/cart/discount-codes",
+              "cart-drawer/cart/checkout-button",
+              "cart-drawer/cart/accelerated-checkout",
+              "cart-drawer/cart/payment-methods",
+              "cart-drawer/cart/footer-strip",
+              "cart-drawer/cart/secondary-button"
+            ]
+          },
+          {
+            "group": "More features",
+            "pages": [
+              "cart-drawer/sticky-cart"
+            ]
+          },
+          {
+            "group": "Customization",
+            "pages": [
+              "cart-drawer/customization/translations-markets"
+            ]
+          },
+          {
+            "group": "Analytics & help",
+            "pages": [
+              "cart-drawer/analytics",
+              "cart-drawer/troubleshooting"
+            ]
           }
         ]
       }
     ]
   },
+  "redirects": [
+    {
+      "source": "/cart-drawer/cart/body-sections",
+      "destination": "/cart-drawer/cart/top-bar"
+    },
+    {
+      "source": "/cart-drawer/cart/footer-addons",
+      "destination": "/cart-drawer/cart/shipping-protection"
+    },
+    {
+      "source": "/cart-drawer/cart/footer-checkout",
+      "destination": "/cart-drawer/cart/checkout-button"
+    },
+    {
+      "source": "/post-purchase-upsells/upsells/triggers",
+      "destination": "/post-purchase-upsells/upsells/post-purchase-offers"
+    },
+    {
+      "source": "/post-purchase-upsells/upsells/discounts",
+      "destination": "/post-purchase-upsells/upsells/post-purchase-offers"
+    },
+    {
+      "source": "/post-purchase-upsells/upsells/funnels",
+      "destination": "/post-purchase-upsells/upsells/post-purchase-offers"
+    }
+  ],
   "footer": {
     "socials": {
-      "website": "https://apps.shopify.com/partners/checkoutful"
+      "website": "https://apps.shopify.com/partners/afflr"
     }
-  }
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "assistant",
+      "view",
+      "chatgpt",
+      "claude",
+      "mcp",
+      "cursor"
+    ],
+    "display": "header"
+  },
+  "markdown": {
+    "schema": true
+  },
+  "description": "Grow your Shopify store revenue with discounts, upsells, loyalty and referral features. Explore the Yuko apps for Shopify"
 }

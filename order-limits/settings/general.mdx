@@ -1,0 +1,57 @@
+---
+title: "General settings"
+description: "Control enforcement behavior: allow or block purchases, hide payment methods, and order value calculation."
+---
+
+import OrderLimitsFooter from "/snippets/order-limits/footer.mdx";
+
+The **Settings** page controls how limits are enforced store-wide. These
+settings apply to all limits.
+
+## Rule settings
+
+Choose what happens when a cart doesn't meet your limits:
+
+- **Allows customer to purchase even if limits are not met** — the limit
+  message is shown, but checkout stays open. Use this when limits are
+  advisory.
+- **Blocks customer from purchasing if limits are not met** — checkout is
+  blocked until the cart satisfies every active limit.
+
+### Hide payment methods if limits are not met
+
+When enabled, payment methods are hidden at checkout while limits aren't
+met — an extra layer of enforcement on top of the checkout validation.
+
+<Tip>
+  There's also a **Hide express checkout** toggle on the Limits page that
+  hides dynamic checkout buttons (like Buy it now), preventing customers
+  from skipping the cart entirely. See
+  [Scheduling & status](/order-limits/limits/scheduling#managing-limits).
+</Tip>
+
+## Order Value Calculation
+
+Choose whether shipping and taxes count toward value-based limits:
+
+- **Without shipping & taxes** — limits compare against the cart subtotal
+- **With shipping & taxes** — limits compare against the order total
+
+This affects order limits and collection limits that use value conditions.
+
+## Cart Message Placement
+
+The app automatically detects where to place limit messages in standard
+Shopify themes (Dawn, Debut, Brooklyn, and similar). If messages aren't
+appearing correctly in a customized theme, enable **Use advanced selectors
+(for complex / custom themes)** — see
+[Theme compatibility & selectors](/order-limits/settings/theme-compatibility)
+for how to find and set them.
+
+## Customers Email
+
+The second tab on the Settings page manages email notifications to
+customers — see
+[Customer email notifications](/order-limits/settings/email-notifications).
+
+<OrderLimitsFooter />

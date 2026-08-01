@@ -1,0 +1,111 @@
+---
+title: "AI Bundle"
+description: "A bundle whose products are picked automatically from Shopify's product recommendations."
+---
+
+import BundlesFooter from "/snippets/bundles-discounts/footer.mdx";
+import WhenToDisplay from "/snippets/bundles-discounts/when-to-display.mdx";
+import Combinations from "/snippets/bundles-discounts/combinations.mdx";
+import Schedule from "/snippets/bundles-discounts/schedule.mdx";
+import DesignCallout from "/snippets/bundles-discounts/design-callout.mdx";
+
+The AI Bundle builds itself: on the storefront it fills the bundle's
+slots with **Shopify's product recommendations for the product being
+viewed**, so every product page gets a relevant, automatically chosen
+bundle. You define the slot count, the discount, and optional **fallback
+products** used when recommendations aren't available (or are sold out).
+
+<Tip>
+  A draft AI Bundle named **Test Offer** is seeded automatically when you
+  install the app — open it from the Offers list to explore the type
+  without starting from scratch.
+</Tip>
+
+**Create it:** **Create Offer → Bundle → AI Bundle** (the highlighted
+card with the magic icon). Tabs: **Offers block**, **Design**,
+**Settings & Schedule**.
+
+## Offers block tab
+
+### When to display
+
+Which product pages show the AI bundle:
+
+<WhenToDisplay />
+
+### Offer title
+
+Same title field with eye toggle and horizontal-line checkbox.
+
+### Number of products
+
+The **Slots** field (allowed **1–4**, default 3) — how many recommended
+products the bundle includes.
+
+### Fallback products
+
+Expand **Fallback products** to *"pick products the AI can fall back to
+when it can't find a best bundle"*. Fallbacks are optional, but if you
+select any, the count must equal the slot count — the form enforces
+*"Please select {n} fallback product(s) (or leave it empty)."*
+
+### Discount
+
+**None**, **Percentage discount**, or **Fixed amount for each product**,
+plus the **Value** field.
+
+## Design tab
+
+The same design system as the other bundles — 21 themes, layout, sliders,
+colors, typography.
+
+<DesignCallout />
+
+## Settings & Schedule tab
+
+**Combinations**, then a reduced **Deal settings** (pricing display and
+per-item options don't apply — each recommended product appears once):
+**Add main item to the cart together with the bundle**, **Action**
+(theme button / cart / checkout), **Footer text**, **Call to action
+text**, and **Schedule**.
+
+<Combinations />
+
+<Schedule />
+
+## Use cases & examples
+
+<AccordionGroup>
+  <Accordion title="Storewide personalized bundles" icon="wand-magic-sparkles" description="Every product page gets its own auto-built 3-product bundle.">
+    **Applies to: All products**, 3 slots, 10% off. One offer covers the
+    whole catalog with page-relevant bundles — the lowest-effort AOV
+    play in the app.
+  </Accordion>
+  <Accordion title="Safety net for a young store" icon="life-ring" description="Fallback products cover pages with no recommendation data yet.">
+    New stores may lack recommendation history. Select 3 fallback
+    products (matching the slot count) — bestsellers work well — so the
+    widget is never empty.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The bundle shows different products than expected">
+    That's the point — products come live from Shopify's recommendations
+    for the viewed product, preferring in-stock items and skipping the
+    current product. To pin exact products, use a
+    [Fixed Bundle](/bundles-discounts/offers/fixed-bundle) instead.
+  </Accordion>
+  <Accordion title="The widget is empty on some pages">
+    Those pages likely have no recommendations yet and no fallbacks are
+    set — add fallback products (count must equal slots).
+  </Accordion>
+  <Accordion title="It doesn't render at all">
+    Check the **Yuko Extension** embed, the **When to display...**
+    targeting, offer status (the seeded **Test Offer** starts as a
+    draft), and the overlap banner.
+  </Accordion>
+</AccordionGroup>
+
+<BundlesFooter />

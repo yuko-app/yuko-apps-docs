@@ -1,0 +1,29 @@
+### The Tiers card
+
+Tiers appear as tabs (**Tier 1**, **Tier 2**, …) with **Add another tier**
+to add more and a trash button to delete (hidden when only one tier
+remains). New tiers pre-fill with a title like `Buy any 3 items` and a
+badge like `⭐ 15% Off`.
+
+Each tier has:
+
+| Field | What it does |
+| --- | --- |
+| Title | Shown to customers on the product page, in their cart, and at checkout |
+| Minimum quantity / Maximum quantity | The quantity range this tier covers — leave the maximum blank for "and above". Ranges must be unique and must not overlap |
+| Discount type | **Percentage**, **Fixed amount**, **Final tier price**, or **Price per quantity** |
+| Discount value | The `%` or currency value (percentage capped at 100) |
+| Subtitle | Secondary line under the title |
+| Badge | Attention badge on the tier, with an eye toggle to show/hide |
+| Colors (Show more) | **Badge background** and **Badge text** color pickers |
+
+Discount type notes:
+
+- **Fixed amount** shows the heading *Discount (per product)* and warns:
+  make sure the amount isn't bigger than the product's price, or the item
+  can't be added to cart.
+- **Final tier price** fixes one price for the whole range — the app
+  warns: customers pay the same amount anywhere between the minimum and
+  maximum quantity of that tier.
+- **Price per quantity** shows the heading *Price per item* — customers
+  pay that per-unit price in this range.

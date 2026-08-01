@@ -1,0 +1,79 @@
+---
+title: "Quick start: your first upsell"
+description: "Build and publish a post-purchase offer with the three-step wizard."
+---
+
+import PostPurchaseFooter from "/snippets/post-purchase-upsells/footer.mdx";
+
+Upsells are built in a three-step wizard — **Trigger → Offer → Style**.
+This guide creates a simple post-purchase offer: after any customer pays,
+they see one discounted add-on product they can accept in one click.
+
+<Info>
+  Make sure the post-purchase page is enabled first — see
+  [Installation & setup](/post-purchase-upsells/installation).
+</Info>
+
+<Steps>
+  <Step title="Create the upsell">
+    Go to **Upsells** and click **Create upsell**.
+  </Step>
+  <Step title="Step 1 — Trigger">
+    1. Under **Name this offer for your own reference**, enter something
+       like `Post-purchase add-on`. Customers never see this name.
+    2. Under **Select Upsell Trigger**, choose **Post Purchase Upsell**.
+    3. Under **Show Upsell offer when → Customer orders**, keep
+       **Any products** so the offer shows for every order.
+    4. Click **Save (Next Step)**.
+  </Step>
+  <Step title="Step 2 — Offer">
+    1. Click **Select products** and pick the product to offer.
+    2. Set a discount — for example **Discounted in percentage** with
+       `15`. Discount values must be whole numbers.
+    3. Optionally enable **Exclude products already in customer's order**
+       so buyers aren't offered something they just bought.
+    4. Leave **Upsell offer #2** and **Downsell offer** off for now.
+    5. Click **Save (Next Step)**.
+  </Step>
+  <Step title="Step 3 — Style">
+    1. Review the live preview and adjust the **Message** section's title
+       (the countdown **Timer** is on by default at 15 minutes).
+    2. Pick a **Color scheme** and **Layout** in the **Upsell products**
+       section, and set the **CTA Text** and **Decline Text**.
+    3. Click **Save and publish**.
+  </Step>
+  <Step title="Test it">
+    Place a test order on your storefront and pay for it.
+
+    <Check>
+      After payment — before the thank-you page — you should see your
+      offer. Accept it and the product is added to the order without
+      re-entering payment details.
+    </Check>
+
+    <Note>
+      Post-purchase offers only appear for supported payment methods —
+      when testing, pay with a regular credit card checkout rather than a
+      wallet or third-party gateway.
+    </Note>
+  </Step>
+</Steps>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Post-purchase offers" href="/post-purchase-upsells/upsells/post-purchase-offers" icon="bolt">
+    The full configuration guide: triggers, discounts, and funnels.
+  </Card>
+  <Card title="Thank-you page offers" href="/post-purchase-upsells/upsells/thank-you-offers" icon="circle-check">
+    Offers on the order confirmation page, with shipping discounts.
+  </Card>
+  <Card title="Checkout offers" href="/post-purchase-upsells/upsells/checkout-offers" icon="credit-card">
+    In-checkout offers for Shopify Plus stores.
+  </Card>
+  <Card title="Styling your offer" href="/post-purchase-upsells/customization/styling" icon="palette">
+    Layouts, color schemes, timer, and custom labels.
+  </Card>
+</CardGroup>
+
+<PostPurchaseFooter />

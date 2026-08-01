@@ -1,0 +1,77 @@
+---
+title: "Quick start: your first limit"
+description: "Create and test a simple product quantity limit in a few minutes."
+---
+
+import OrderLimitsFooter from "/snippets/order-limits/footer.mdx";
+
+This guide walks you through creating a simple **product limit** — for
+example, "customers can buy at most 5 of this product" — and testing it on
+your storefront.
+
+<Info>
+  Before you start, make sure the theme extension and block are active — see
+  [Installation & theme setup](/order-limits/installation).
+</Info>
+
+<Steps>
+  <Step title="Create a new limit">
+    Go to **Limits** in the app's navigation and click **Create Limit**.
+    You'll see the limit type picker — choose **Product limit** (labeled
+    "Most popular").
+  </Step>
+  <Step title="Name the limit">
+    Give the limit a name, like `Max 5 per customer`. The name is only
+    visible to you — customers never see it.
+  </Step>
+  <Step title="Choose which products it applies to">
+    Under **Select products to limit**, choose how to apply it:
+
+    - **All products** — the rule covers your whole catalog
+    - **Specific products** — pick individual products or variants
+    - **Exclusions** — apply to everything except selected products
+
+    For this example, pick **Specific products** and select one product you
+    can easily test with.
+  </Step>
+  <Step title="Set the limit conditions">
+    Under **Limit conditions**, set:
+
+    - **Minimum number of items the customer must add**: `1`
+    - **Maximum number of items the customer can add**: `5`
+
+    The minimum is a required field — `1` means any quantity satisfies
+    it, so only the maximum has an effect here.
+  </Step>
+  <Step title="Save and activate">
+    Click **Save**. The limit appears in your Limits list with its status
+    toggle — make sure it's **Active**.
+  </Step>
+  <Step title="Test it on your storefront">
+    Open the product on your storefront and try adding 6 to the cart.
+
+    <Check>
+      You should see the limit message on the product page and in the cart,
+      and checkout is blocked until the quantity is within the limit.
+    </Check>
+  </Step>
+</Steps>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Explore all limit types" href="/order-limits/limits/product-limits" icon="list-check">
+    Product, collection, and order limits — and when to use each.
+  </Card>
+  <Card title="Customize the message" href="/order-limits/customization/messages-translations" icon="message">
+    Edit the customer-facing text and translate it into other languages.
+  </Card>
+  <Card title="Style the message" href="/order-limits/customization/branding" icon="palette">
+    Match the limit messages to your store's look with Branding.
+  </Card>
+  <Card title="Fine-tune enforcement" href="/order-limits/settings/general" icon="sliders">
+    Allow vs block purchases, hide payment methods, and more.
+  </Card>
+</CardGroup>
+
+<OrderLimitsFooter />

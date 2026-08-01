@@ -1,0 +1,54 @@
+---
+title: "Targeting rules"
+description: "Apply limits only to specific customer tags or countries."
+---
+
+import OrderLimitsFooter from "/snippets/order-limits/footer.mdx";
+
+Every limit can be narrowed so it only applies to certain customers or
+regions. Both options appear in the limit editor's **General** tab.
+
+## Customer tag targeting
+
+Enable **Apply this rule only to specific customer tags** to restrict the
+limit to customers carrying certain tags in Shopify — for example
+`wholesale`, `vip`, or `b2b`.
+
+1. Check the option in the **Customer tag based Rule** section.
+2. Click **Browse** to search and select tags from your store.
+
+<Note>
+  Tag-based rules only work for **logged-in customers**, since Shopify can
+  only identify tags for a known customer. Guests are treated as having no
+  tags.
+</Note>
+
+Typical uses:
+
+- Give wholesale customers a *higher* maximum (or no limit) by creating one
+  limit for everyone and a separate, more permissive limit targeted at the
+  `wholesale` tag
+- Enforce an MOQ only for `b2b`-tagged customers
+
+## Country-based rules
+
+Enable **Apply this rule only to specific countries** in the
+**Country-based Rule** section, then click **Browse country** and select
+one or more countries.
+
+The limit then only applies to customers ordering from those countries —
+useful for regional shipping restrictions or country-specific quantity
+caps.
+
+## How multiple limits combine
+
+You can run several limits at once — for example, a store-wide order limit
+plus targeted product limits. Each active limit is evaluated independently,
+and the cart must satisfy all of them before checkout is allowed.
+
+<Tip>
+  Keep names descriptive (e.g. `MOQ 10 — wholesale only`, `Max 2 — US
+  customers`) so the Limits list stays easy to scan as rules accumulate.
+</Tip>
+
+<OrderLimitsFooter />

@@ -1,0 +1,74 @@
+---
+title: "FAQ & troubleshooting"
+description: "Fixes for the most common issues with offers not showing, discounts, and placements."
+---
+
+import PostPurchaseFooter from "/snippets/post-purchase-upsells/footer.mdx";
+
+<AccordionGroup>
+  <Accordion title="My post-purchase offer doesn't appear after payment">
+    Work through these in order:
+
+    1. **Is the app selected as the post-purchase app?** Go to
+       **Settings → Checkout → Post-purchase page** — Shopify allows one
+       app here, and Yuko must be the selected one. The dashboard Setup
+       Guide's **Refresh status** confirms this automatically.
+    2. **Is the upsell Active and published?** Drafts and paused upsells
+       never show.
+    3. **Do the trigger conditions match your test order?** See the
+       trigger section of
+       [Post-purchase offers](/post-purchase-upsells/upsells/post-purchase-offers#step-1--trigger).
+    4. **Payment method** — Shopify skips the post-purchase page for some
+       payment flows (certain wallets and third-party gateways). Test
+       with a standard card payment.
+    5. **Priority** — only the highest-priority matching upsell shows.
+       Check [Manage priority](/post-purchase-upsells/upsells/priority).
+  </Accordion>
+
+  <Accordion title="Thank-you or checkout offers don't appear">
+    These placements need their app block manually placed in the checkout
+    editor (**Settings → Checkout → Customize**) — publishing an upsell
+    is not enough. Checkout blocks additionally require **Shopify Plus**.
+    See [Installation & setup](/post-purchase-upsells/installation).
+  </Accordion>
+
+  <Accordion title="The discount didn't apply to the accepted offer">
+    The app maintains its discount function automatically. Re-save the
+    upsell to force a re-sync and test again; if the problem persists,
+    contact support and we'll re-sync it for your store. Also check the
+    discount value follows the rules — whole numbers only, percentage
+    1–100, amounts not exceeding the product price.
+  </Accordion>
+
+  <Accordion title="Accepting a thank-you offer created a second order — is that right?">
+    Yes. Thank-you offers start a fresh checkout, so the purchase lands
+    as a separate order. Only post-purchase offers modify the original
+    order. See
+    [Thank-you page offers](/post-purchase-upsells/upsells/thank-you-offers).
+  </Accordion>
+
+  <Accordion title="The offer disappeared while the customer was reading it">
+    The countdown **Timer** hides the offer when it expires (default 15
+    minutes). Extend or disable the timer in the Style step's Message
+    section.
+  </Accordion>
+
+  <Accordion title="Revenue numbers don't match my expectations">
+    Upsell revenue is attributed from Shopify order webhooks when the
+    upsell purchase completes, split by placement on the Home page.
+    Remember thank-you offers create separate orders, and declined or
+    expired offers never produce revenue — cross-check the **Analytics**
+    event log's Shown/Accepted counts.
+  </Accordion>
+
+  <Accordion title="Can I show more than one offer per order?">
+    Per placement, a customer sees one upsell (the highest-priority
+    match) — but that upsell can chain into **Upsell #2** after
+    acceptance or a **Downsell** after decline, and each placement
+    (post-purchase, thank-you, checkout) can show its own offer for the
+    same order. See the funnel section of each placement's guide, e.g.
+    [Post-purchase offers](/post-purchase-upsells/upsells/post-purchase-offers#funnel-upsell-2--downsell).
+  </Accordion>
+</AccordionGroup>
+
+<PostPurchaseFooter />

@@ -1,0 +1,128 @@
+---
+title: "Product limits"
+description: "Set minimum and maximum quantities per product, sell in multiples, and apply limits per variant."
+---
+
+import OrderLimitsFooter from "/snippets/order-limits/footer.mdx";
+
+Product limits control how many units of a product a customer can buy in a
+single order — a minimum, a maximum, or both. This is the most common limit
+type, used for minimum order quantities (MOQ), purchase caps on limited
+stock, and pack-size rules.
+
+## Choose which products the limit applies to
+
+Under **Select products to limit**, choose **Apply this limit based on**:
+
+- **All products** — the rule applies to your entire catalog.
+- **Specific products** — pick individual products or variants using the
+  browse dialog. You can search by product name or SKU.
+- **Exclusions** — the rule applies to all products *except* the ones you
+  select.
+
+<Note>
+  Product selection is capped for very large selections. If you need to
+  select more products than the picker allows, contact support and we'll
+  raise the cap for your store.
+</Note>
+
+## Limit conditions
+
+| Setting | What it does |
+| --- | --- |
+| Minimum number of items the customer must add | Customers can't check out with fewer than this quantity of the product. This field is required. |
+| Maximum number of items the customer can add | Customers can't check out with more than this quantity |
+| Sell products in multiples | Quantity must be a multiple of the value you set (e.g. packs of 6) |
+| Apply to each variant | Applies the quantity limits to each variant of the selected products separately, instead of the product as a whole |
+
+<Note>
+  The minimum is a required field. If you only want a maximum, set the
+  minimum to `1` — every order trivially satisfies it.
+</Note>
+
+### Sell in multiples
+
+Enable **Sell products in multiples** when products must be bought in packs
+or combos — for example, wine sold in multiples of 6. The **Multiple** value
+must be at least 2. Customers see a message when their quantity isn't a
+valid multiple, using the `{{multiple}}`
+[message variable](/order-limits/customization/message-variables):
+
+```text
+The quantity must be a multiple of {{multiple}}
+```
+
+## Use cases & examples
+
+<AccordionGroup>
+  <Accordion title="Limit a flash-sale product to 2 per customer" icon="bolt" description="Cap a hot sale item so stock lasts — maximum 2 per order.">
+    Apply to **Specific products** → select the sale product → set
+    **Minimum** `1`, **Maximum** `2`. Customers adding a third unit see
+    your maximum message, and checkout is blocked until they reduce the
+    quantity.
+  </Accordion>
+  <Accordion title="Wholesale MOQ: at least 10 units of any product" icon="warehouse" description="A store-wide minimum, targeted at wholesale-tagged customers.">
+    Apply to **All products** → **Minimum** `10`, leave maximum empty. Pair
+    it with [customer tag targeting](/order-limits/limits/targeting) on a
+    `wholesale` tag so retail customers aren't affected.
+  </Accordion>
+  <Accordion title="Sell drinks only in packs of 6" icon="boxes-stacked" description="Quantities must be multiples of 6 — 6, 12, 18…">
+    Select the product → enable **Sell products in multiples** →
+    **Multiple** `6`. Customers can buy 6, 12, 18… but not 8. The default
+    message `The quantity must be a multiple of {{multiple}}` explains the
+    rule.
+  </Accordion>
+  <Accordion title="Cap each variant separately (sizes, colors)" icon="swatchbook" description="Count each size or color on its own with per-variant limits.">
+    Enable **Apply to each variant**. With a maximum of 5, a customer can
+    buy 5 of the Small *and* 5 of the Medium — each variant is counted on
+    its own. Leave it off to count all variants of the product together.
+  </Accordion>
+  <Accordion title="Limit everything except gift cards" icon="gift" description="Apply the rule store-wide, minus excluded products.">
+    Choose **Exclusions** → select your gift card products. The limit
+    applies store-wide but skips the excluded items.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The limit doesn't apply at all">
+    - Check the limit's status toggle in the Limits list — it must be
+      **Active**, not Inactive or Scheduled (a future start date delays
+      activation; times are GMT+0).
+    - If the limit targets customer tags, remember tags only resolve for
+      **logged-in customers**.
+    - Verify the theme extension is enabled — see the dashboard's
+      **Active App Block(s)** card and
+      [Installation & theme setup](/order-limits/installation).
+  </Accordion>
+  <Accordion title="The message shows, but customers can still check out">
+    - **Settings → Rule settings** may be set to *Allows customer to
+      purchase even if limits are not met* — switch to the **Blocks**
+      option.
+    - The checkout validation for product limits may be missing. Open the
+      limit — if you see an **Enable Checkout Rule** button at the top,
+      click it and add the **Yuko Product Limit** validation in Shopify's
+      checkout settings.
+  </Accordion>
+  <Accordion title="Limits behave oddly on products with many variants">
+    Check the **Apply to each variant** toggle — with it on, each variant
+    has its own count; with it off, all variants are summed. The wrong
+    setting here is the most common cause of "the max is being hit too
+    early / too late" reports.
+  </Accordion>
+  <Accordion title="Two limits cover the same product">
+    All active limits are enforced together, so the strictest combination
+    wins. If a product is in both a product limit and an overlapping rule,
+    review both and deactivate the one you don't need.
+  </Accordion>
+</AccordionGroup>
+
+## Refine the rule
+
+Every limit also supports
+[customer tag and country targeting](/order-limits/limits/targeting),
+[scheduling](/order-limits/limits/scheduling), and
+[custom messages with translations](/order-limits/customization/messages-translations).
+
+<OrderLimitsFooter />

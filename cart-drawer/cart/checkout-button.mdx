@@ -1,0 +1,44 @@
+---
+title: "Checkout button & totals"
+description: "The subtotal row, discounts row, and the checkout button itself."
+---
+
+import CartDrawerFooter from "/snippets/cart-drawer/footer.mdx";
+
+The bottom of the drawer is where a full cart becomes an order. Three
+sections work together here — find them under **Footer**.
+
+## Subtotal row
+
+Shows the cart's subtotal. Configure:
+
+- **Subtotal Text** — the label
+- **Savings Text** — the label for the savings line shown above the
+  subtotal when a discount is applied
+
+## Discounts row
+
+Displays applied discounts as their own line, so shoppers see the deal
+reflected before checkout.
+
+## Checkout button
+
+- **Text** — supports the `{{cart_total}}` shortcode, e.g.
+  `Checkout • {{cart_total}}`
+- **Show terms and conditions** with your **Terms text**
+- Full styling: colors, roundness, font
+
+<Tip>
+  Put the live total on the button ("Checkout • $64.90"). It removes
+  the last surprise between cart and payment — and it consistently
+  helps conversion.
+</Tip>
+
+### GoKwik stores
+
+If the GoKwik app is installed on your storefront, enable the **GoKwik
+checkout flow** to hand the button off to GoKwik one-click checkout. If
+GoKwik isn't detected at checkout, the button safely falls back to the
+native checkout.
+
+<CartDrawerFooter />

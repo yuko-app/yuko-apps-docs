@@ -1,0 +1,54 @@
+---
+title: "Scheduling & status"
+description: "Run limits between start and end dates, and manage limit status from the Limits list."
+---
+
+import OrderLimitsFooter from "/snippets/order-limits/footer.mdx";
+
+## Schedule a limit
+
+In the limit editor, open **Advanced settings**:
+
+- **Start date** — when the limit begins to apply
+- **Set end date** — optionally add an **End date** after which the limit
+  stops applying automatically
+
+<Note>
+  Scheduled times are based on **GMT +0:00**, not your store's local
+  timezone. Adjust accordingly when planning a launch.
+</Note>
+
+A limit with a future start date shows the **Scheduled** status until it
+becomes active.
+
+## Notification behavior
+
+Also under Advanced settings, choose when the customer sees the limit
+message — **When should we notify the customer about this limit?**
+
+- **When the limit is reached** — the message appears once the cart hits
+  the limit
+- **When customer tries to add more items to cart than allowed** — the
+  message appears only when they attempt to exceed the limit
+- **Do not show any notification** — the limit is enforced silently at
+  checkout with no storefront message
+
+## Managing limits
+
+The **Limits** page lists every limit with tabs for **All**, **Active**,
+and **Inactive**. From the list you can:
+
+- Toggle a limit's status on or off
+- Edit or delete a limit
+- Turn on **Hide express checkout if limits are not met** — a store-level
+  option that hides express checkout buttons (like Buy it now) so
+  customers can't skip past cart-level validation
+
+<Tip>
+  If dynamic checkout buttons let customers bypass your minimum order
+  rules, enabling **Hide express checkout** closes that gap. See also
+  [hide payment methods](/order-limits/settings/general) for the checkout
+  side.
+</Tip>
+
+<OrderLimitsFooter />

@@ -1,0 +1,102 @@
+---
+title: "Checkout offers (Shopify Plus)"
+description: "Configure in-checkout offers — triggers, products, discounts, shipping discounts, funnels, and styling."
+---
+
+import PostPurchaseFooter from "/snippets/post-purchase-upsells/footer.mdx";
+import TriggerConfig from "/snippets/post-purchase-upsells/trigger-config.mdx";
+import OfferConfig from "/snippets/post-purchase-upsells/offer-config.mdx";
+import FunnelConfig from "/snippets/post-purchase-upsells/funnel-config.mdx";
+import ShippingDiscounts from "/snippets/post-purchase-upsells/shipping-discounts.mdx";
+import StyleCallout from "/snippets/post-purchase-upsells/style-callout.mdx";
+
+Checkout offers appear **inside the checkout itself** — for example, under
+the order summary — and let customers add the offered product to the order
+they're about to place. Accepting adds the item directly to the current
+checkout: no second order, no extra payment step.
+
+<Warning>
+  Checkout UI blocks require **Shopify Plus**. On other plans this
+  placement isn't available — use
+  [post-purchase](/post-purchase-upsells/upsells/post-purchase-offers) and
+  [thank-you page](/post-purchase-upsells/upsells/thank-you-offers) offers
+  instead.
+</Warning>
+
+## Setup
+
+<Steps>
+  <Step title="Add the checkout block">
+    In the checkout editor (**Settings → Checkout → Customize**), on the
+    **Checkout** page, add the app's **checkout upsell** block — for
+    example below the order summary — and save. See
+    [Installation & setup](/post-purchase-upsells/installation).
+  </Step>
+  <Step title="Create the upsell">
+    Go to **Upsells → Create upsell** and configure the three wizard
+    steps below. The **Checkout Upsell** trigger carries a
+    **Shopify Plus** badge in the wizard.
+  </Step>
+</Steps>
+
+## Step 1 — Trigger
+
+Under **Select Upsell Trigger**, choose **Checkout Upsell**, then define
+when the offer shows:
+
+<TriggerConfig />
+
+## Step 2 — Offer
+
+<OfferConfig />
+
+### Shipping discounts
+
+<ShippingDiscounts />
+
+### Funnel: Upsell #2 & downsell
+
+<FunnelConfig />
+
+## Step 3 — Style
+
+<StyleCallout />
+
+## Use cases & examples
+
+<AccordionGroup>
+  <Accordion title="Last-chance add-on under the order summary" icon="gift" description="A small, universally useful product at a modest discount.">
+    Offer a small, universally useful product (gift wrap, a sample set)
+    to every checkout with a modest discount — classic impulse placement.
+  </Accordion>
+  <Accordion title="Free-shipping threshold nudge" icon="truck" description="Help carts under $50 reach your free-shipping threshold.">
+    Combine a trigger condition **Order subtotal → Lesser than → 50**
+    with an attractively priced add-on to help customers reach your
+    free-shipping threshold before they place the order.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The block isn't available or doesn't render">
+    - Checkout UI blocks require **Shopify Plus** — on other plans the
+      block can't be placed in the checkout editor.
+    - The block must be manually added on the **Checkout** page in the
+      checkout editor and saved.
+  </Accordion>
+  <Accordion title="The offer doesn't show during checkout">
+    Confirm the upsell's trigger is **Checkout Upsell**, its status is
+    **Active**, and its conditions match the cart you're testing with —
+    subtotal excludes tax/shipping, total includes them. Only the
+    highest-priority matching checkout upsell is shown — see
+    [Managing upsells & priority](/post-purchase-upsells/upsells/priority).
+  </Accordion>
+  <Accordion title="The discount didn't apply to the added item">
+    The app's discount function applies offer discounts automatically —
+    re-save the upsell to re-sync it. Check the whole-number and range
+    rules on the discount value.
+  </Accordion>
+</AccordionGroup>
+
+<PostPurchaseFooter />
