@@ -1,0 +1,112 @@
+---
+title: "Payouts & payment methods"
+description: "Pay affiliates via PayPal, Wise, Tremendous, store credit, coupons, or offline — one by one, in bulk, or on a schedule."
+---
+
+import ShopjarFooter from "/snippets/shopjar/footer.mdx";
+
+Everything payout-related lives under **Affiliate → Payouts**, with
+three sub-tabs: **Payouts**, **Scheduled Payouts**, and **Payment
+Methods**.
+
+## Paying an affiliate
+
+The Payouts table lists every affiliate with a payable **Balance**.
+
+- **Pay** — pay one affiliate: enter the amount, add a comment, pick
+  the method (**Pay via Paypal / Wise / Tremendous / store credit**,
+  **Pay as Coupon**, or **Pay offline** for manual settlements).
+- **Bulk Pay** — pay many at once: select members, choose one method,
+  review, confirm. Members missing required details (e.g. no PayPal
+  email) are listed and skipped safely.
+- **View History** — the transaction record per member.
+
+## Payment methods
+
+Configure gateways under **Payment Methods** (each with Live/Sandbox
+environment selection where relevant):
+
+| Method | Setup | Plan |
+| --- | --- | --- |
+| PayPal | Client ID + Client Secret from a PayPal Business account with Payouts API access | Growth |
+| Wise | API key, verified in-app, then choose your Wise profile | Growth |
+| Tremendous | API key + campaign + funding source; pays via ACH, Venmo, PayPal, or 700+ reward options | Growth |
+| Store Credit | Set a minimum payout threshold, optional credit validity in days | Starter |
+| Coupon | Commission converts to a discount code for your store | Starter |
+| Offline | You pay outside the app and record it here | Starter |
+
+<Note>
+  PayPal requires approval for third-party Payouts API access — the
+  configuration screen flags **"Action Required: PayPal API Access"**
+  with instructions if your account isn't approved yet.
+</Note>
+
+## Scheduled automatic payouts (PayPal)
+
+In the PayPal configuration, enable **Automatic Payout Processing**:
+pick the day of the month (1st–30th) and a **minimum payout threshold**
+(e.g. only pay affiliates whose balance crossed $100). Runs appear
+under **Scheduled Payouts** with per-member transaction details.
+
+If your PayPal balance can't cover a run, the app pauses with **"Your
+auto payout is blocked"** — top up, tick the confirmation, and payouts
+resume.
+
+## Self-service conversion
+
+Two settings let affiliates pay themselves from the portal:
+
+- **Let affiliates convert the payout amount as a coupon** (Affiliate →
+  Settings) — they turn earnings into a discount code
+- Store Credit's **Allow affiliates to convert their balance into store
+  credits from the Affiliate portal**
+
+<Tip>
+  Coupon and store-credit payouts turn commission liabilities into
+  repeat purchases at your own margin — enable them even if you also
+  pay cash. Many affiliates prefer instant store value over waiting
+  for a transfer.
+</Tip>
+
+## Use cases & examples
+
+<AccordionGroup>
+  <Accordion title="Hands-off monthly payroll" icon="calendar-check" description="Scheduled PayPal payouts on the 1st, $50 minimum.">
+    Configure PayPal, enable Automatic Payout Processing on the 1st
+    with a $50 threshold. Small balances roll over; you never touch a
+    payout again.
+  </Accordion>
+  <Accordion title="Global affiliates without PayPal" icon="globe" description="Tremendous covers 700+ payout options worldwide.">
+    Affiliates in markets PayPal serves poorly can receive bank
+    transfers, gift cards, and more via Tremendous — one API key, one
+    bulk-pay flow.
+  </Accordion>
+  <Accordion title="Zero-cash ambassador program" icon="store" description="Store credit and coupons only — no payment gateway needed.">
+    On Starter, run payouts entirely through store credit and coupon
+    conversion. Ambassadors shop; cash stays in the business.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="A bulk pay skipped some members">
+    The review step lists exactly who and why — usually a missing
+    PayPal email. Affiliates add their PayPal address in their
+    [portal](/shopjar/member-portal); you can also nudge them from the
+    member profile.
+  </Accordion>
+  <Accordion title="PayPal payouts fail with a credentials error">
+    Re-check the Client ID/Secret and the environment (Live vs
+    Sandbox), confirm Payouts API approval, and note the error
+    "Paypal does not support this store currency" — currency support
+    is a PayPal-side limitation.
+  </Accordion>
+  <Accordion title="An automatic run shows Failed">
+    Open the run under **Scheduled Payouts → View transaction** to see
+    per-member statuses — the commonest cause is insufficient PayPal
+    balance, which also triggers the auto-payout block banner.
+  </Accordion>
+</AccordionGroup>
+
+<ShopjarFooter />

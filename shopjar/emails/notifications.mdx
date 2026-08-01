@@ -1,0 +1,76 @@
+---
+title: "Email notifications"
+description: "The twelve automated emails Shopjar sends — and how to customize each."
+---
+
+import ShopjarFooter from "/snippets/shopjar/footer.mdx";
+
+Shopjar sends automated emails on both sides of the program. Each has
+an on/off toggle and a full template editor — find them under
+**Referral → Emails** and **Affiliate → Emails**.
+
+## Referral emails (5)
+
+| Email | Sent when | Default subject |
+| --- | --- | --- |
+| Invitation email | A referrer invites a friend | You've got a gift |
+| Friend reward claim | A friend claims their reward | You've claimed your referral reward |
+| Welcome email | Someone joins the referral program | Get 10% off your next purchase and help a friend save too! |
+| Referrer reward | A referrer earns a reward | You have earned a reward for successful referral |
+| Admin: referral sale | A referral drives an order | You've made a successful sale! |
+
+The invitation email can **include the coupon code** directly, so the
+friend's reward is one tap away.
+
+## Affiliate emails (7)
+
+| Email | Sent when |
+| --- | --- |
+| Admin: affiliate sale | An affiliate sale is made |
+| Admin: application received | Someone applies to the program |
+| Application approved | You approve an affiliate |
+| Application rejected | You reject an application |
+| Commission earned | An affiliate earns a commission |
+| Payout processed | A payout completes |
+| Commission redeemed as coupon | An affiliate converts balance to a coupon |
+
+## Customizing a template
+
+Each editor has **Edit / Preview** tabs and a Live/Draft status, with
+sections for the **Image**, **Subject**, **Title**, **Message**,
+**Button** (text, URL, colors), and **Footer**.
+
+Templates support shortcodes — the editor lists what's available per
+email. Highlights: `{{referrer_name}}`, `{{friend_name}}`,
+`{{affiliate_name}}`, `{{referral_url}}`, `{{referral_code}}`,
+`{{coupon_code}}`, `{{coupon_expiry_date}}`, `{{paid_amount}}`,
+`{{order_value}}`, `{{affiliate_dashboard_url}}`, `{{store_name}}`,
+and `{{store_url}}`.
+
+<Tip>
+  Point the reward email's **Button Url** at
+  `https://yourstore.com/discount/{{coupon_code}}` — one click applies
+  the coupon and lands the member in your store, no copy-paste.
+</Tip>
+
+<Note>
+  New stores have email sending limited to **10 per day** until
+  verified — a short anti-spam measure. Book a quick verification call
+  (via the help footer below) to unlock full sending.
+</Note>
+
+## Use cases & examples
+
+<AccordionGroup>
+  <Accordion title="Quiet admin inbox" icon="bell-slash" description="Keep member emails on, turn admin notifications off at volume.">
+    The two admin emails are great early on and noisy at scale — toggle
+    them off once you're checking the dashboard daily instead.
+  </Accordion>
+  <Accordion title="On-brand from day one" icon="palette" description="Store branding applies to email templates too.">
+    Set your logo and colors in **Settings → Branding** and apply them
+    to **Email notifications** in the confirmation modal — every
+    template picks up your look.
+  </Accordion>
+</AccordionGroup>
+
+<ShopjarFooter />

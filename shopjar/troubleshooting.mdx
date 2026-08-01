@@ -1,0 +1,74 @@
+---
+title: "FAQ & troubleshooting"
+description: "Quick answers for the most common referral and affiliate questions."
+---
+
+import ShopjarFooter from "/snippets/shopjar/footer.mdx";
+
+<AccordionGroup>
+  <Accordion title="What's the difference between a referral and an affiliate?">
+    **Referrals** are your customers sharing with friends — both sides
+    typically earn a discount or gift. **Affiliates** are creators and
+    partners who apply to promote you and earn cash commissions or
+    coupons per sale. Shopjar runs both; the referral side is
+    self-serve, the affiliate side has applications and payouts.
+  </Accordion>
+
+  <Accordion title="Widgets don't show on my storefront">
+    Turn on the Shopjar **app embed** in your theme editor (dashboard
+    Setup Guide → **Activate app** → **Refresh status**). The
+    thank-you page and customer account widgets additionally need
+    their app block placed in Shopify's checkout editor — see
+    [Storefront widgets & pages](/shopjar/referral/widgets-pages).
+  </Accordion>
+
+  <Accordion title="A referral sale wasn't tracked">
+    Attribution needs the friend to arrive via the referral link or use
+    a referral coupon. Check the coupon on the order, the member's
+    status (approved, not blocked), and whether fraud protection
+    flagged it — IP-flagged sales show as "Fraud via IP" and can be
+    approved manually if legitimate.
+  </Accordion>
+
+  <Accordion title="A reward or commission wasn't issued">
+    Work through: rule is **Active** → conditions pass (first-order,
+    order value, products) → approval mode isn't **Manual** with the
+    reward sitting in Pending → the member isn't excluded by a rule's
+    member targeting.
+  </Accordion>
+
+  <Accordion title="Emails aren't being received">
+    Check the template's toggle is on (each email can be disabled),
+    remember new stores are limited to **10 emails/day** until
+    verified, and consider a
+    [custom sending domain](/shopjar/emails/custom-domain) for better
+    deliverability. In test mode, emails are never sent.
+  </Accordion>
+
+  <Accordion title="An affiliate can't log in to the portal">
+    OTP codes only go to **approved** members — check their status.
+    Also confirm **Allow Email OTP for Guest Login** is enabled in
+    Settings → Referral & Affiliate Dashboard.
+  </Accordion>
+
+  <Accordion title="Bulk payout skipped members">
+    Usually a missing PayPal email — the review step lists who and
+    why. Affiliates can add their own PayPal address in the
+    [member portal](/shopjar/member-portal).
+  </Accordion>
+
+  <Accordion title="A refund still counted toward rewards">
+    Enable auto-revoke (**Affiliate → Settings → Revoke Commission**)
+    with the Refunded/Canceled statuses, and use **Auto approve after
+    delay** set past your return window so nothing is paid before
+    refunds can happen.
+  </Accordion>
+
+  <Accordion title="Why is a feature locked?">
+    Locked features show "Included in Essential / Starter / growth" —
+    that's plan gating, not a bug. See
+    [Billing & plans](/shopjar/billing) for the full map.
+  </Accordion>
+</AccordionGroup>
+
+<ShopjarFooter />

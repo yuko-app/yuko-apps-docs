@@ -1,0 +1,83 @@
+---
+title: "Invites & fraud protection"
+description: "Email-a-friend invites, verification, and the settings that keep your program honest."
+---
+
+import ShopjarFooter from "/snippets/shopjar/footer.mdx";
+
+## Referral invites
+
+Members can invite friends by email straight from the landing page and
+widgets. The **Invitation email** template (Referral → Emails) controls
+what the friend receives — optionally including the coupon code itself
+(**Include the coupon code in the invitation email**).
+
+Guardrails are built in: self-invites are rejected ("Self invite is
+invalid!"), duplicate invites are caught ("Invitation already sent!"),
+and there's a maximum invite limit per member.
+
+Track invites under **Referral → Sales & Analytics → Referral Invites**
+— each row shows referrer, friend, and status (**Invited** →
+**Successful** once the friend purchases). A per-member **Invite
+History** lives on each member's profile.
+
+## Fraud protection
+
+Referral programs attract freeloaders; Shopjar ships several layers
+(Referral → Settings → Fraud Protection, unless noted):
+
+| Protection | What it does | Plan |
+| --- | --- | --- |
+| Safe Referral Reward Popup | Captures and verifies the friend's email before unlocking any reward | Free |
+| Lock rewards to verified emails | Friends must check out with the same email they used to claim — codes can't be shared or resold | Essential |
+| OTP Verification for Referral | The friend must enter a one-time code emailed to them before claiming | Growth |
+| Membership eligibility | "Who can become a member": **Anyone** or **Only existing customers with at least one order** | Essential |
+| IP-based fraud detection | Detects self-referrals from the same device/network — flagged as "Fraud via IP" in reports | Growth |
+
+IP fraud protection is enabled app-wide under **Settings → General →
+Enable IP based Advanced Fraud Protection**.
+
+<Tip>
+  Layer them by risk: the safe popup + first-order condition stops
+  casual abuse; verified-email locking stops code resellers; IP
+  detection catches determined self-referrers. Turn on what your
+  margins justify.
+</Tip>
+
+## Use cases & examples
+
+<AccordionGroup>
+  <Accordion title="Stop coupon-site leakage" icon="lock" description="Verified-email locking makes shared codes worthless.">
+    Enable **Lock rewards to verified emails**. A code posted to a
+    coupon site fails at checkout for anyone but the person who
+    claimed it.
+  </Accordion>
+  <Accordion title="Customers-only referral program" icon="user-check" description="Only people who bought can refer.">
+    Set membership eligibility to **Only existing customers with at
+    least one order** — referrers vouch from experience, and fake
+    accounts can't join to farm rewards.
+  </Accordion>
+  <Accordion title="High-discount program, maximum security" icon="shield" description="For rewards worth gaming: OTP + IP + verified email.">
+    Offering 25%+ rewards? Enable all three Growth-tier protections.
+    The friction is minor for genuine friends and decisive against
+    fraud rings.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="A legitimate customer was flagged as fraud">
+    IP detection flags shared networks (offices, households) too. Open
+    the reward in **Referrer Rewards** and approve it manually — the
+    flag is a hold, not a verdict.
+  </Accordion>
+  <Accordion title="Friends say they didn't get the reward email">
+    Check the invitation and claim email templates are enabled
+    (Referral → Emails), and consider a
+    [custom sending domain](/shopjar/emails/custom-domain) — emails
+    from your own verified domain land in inboxes more reliably.
+  </Accordion>
+</AccordionGroup>
+
+<ShopjarFooter />

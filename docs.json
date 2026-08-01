@@ -219,7 +219,59 @@
         "groups": [
           {
             "group": "Get started",
-            "pages": ["shopjar/overview"]
+            "pages": [
+              "shopjar/overview",
+              "shopjar/installation",
+              "shopjar/quickstart"
+            ]
+          },
+          {
+            "group": "Referral program",
+            "pages": [
+              "shopjar/referral/reward-rules",
+              "shopjar/referral/links-codes",
+              "shopjar/referral/widgets-pages",
+              "shopjar/referral/invites-fraud",
+              "shopjar/referral/analytics"
+            ]
+          },
+          {
+            "group": "Affiliate program",
+            "pages": [
+              "shopjar/affiliate/applications-signup",
+              "shopjar/affiliate/commissions",
+              "shopjar/affiliate/links-coupons",
+              "shopjar/affiliate/payouts",
+              "shopjar/affiliate/analytics"
+            ]
+          },
+          {
+            "group": "Members & portal",
+            "pages": [
+              "shopjar/members",
+              "shopjar/member-portal"
+            ]
+          },
+          {
+            "group": "Emails",
+            "pages": [
+              "shopjar/emails/notifications",
+              "shopjar/emails/custom-domain"
+            ]
+          },
+          {
+            "group": "Settings & billing",
+            "pages": [
+              "shopjar/settings",
+              "shopjar/integrations",
+              "shopjar/billing"
+            ]
+          },
+          {
+            "group": "Help",
+            "pages": [
+              "shopjar/troubleshooting"
+            ]
           }
         ]
       }

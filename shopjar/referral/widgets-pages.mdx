@@ -1,0 +1,112 @@
+---
+title: "Storefront widgets & pages"
+description: "The five places customers meet your referral program — and how to customize each."
+---
+
+import ShopjarFooter from "/snippets/shopjar/footer.mdx";
+
+All storefront pieces live under **Referral → Program → Branding &
+Popups**. Each card has an on/off toggle and a **Customize** button that
+opens a full editor with **Edit / Preview** tabs and Custom CSS.
+
+<Note>
+  The Shopjar **app embed** must be on in your theme editor first — the
+  app blocks toggles with "Turn on the Shopjar app embed in your theme
+  editor before enabling this."
+</Note>
+
+## Referral Landing Page
+
+A dedicated page where customers discover your program and get their
+link. It has a **Guest view** (signup form) and a **Logged-In view**
+(their referral link and share buttons) — customize titles, fields,
+buttons, terms, footer, and CSS. The page URL appears on the card once
+live; share it anywhere.
+
+## Safe Referral Reward Popup
+
+The fraud-resistant reward claim flow: when someone clicks a referral
+link, the popup captures and verifies their email, then unlocks the
+discount only for first-time purchasers. Customize both steps (**Email
+Form** and **Reward Display**), the prompt text, colors, and the coupon
+presentation.
+
+<Tip>
+  Keep this popup on. Without verification, one person can claim
+  friend rewards repeatedly — this single toggle is the difference
+  between a referral program and a coupon leak.
+</Tip>
+
+## Floating referral button
+
+A sticky button that stays visible while customers browse — one click
+opens the referral flow. Configure its position (top/bottom/left/right),
+text, and colors, plus the popup's form fields.
+
+## Thank you page referral widget
+
+Shows the program right after purchase — when excitement peaks. Choose
+**In-Line** or **Pop-up** display. This widget needs a one-time
+placement in Shopify's checkout editor:
+
+<Steps>
+  <Step title="Open the checkout editor">
+    Go to **Shopify Settings → Checkout** and click **Customize**.
+  </Step>
+  <Step title="Pick the Thank you page">
+    Choose **Thank you page** from the dropdown at the top.
+  </Step>
+  <Step title="Add the block">
+    Under **Add App block options**, select the **Shopjar Thank you
+    page Referral** block, drag it where you like, and click **Save**.
+  </Step>
+</Steps>
+
+## Customer account referral widget
+
+Shows members their link, stats, and rewards inside their Shopify
+customer account. Placed the same way as the thank-you widget, but on
+the **Profile** page in the checkout editor, using the **Shopjar
+Referral Widget** block. Customize the member and non-member views.
+
+## Use cases & examples
+
+<AccordionGroup>
+  <Accordion title="The full-funnel setup" icon="filter" description="All five pieces on: discover, join, share, and claim safely.">
+    Landing page for campaigns, floating button for browsers, thank-you
+    widget for fresh buyers, account widget for returning customers,
+    safe popup guarding every claim. Each piece catches a different
+    moment.
+  </Accordion>
+  <Accordion title="Post-purchase-first strategy" icon="cart-shopping" description="Start with just the thank-you widget — the highest-intent moment.">
+    If you enable one thing beyond the landing page, make it the
+    thank-you widget. Customers who just bought are your most likely
+    referrers.
+  </Accordion>
+  <Accordion title="Branded everything" icon="palette" description="Apply your store branding across all popups and pages at once.">
+    Set colors and logo once in **Settings → Branding** — the change
+    modal offers to apply it to the Reward Popup, Referral Widget,
+    Landing page, Affiliate signup form, and Email notifications
+    together.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="A widget toggle won't turn on">
+    Enable the Shopjar **app embed** in the theme editor first — the
+    dashboard Setup Guide's **Activate app** step deep-links there and
+    **Refresh status** confirms it.
+  </Accordion>
+  <Accordion title="The landing page URL 404s">
+    The Shopify page may have been deleted — the editor shows "This
+    page has been deleted" with a **click here to regenerate** link.
+  </Accordion>
+  <Accordion title="The thank-you or account widget doesn't show">
+    Both need their app block manually placed in the checkout editor
+    (steps above) — enabling the card in Shopjar alone isn't enough.
+  </Accordion>
+</AccordionGroup>
+
+<ShopjarFooter />

@@ -1,0 +1,89 @@
+---
+title: "Affiliate links, coupons & customer discount"
+description: "Link and coupon tracking, the shopper-facing discount, and social sharing."
+---
+
+import ShopjarFooter from "/snippets/shopjar/footer.mdx";
+
+Affiliates can be tracked two ways — and offering both maximizes
+attributed sales.
+
+## Affiliate links
+
+Each approved affiliate gets a unique link. **Affiliate link
+destination** (Affiliate → Settings) controls where it lands: **Home
+page**, a specific **Product**, or a **Custom link**.
+
+## Affiliate coupons
+
+A coupon bound to the affiliate tracks sales even when no link was
+clicked — essential for video, podcast, and offline promotion ("use
+code SARAH10"). Manage them from the member's profile (**Your affiliate
+coupons**): create a new coupon or bind an existing Shopify code.
+Coupons can also be generated automatically at approval time.
+
+<Tip>
+  Give every serious affiliate both. Links capture click-through
+  traffic; coupons capture "heard it on the podcast" traffic that
+  links can never see.
+</Tip>
+
+## Customer Discount
+
+**Affiliate → Program → Customer Discount** defines what the *shopper*
+gets when buying through an affiliate code — the discount that makes
+the code worth using:
+
+- **Discount Value** — Percentage Discount, Fixed Discount, or No
+  discount or reward
+- **Limit to one use per customer**
+- **Minimum requirements** — minimum purchase amount or item quantity
+- **Combinations** — whether it stacks with product, order, and
+  shipping discounts
+
+The discount applies automatically at checkout for customers shopping
+through an affiliate's link or code.
+
+## Social share options
+
+**Affiliate → Settings → Social Share Options** chooses which channels
+affiliates see in their portal — Facebook, Twitter (with custom
+message), WhatsApp (with custom text), and Email (with subject and
+message). Messages support the shortcodes `{{affiliate_link}}`,
+`{{store_url}}`, and `{{affiliate_code}}`.
+
+## Use cases & examples
+
+<AccordionGroup>
+  <Accordion title="Podcast & video promotion" icon="microphone" description="Coupon-first tracking for audio audiences.">
+    Create a memorable coupon per affiliate and set the Customer
+    Discount to 10% — listeners type the code at checkout and the sale
+    attributes perfectly without any click.
+  </Accordion>
+  <Accordion title="Send traffic to the money page" icon="bullseye" description="Affiliate links land on your flagship product.">
+    Set the link destination to **Products** and pick your bestseller.
+    Shorter path, higher conversion, happier affiliates.
+  </Accordion>
+  <Accordion title="Commission-only program" icon="scale-balanced" description="No shopper discount — affiliates earn, prices stay intact.">
+    Set Customer Discount to **No discount or reward** when your brand
+    avoids discounting. Affiliates still earn per sale via their link.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The affiliate coupon stopped working">
+    If the underlying Shopify discount was deleted, the Customer
+    Discount card shows "Your discount code has been deleted" with a
+    **Recreate** button. Coupons also expire per their validity
+    settings.
+  </Accordion>
+  <Accordion title="Coupon sales aren't crediting the right affiliate">
+    A coupon credits the affiliate it's bound to — check the binding on
+    the member's profile, and make sure two affiliates aren't sharing
+    a code.
+  </Accordion>
+</AccordionGroup>
+
+<ShopjarFooter />
