@@ -320,6 +320,10 @@
       "mcp",
       "cursor"
     ],
-    "display": "toc"
-  }
+    "display": "header"
+  },
+  "markdown": {
+    "schema": true
+  },
+  "description": "Grow your Shopify store revenue with discounts, upsells, loyalty and referral features. Explore the Yuko apps for Shopify"
 }
