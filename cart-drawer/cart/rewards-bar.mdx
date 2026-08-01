@@ -1,0 +1,127 @@
+---
+title: "Rewards bar"
+description: "The free-shipping and rewards progress bar — tiers, free gifts, confetti, and per-market thresholds."
+---
+
+import CartDrawerFooter from "/snippets/cart-drawer/footer.mdx";
+
+The **Promotions progress bar** is the drawer's biggest motivator. It
+shows shoppers how close they are to a reward — "Spend $12 more for free
+shipping" — and fills up as they add items. Find it under **Body →
+Promotions progress bar**.
+
+## How rewards unlock
+
+First choose **Promotions unlocked by**:
+
+- **Cart total** — rewards unlock at spending amounts (e.g. $50)
+- **Item quantity** — rewards unlock at item counts (e.g. 3 items)
+
+You can also tick **Exclude specific products from being counted** and
+select products (like gift cards) that shouldn't count toward the goal.
+
+## Tiers
+
+Each tier is one reward. Click **Add tier** to build a ladder. Every
+tier has:
+
+| Field | What it does |
+| --- | --- |
+| Title | The reward's name, e.g. "Free shipping" — shown in the bar's messages |
+| Reward type | **Shipping discount**, **Order discount**, or **Free gift** |
+| Min. price / Min. items | The spend or quantity that unlocks it |
+| Near text | The message when this is the next reward ("Spend `{{amount}}` more…") — optional, falls back to the default text |
+| Earned text | The message right after unlocking — optional, falls back to the unlocked text |
+
+Reward type details:
+
+- **Shipping discount** — free shipping is applied automatically at
+  checkout.
+- **Order discount** — set the **Discount type** (**Percentage** or
+  **Fixed amount**) and the value.
+- **Free gift** — click **Select free gift product** and pick the gift.
+  It's added to the cart automatically when the tier unlocks, and
+  removed if the cart drops below the threshold.
+
+<Tip>
+  A proven ladder: free shipping at your average order value, and a free
+  gift about 30–40% above it. The first tier feels reachable, the second
+  stretches the order.
+</Tip>
+
+## Messages
+
+Three global messages drive the bar (each tier can override its own):
+
+- **Default text** — shown while working toward the next reward
+- **Unlocked text** — shown right after a reward unlocks
+- **All promotions unlocked text** — shown when everything is earned
+
+Use the shortcode picker to insert live values: amount needed for the
+next reward, next reward title/number, unlocked reward title/number, and
+total number of rewards.
+
+<Tip>
+  Turn on **Celebrate with confetti when a reward is unlocked** — a
+  small moment of delight that makes the unlock feel like a win.
+</Tip>
+
+## Different thresholds per country
+
+Selling in several currencies? Under the market overrides you can
+require a different amount or quantity for shoppers in specific
+**Shopify Markets** — for example $50 in the US but €45 in Europe.
+Everywhere else keeps the default tiers. Use the preview's **Previewing
+market** selector to check each market's bar.
+
+## Show it on product pages too
+
+The same progress works outside the drawer: add the **Yuko Progress
+Bar** block to your product template — see
+[Installation & theme setup](/cart-drawer/installation).
+
+## Use cases & examples
+
+<AccordionGroup>
+  <Accordion title="Classic free-shipping bar" icon="truck-fast" description="One tier: free shipping at $50.">
+    One tier, **Cart total**, **Min. price** `50`, reward **Shipping
+    discount**. The default texts already read well — just set the
+    threshold.
+  </Accordion>
+  <Accordion title="Three-step reward ladder" icon="stairs" description="Free shipping at $50, 10% off at $75, free gift at $100.">
+    Three tiers with rising thresholds. Shoppers keep seeing a next goal
+    after each unlock, and the bar celebrates each one.
+  </Accordion>
+  <Accordion title="Quantity-based gift" icon="gift" description="Buy 3 items, get a free sample — counted by items, not money.">
+    Switch **Promotions unlocked by** to **Item quantity**, one tier at
+    **Min. items** `3` with reward **Free gift**.
+  </Accordion>
+  <Accordion title="Fair thresholds for every market" icon="globe" description="$50 in the US, €45 in the EU — same bar, right numbers.">
+    Add a market override for your EU market with the adjusted amount.
+    Check both with the **Previewing market** selector before saving.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The free gift didn't appear (or won't go away)">
+    Gifts are added when the tier unlocks and removed when the cart
+    drops below the threshold. If the gift is missing, check the gift
+    product is in stock and published to your Online Store. Excluded
+    products also don't count toward the threshold — check your
+    exclusion list.
+  </Accordion>
+  <Accordion title="The bar shows the wrong amount for some shoppers">
+    They're probably in a Shopify Market with an override (or without
+    one you expected). Check the market overrides and use the
+    **Previewing market** selector to verify.
+  </Accordion>
+  <Accordion title="The reward unlocked but checkout shows no discount">
+    Shipping and order discounts apply at checkout, not in the cart
+    rows. If it's genuinely missing at checkout, re-save the cart and
+    test again — then contact support if it persists.
+  </Accordion>
+</AccordionGroup>
+
+<CartDrawerFooter />

@@ -1,0 +1,38 @@
+---
+title: "Analytics"
+description: "Track upsell performance and add-on revenue: views, add-to-carts, purchases."
+---
+
+import CartDrawerFooter from "/snippets/cart-drawer/footer.mdx";
+
+The **Analytics** page ("Upsell analytics") shows how much extra revenue
+the drawer is generating.
+
+## Summary tiles
+
+| Metric | Meaning |
+| --- | --- |
+| Views | How many times upsell products were shown to shoppers |
+| Added to Cart | How many times shoppers added an upsell from the drawer |
+| Purchases | Upsell items that ended up in paid orders |
+| Upsell revenue | Revenue from purchased upsells — in your shop currency and the shopper's (presentment) currency |
+| Shipping protection revenue / units sold | What the protection add-on earned |
+| Gift wrap revenue | What gift wrap earned |
+
+Purchases and revenue are recorded from Shopify's paid-order data, so
+they reflect real completed orders.
+
+## The events table
+
+Every event is logged with its date, type (Upsell Viewed / Added to
+Cart / Upsell Purchased / Shipping Protection Purchased / Gift Wrap
+Purchased), product, quantity, unit price, revenue, and order. Filter by
+**Event type**, **date range**, and **page size**.
+
+<Tip>
+  The ratio to watch is **Added to Cart ÷ Views**. Below ~5%, try
+  different products, a small discount, or switching the AI
+  recommendation type from Related to Complementary.
+</Tip>
+
+<CartDrawerFooter />

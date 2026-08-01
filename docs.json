@@ -152,7 +152,42 @@
         "groups": [
           {
             "group": "Get started",
-            "pages": ["cart-drawer/overview"]
+            "pages": [
+              "cart-drawer/overview",
+              "cart-drawer/installation",
+              "cart-drawer/quickstart"
+            ]
+          },
+          {
+            "group": "Cart editor",
+            "pages": [
+              "cart-drawer/cart/cart-editor",
+              "cart-drawer/cart/rewards-bar",
+              "cart-drawer/cart/product-upsells",
+              "cart-drawer/cart/body-sections",
+              "cart-drawer/cart/footer-addons",
+              "cart-drawer/cart/footer-checkout",
+              "cart-drawer/cart/general-settings"
+            ]
+          },
+          {
+            "group": "More features",
+            "pages": [
+              "cart-drawer/sticky-cart"
+            ]
+          },
+          {
+            "group": "Customization",
+            "pages": [
+              "cart-drawer/customization/translations-markets"
+            ]
+          },
+          {
+            "group": "Analytics & help",
+            "pages": [
+              "cart-drawer/analytics",
+              "cart-drawer/troubleshooting"
+            ]
           }
         ]
       },
