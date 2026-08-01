@@ -1,0 +1,74 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Yuko Apps",
+  "colors": {
+    "primary": "#0D9373",
+    "light": "#07C983",
+    "dark": "#0D9373"
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Home",
+        "icon": "house",
+        "pages": ["index"]
+      },
+      {
+        "tab": "Order Limits",
+        "icon": "scale-balanced",
+        "groups": [
+          {
+            "group": "Get started",
+            "pages": ["order-limits/overview"]
+          }
+        ]
+      },
+      {
+        "tab": "Post Purchase Upsells",
+        "icon": "cart-plus",
+        "groups": [
+          {
+            "group": "Get started",
+            "pages": ["post-purchase-upsells/overview"]
+          }
+        ]
+      },
+      {
+        "tab": "Bundles & Discounts",
+        "icon": "boxes-stacked",
+        "groups": [
+          {
+            "group": "Get started",
+            "pages": ["bundles-discounts/overview"]
+          }
+        ]
+      },
+      {
+        "tab": "Cart Drawer",
+        "icon": "cart-shopping",
+        "groups": [
+          {
+            "group": "Get started",
+            "pages": ["cart-drawer/overview"]
+          }
+        ]
+      },
+      {
+        "tab": "Shopjar",
+        "icon": "handshake",
+        "groups": [
+          {
+            "group": "Get started",
+            "pages": ["shopjar/overview"]
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "socials": {
+      "website": "https://apps.shopify.com/partners/checkoutful"
+    }
+  }
+}
