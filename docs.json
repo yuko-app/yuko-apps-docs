@@ -309,5 +309,17 @@
     "socials": {
       "website": "https://apps.shopify.com/partners/afflr"
     }
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "assistant",
+      "view",
+      "chatgpt",
+      "claude",
+      "mcp",
+      "cursor"
+    ],
+    "display": "header"
   }
 }
