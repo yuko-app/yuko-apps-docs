@@ -62,7 +62,7 @@ cart is checked against the rule.
 ## Use cases & examples
 
 <AccordionGroup>
-  <Accordion title="Minimum order value of $50">
+  <Accordion title="Minimum order value of $50" icon="dollar-sign" description="A cart-wide value floor, with a live “add X more” message.">
     Condition **Cart Value** → **Minimum value in order** `50`. A helpful
     message pattern uses the live remaining amount:
 
@@ -70,20 +70,20 @@ cart is checked against the rule.
     Add {{remaining_total_value}} {{currency}} more to reach our {{minimum_total_product_value}} {{currency}} minimum.
     ```
   </Accordion>
-  <Accordion title="No more than 20 items per order">
+  <Accordion title="No more than 20 items per order" icon="basket-shopping" description="Keep orders within packing and fulfillment constraints.">
     Condition **Cart Quantity** → **Minimum** `1`, **Maximum** `20`.
     Useful for keeping orders within packing or fulfillment constraints.
   </Accordion>
-  <Accordion title="Keep orders under a shipping weight cap">
+  <Accordion title="Keep orders under a shipping weight cap" icon="weight-hanging" description="A maximum cart weight in your preferred unit.">
     Condition **Cart Weight** → set the maximum and pick the unit (e.g.
     `20` **kg**). The `{{maximum_product_weight}}` and `{{weight_unit}}`
     variables let the message show the exact cap.
   </Accordion>
-  <Accordion title="Different minimums for USD and EUR customers">
+  <Accordion title="Different minimums for USD and EUR customers" icon="euro-sign" description="Per-currency minimums for multi-currency stores.">
     Condition **Cart Value** → add one row per currency: USD min `50`, EUR
     min `45`. Each customer is checked against their own currency's row.
   </Accordion>
-  <Accordion title="A $100 minimum that ignores gift cards">
+  <Accordion title="A $100 minimum that ignores gift cards" icon="gift" description="A value minimum with excluded products left out of the count.">
     Set the Cart Value minimum, then enable **Exclusions** → **Specific
     product** → select your gift card products so they don't count toward
     the $100.

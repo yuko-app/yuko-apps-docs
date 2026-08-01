@@ -55,29 +55,29 @@ The quantity must be a multiple of {{multiple}}
 ## Use cases & examples
 
 <AccordionGroup>
-  <Accordion title="Limit a flash-sale product to 2 per customer">
+  <Accordion title="Limit a flash-sale product to 2 per customer" icon="bolt" description="Cap a hot sale item so stock lasts — maximum 2 per order.">
     Apply to **Specific products** → select the sale product → set
     **Minimum** `1`, **Maximum** `2`. Customers adding a third unit see
     your maximum message, and checkout is blocked until they reduce the
     quantity.
   </Accordion>
-  <Accordion title="Wholesale MOQ: at least 10 units of any product">
+  <Accordion title="Wholesale MOQ: at least 10 units of any product" icon="warehouse" description="A store-wide minimum, targeted at wholesale-tagged customers.">
     Apply to **All products** → **Minimum** `10`, leave maximum empty. Pair
     it with [customer tag targeting](/order-limits/limits/targeting) on a
     `wholesale` tag so retail customers aren't affected.
   </Accordion>
-  <Accordion title="Sell drinks only in packs of 6">
+  <Accordion title="Sell drinks only in packs of 6" icon="boxes-stacked" description="Quantities must be multiples of 6 — 6, 12, 18…">
     Select the product → enable **Sell products in multiples** →
     **Multiple** `6`. Customers can buy 6, 12, 18… but not 8. The default
     message `The quantity must be a multiple of {{multiple}}` explains the
     rule.
   </Accordion>
-  <Accordion title="Cap each variant separately (sizes, colors)">
+  <Accordion title="Cap each variant separately (sizes, colors)" icon="swatchbook" description="Count each size or color on its own with per-variant limits.">
     Enable **Apply to each variant**. With a maximum of 5, a customer can
     buy 5 of the Small *and* 5 of the Medium — each variant is counted on
     its own. Leave it off to count all variants of the product together.
   </Accordion>
-  <Accordion title="Limit everything except gift cards">
+  <Accordion title="Limit everything except gift cards" icon="gift" description="Apply the rule store-wide, minus excluded products.">
     Choose **Exclusions** → select your gift card products. The limit
     applies store-wide but skips the excluded items.
   </Accordion>

@@ -60,23 +60,23 @@ collection)
 ## Use cases & examples
 
 <AccordionGroup>
-  <Accordion title="Minimum 3 items from the Sample Packs collection">
+  <Accordion title="Minimum 3 items from the Sample Packs collection" icon="flask" description="Let customers mix and match any 3 samples toward one total.">
     Select the collection → condition **product quantity** → **Minimum**
     `3` → calculation method **total across all products**. Customers can
     mix and match any 3 samples.
   </Accordion>
-  <Accordion title="Cap Sale items at 5 per order">
+  <Accordion title="Cap Sale items at 5 per order" icon="tag" description="No more than 5 discounted items per order, in any combination.">
     Select your Sale collection → **Minimum** `1`, **Maximum** `5` →
     **total across all products**. No more than 5 discounted items per
     order, in any combination.
   </Accordion>
-  <Accordion title="Pre-orders limited to $500 per order">
+  <Accordion title="Pre-orders limited to $500 per order" icon="clock" description="A value ceiling on the Pre-order collection.">
     Select the Pre-order collection → condition **total value** →
     **Maximum** `500`. The message can show the live remaining allowance
     with the `{{maximum_total_product_value}}` and `{{currency}}`
     [variables](/order-limits/customization/message-variables).
   </Accordion>
-  <Accordion title="Every product from the Bulk collection in packs of 12">
+  <Accordion title="Every product from the Bulk collection in packs of 12" icon="boxes-stacked" description="Each bulk product must be bought in multiples of 12.">
     Select the collection → enable **Sell products in multiples** →
     **Multiple** `12` → calculation method **each product individually**,
     so each bulk product must independently be a multiple of 12.
