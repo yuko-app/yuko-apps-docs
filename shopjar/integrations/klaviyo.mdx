@@ -1,0 +1,267 @@
+---
+title: "Klaviyo"
+description: "Connect Shopjar to Klaviyo, verify the sync, and use every trigger and property in your flows."
+---
+
+import ShopjarFooter from "/snippets/shopjar/footer.mdx";
+
+Klaviyo is an email and SMS marketing platform. Connected to Shopjar, it
+receives every referral and affiliate event from your store — so you can
+trigger Klaviyo flows on program activity and personalize the emails
+with member names, links, coupons, and amounts. *(Growth plan)*
+
+## Step 1 — Get your Klaviyo API key
+
+<Steps>
+  <Step title="Open Klaviyo's settings">
+    In Klaviyo, click your account name at the bottom left and select
+    **Settings**.
+  </Step>
+  <Step title="Create a Private API Key">
+    Go to the **API Keys** section and click **Create Private API
+    Key**.
+  </Step>
+  <Step title="Grant full access">
+    Name the key (e.g. `Shopjar`), select **Grant applications full
+    access** for every API scope, and click **Create**.
+
+    <Warning>
+      Full access on all scopes is required — a restricted key connects
+      but fails when Shopjar tries to send events.
+    </Warning>
+  </Step>
+  <Step title="Copy the key">
+    Copy the key now — Klaviyo only shows it once.
+  </Step>
+</Steps>
+
+## Step 2 — Connect Shopjar
+
+<Steps>
+  <Step title="Open the integration">
+    In Shopjar, go to **Settings → Integrations** and click
+    **Configure** on the Klaviyo card.
+  </Step>
+  <Step title="Enable and save">
+    Turn on **Enable Klaviyo Integration**, paste the API key, and
+    save. The card's badge shows **Active** once the key verifies.
+  </Step>
+</Steps>
+
+## Step 3 — Verify it's working
+
+In Klaviyo, go to **Audience → Profiles**. After the first event fires
+(or after you trigger some test activity), you'll see profiles carrying
+Shopjar's custom properties. Open a profile to see its **activity
+feed** — Shopjar events appear there with their properties, which is
+also the easiest place to confirm exact property names while building
+emails.
+
+## How the data is organized
+
+Shopjar sends two kinds of data:
+
+- **Events (metrics)** — one per program moment, all named with the
+  `Shopjar-` prefix. Use them as **flow triggers**. Their properties
+  are referenced in emails as `{{ event.sj_event_... }}`.
+- **Profile properties** — details stored on the member's Klaviyo
+  profile, referenced as `{{ person|lookup:'sj_member_...' }}`:
+
+| Property | Description | Example |
+| --- | --- | --- |
+| `sj_member_first_name` | Member's first name | `John` |
+| `sj_member_last_name` | Member's last name | `Smith` |
+| `sj_member_email` | Member's email address | `john@example.com` |
+| `sj_member_referral_link` | Their unique referral link | `https://yourstore.com?sjref=JOHN10` |
+| `sj_member_affiliate_link` | Their unique affiliate link | `https://yourstore.com?sjram=JOHN10` |
+| `sj_member_affiliate_code` | Their affiliate code | `JOHN10` |
+
+## Referral triggers (5)
+
+| Trigger (metric name) | Fires when | Concerns |
+| --- | --- | --- |
+| Shopjar-Welcome email | A member joins the referral program | Referrer |
+| Shopjar-Invitation Email (sent when referrer invite their friends) | A referrer invites a friend | Friend |
+| Shopjar-Email when a friend claims a reward | A friend claims their reward | Friend |
+| Shopjar-Email when referrer earns a reward for successful referral | A referrer's reward is issued | Referrer |
+| Shopjar-Notify after referral sale | A referral drives an order | Admin |
+
+### Shopjar-Welcome email
+
+| Shortcode | Description | Example |
+| --- | --- | --- |
+| `{{ event.sj_event_referrer_first_name }}` | Referrer's first name | `John` |
+| `{{ event.sj_event_referrer_last_name }}` | Referrer's last name | `Smith` |
+| `{{ event.sj_event_referrer_email }}` | Referrer's email address | `john@example.com` |
+| `{{ event.sj_event_referrer_link }}` | The referrer's referral link | `https://yourstore.com?sjref=JOHN10` |
+
+### Shopjar-Invitation Email
+
+| Shortcode | Description | Example |
+| --- | --- | --- |
+| `{{ event.sj_event_referrer_first_name }}` | Referrer's first name | `John` |
+| `{{ event.sj_event_referrer_last_name }}` | Referrer's last name | `Smith` |
+| `{{ event.sj_event_referrer_email }}` | Referrer's email address | `john@example.com` |
+| `{{ event.sj_event_referrer_link }}` | The referrer's referral link | `https://yourstore.com?sjref=JOHN10` |
+| `{{ event.sj_event_coupon_code }}` | The friend's coupon code | `FRIEND15` |
+| `{{ event.sj_event_coupon_code_expiry_at }}` | Coupon expiry date | `2026-10-15` |
+
+### Shopjar-Email when a friend claims a reward
+
+| Shortcode | Description | Example |
+| --- | --- | --- |
+| `{{ event.sj_event_friend_name }}` | Friend's full name | `Emily Clark` |
+| `{{ event.sj_event_friend_first_name }}` | Friend's first name | `Emily` |
+| `{{ event.sj_event_friend_last_name }}` | Friend's last name | `Clark` |
+| `{{ event.sj_event_referrer_first_name }}` | Referrer's first name | `John` |
+| `{{ event.sj_event_referrer_last_name }}` | Referrer's last name | `Smith` |
+| `{{ event.sj_event_referrer_email }}` | Referrer's email address | `john@example.com` |
+| `{{ event.sj_event_coupon_code }}` | The claimed coupon code | `WELCOME10` |
+| `{{ event.sj_event_coupon_code_expiry_at }}` | Coupon expiry date | `2026-10-20` |
+
+### Shopjar-Email when referrer earns a reward for successful referral
+
+| Shortcode | Description | Example |
+| --- | --- | --- |
+| `{{ event.sj_event_referrer_name }}` | Referrer's full name | `John Smith` |
+| `{{ event.sj_event_referrer_email }}` | Referrer's email address | `john@example.com` |
+| `{{ event.sj_event_friend_name }}` | Friend's full name | `Emily Clark` |
+| `{{ event.sj_event_friend_email }}` | Friend's email address | `emily@example.com` |
+| `{{ event.sj_event_coupon_code }}` | The reward coupon code | `REFER10` |
+| `{{ event.sj_event_coupon_code_expiry_at }}` | Coupon expiry date | `2026-09-30` |
+
+### Shopjar-Notify after referral sale
+
+| Shortcode | Description | Example |
+| --- | --- | --- |
+| `{{ event.sj_event_referrer_name }}` | Referrer's full name | `John Smith` |
+| `{{ event.sj_event_referrer_first_name }}` | Referrer's first name | `John` |
+| `{{ event.sj_event_referrer_last_name }}` | Referrer's last name | `Smith` |
+| `{{ event.sj_event_referrer_email }}` | Referrer's email address | `john@example.com` |
+| `{{ event.sj_event_order_value }}` | The order's value | `300.00` |
+| `{{ event.sj_event_sale_url }}` | Link to the sales report | `…/referral/analytics/sales` |
+
+## Affiliate triggers (7)
+
+| Trigger (metric name) | Fires when | Concerns |
+| --- | --- | --- |
+| Shopjar-Notify administrators when an affiliate application is received | Someone applies | Admin |
+| Shopjar-Notify the affiliate when his application is approved | You approve an affiliate | Affiliate |
+| Shopjar-Notify the affiliate when his application is rejected | You reject an application | Affiliate |
+| Shopjar-Notify when an affiliate earns a commission | A commission is earned | Affiliate |
+| Shopjar-Notify when payout is processed for an affiliate | A payout completes | Affiliate |
+| Shopjar-Notify when commission is redeemed as a coupon | Balance converted to a coupon | Affiliate |
+| Shopjar-Notify administrators when an affiliate sale is made | An affiliate drives an order | Admin |
+
+### Application received (admin) & Application rejected
+
+| Shortcode | Description | Example |
+| --- | --- | --- |
+| `{{ event.sj_event_affiliate_first_name }}` | Affiliate's first name | `David` |
+| `{{ event.sj_event_affiliate_last_name }}` | Affiliate's last name | `Lee` |
+| `{{ event.sj_event_affiliate_email }}` | Affiliate's email address | `david@example.com` |
+
+### Application approved
+
+| Shortcode | Description | Example |
+| --- | --- | --- |
+| `{{ event.sj_event_affiliate_first_name }}` | Affiliate's first name | `David` |
+| `{{ event.sj_event_affiliate_last_name }}` | Affiliate's last name | `Lee` |
+| `{{ event.sj_event_affiliate_email }}` | Affiliate's email address | `david@example.com` |
+| `{{ event.sj_event_affiliate_dashboard_url }}` | Their portal (dashboard) URL | `…/my-account` |
+| `{{ event.sj_event_affiliate_url }}` | Their affiliate link | `https://yourstore.com?sjram=DAVID10` |
+| `{{ event.sj_event_affiliate_code }}` | Their affiliate code | `DAVID10` |
+
+### Commission earned
+
+| Shortcode | Description | Example |
+| --- | --- | --- |
+| `{{ event.sj_event_affiliate_name }}` | Affiliate's full name | `David Lee` |
+| `{{ event.sj_event_affiliate_email }}` | Affiliate's email address | `david@example.com` |
+| `{{ event.sj_event_affiliate_url }}` | Their affiliate link | `https://yourstore.com?sjram=DAVID10` |
+| `{{ event.sj_event_affiliate_code }}` | Their affiliate/coupon code | `DAVID10` |
+| `{{ event.sj_event_affiliate_code_expiry_at }}` | Code expiry date, if set | `2026-12-31` |
+| `{{ event.sj_event_amount }}` | The commission amount | `15.00` |
+| `{{ event.sj_event_affiliate_dashboard_url }}` | Their portal URL | `…/my-account` |
+
+### Payout processed
+
+| Shortcode | Description | Example |
+| --- | --- | --- |
+| `{{ event.sj_event_affiliate_first_name }}` | Affiliate's first name | `David` |
+| `{{ event.sj_event_affiliate_last_name }}` | Affiliate's last name | `Lee` |
+| `{{ event.sj_event_paid_amount }}` | The payout amount | `120.00` |
+| `{{ event.sj_event_remaining_balance }}` | Balance left after the payout | `50.00` |
+| `{{ event.sj_event_payment_method }}` | How it was paid | `Paypal` |
+| `{{ event.sj_event_affiliate_dashboard_url }}` | Their portal URL | `…/my-account` |
+
+### Commission redeemed as coupon
+
+| Shortcode | Description | Example |
+| --- | --- | --- |
+| `{{ event.sj_event_affiliate_first_name }}` | Affiliate's first name | `David` |
+| `{{ event.sj_event_affiliate_last_name }}` | Affiliate's last name | `Lee` |
+| `{{ event.sj_event_affiliate_email }}` | Affiliate's email address | `david@example.com` |
+| `{{ event.sj_event_paid_amount }}` | The redeemed amount | `50.00` |
+| `{{ event.sj_event_coupon_code }}` | The generated coupon code | `REDEEM50` |
+| `{{ event.sj_event_affiliate_dashboard_url }}` | Their portal URL | `…/my-account` |
+
+### Affiliate sale (admin)
+
+| Shortcode | Description | Example |
+| --- | --- | --- |
+| `{{ event.sj_event_affiliate_first_name }}` | Affiliate's first name | `David` |
+| `{{ event.sj_event_affiliate_last_name }}` | Affiliate's last name | `Lee` |
+| `{{ event.sj_event_affiliate_email }}` | Affiliate's email address | `david@example.com` |
+| `{{ event.sj_event_order_value }}` | The order's value | `250.00` |
+| `{{ event.sj_event_sale_url }}` | Link to the sales report | `…/affiliate?tab=sales` |
+
+<Note>
+  Stores connected before the current property scheme receive the same
+  events with **unprefixed** property names (e.g. `referrer_name`
+  instead of `sj_event_referrer_name`). When in doubt, open a profile's
+  activity feed in Klaviyo — it shows the exact property names your
+  store sends.
+</Note>
+
+## Build a flow: step by step
+
+Example: email the friend when they claim a reward.
+
+<Steps>
+  <Step title="Create the flow">
+    In Klaviyo, go to **Flows → Create Flow → Build Your Own**, name
+    the flow, and create it.
+  </Step>
+  <Step title="Pick the Shopjar trigger">
+    Choose a metric trigger, open the **API** category, and select
+    **Shopjar-Email when a friend claims a reward**. Save the trigger.
+  </Step>
+  <Step title="Add the email">
+    Drag **Email** from the Actions tab into the flow, click it, and
+    pick a template.
+  </Step>
+  <Step title="Personalize with Shopjar properties">
+    Click **Add Personalization** in the editor and insert the event
+    properties — for this trigger, for example
+    `{{ event.sj_event_friend_first_name }}` and
+    `{{ event.sj_event_coupon_code }}` (full table above). Preview with
+    **Preview & test**.
+  </Step>
+  <Step title="Turn it on">
+    Click **Review and Turn On**, set the flow to **Live**, and
+    confirm.
+
+    <Check>
+      The next reward claim triggers your email automatically.
+    </Check>
+  </Step>
+</Steps>
+
+<Tip>
+  When a Klaviyo flow replaces one of Shopjar's own
+  [email notifications](/shopjar/emails/notifications), toggle the
+  Shopjar template off so members don't receive both.
+</Tip>
+
+<ShopjarFooter />

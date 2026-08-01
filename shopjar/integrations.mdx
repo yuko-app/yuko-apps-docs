@@ -1,45 +1,41 @@
 ---
 title: "Integrations"
-description: "Klaviyo and Shopify Flow — sync members and automate workflows."
+description: "Connect Shopjar to Klaviyo and Shopify Flow — with full event and property references."
 ---
 
 import ShopjarFooter from "/snippets/shopjar/footer.mdx";
 
-Both integrations live under **Settings → Integrations** and require
-the **Growth** plan.
+Shopjar connects to two automation platforms, both configured under
+**Settings → Integrations** and both requiring the **Growth** plan.
 
-## Klaviyo
+<CardGroup cols={2}>
+  <Card title="Klaviyo" icon="envelope-open-text" href="/shopjar/integrations/klaviyo">
+    Sync members and program events into Klaviyo to power email flows —
+    with every event and property documented.
+  </Card>
+  <Card title="Shopify Flow" icon="diagram-project" href="/shopjar/integrations/shopify-flow">
+    Trigger Shopify Flow workflows on program events — with every
+    trigger's payload documented.
+  </Card>
+</CardGroup>
 
-Syncs your referral and affiliate members and their events into Klaviyo
-to power automated, personalized email flows.
+Both integrations emit the **same twelve program events** — one for
+each moment in the referral and affiliate lifecycle — so anything you
+can email through Klaviyo, you can also automate through Flow.
 
-<Steps>
-  <Step title="Get your Klaviyo key">
-    In Klaviyo's account settings, create a **Private API Key** with
-    the access level set to **"Grant applications full access"** for
-    every API scope.
-  </Step>
-  <Step title="Configure">
-    Click **Configure** on the Klaviyo card, paste the key, turn on
-    **Enable Klaviyo Integration**, and save. The card badge flips to
-    **Active** once verified.
-  </Step>
-</Steps>
-
-<Tip>
-  A high-impact first flow: trigger on new referral members and send
-  their referral link a week after joining — reactivating members who
-  joined but never shared.
-</Tip>
-
-## Shopify Flow
-
-Connects Shopjar's triggers and actions to Shopify Flow, so you can
-automate on program events in your Shopify admin — for example, tagging
-customers when they become affiliates, or posting to Slack on big
-referral sales.
-
-Use **Send test event** to fire a sample of every Flow event with
-placeholder data — safe to run — and verify your workflows end to end.
+| Event moment | Program |
+| --- | --- |
+| A member joins the referral program (welcome) | Referral |
+| A referrer invites a friend | Referral |
+| A friend claims their reward | Referral |
+| A referrer earns a reward | Referral |
+| A referral sale is made (admin) | Referral |
+| An affiliate application is received (admin) | Affiliate |
+| An application is approved | Affiliate |
+| An application is rejected | Affiliate |
+| An affiliate earns a commission | Affiliate |
+| A payout is processed | Affiliate |
+| A commission is redeemed as a coupon | Affiliate |
+| An affiliate sale is made (admin) | Affiliate |
 
 <ShopjarFooter />

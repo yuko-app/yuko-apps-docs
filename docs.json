@@ -264,6 +264,8 @@
             "pages": [
               "shopjar/settings",
               "shopjar/integrations",
+              "shopjar/integrations/klaviyo",
+              "shopjar/integrations/shopify-flow",
               "shopjar/billing"
             ]
           },
